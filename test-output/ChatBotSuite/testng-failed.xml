@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite thread-count="2" parallel="tests" name="Failed suite [ChatBotSuite]" guice-stage="DEVELOPMENT">
+  <test thread-count="2" parallel="tests" name="Run2(failed)">
+    <parameter name="excelFile" value=".\\TestData\\ChatBot_part2.xlsx"/>
+    <parameter name="debugPort" value="9223"/>
+    <classes>
+      <class name="testCases.ChatBot">
+        <methods>
+          <include name="baseTesting"/>
+          <include name="refresh"/>
+          <include name="calidateChatBot"/>
+          <include name="setup"/>
+          <include name="questionsValidation"/>
+          <include name="initExcel"/>
+        </methods>
+      </class> <!-- testCases.ChatBot -->
+    </classes>
+  </test> <!-- Run2(failed) -->
+</suite> <!-- Failed suite [ChatBotSuite] -->

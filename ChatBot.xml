@@ -1,0 +1,19 @@
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite name="ChatBotSuite" parallel="tests" thread-count="2">
+    
+    <test name="Run1">
+        <parameter name="excelFile" value=".\\TestData\\ChatBot_part1.xlsx"/>
+        <parameter name="debugPort" value="9222"/>
+        <classes>
+            <class name="testCases.ChatBot"/>
+        </classes>
+    </test>
+
+    <test name="Run2">
+        <parameter name="excelFile" value=".\\TestData\\ChatBot_part2.xlsx"/>
+        <parameter name="debugPort" value="9223"/>
+        <classes>
+            <class name="testCases.ChatBot"/>
+        </classes>
+    </test>
+</suite>

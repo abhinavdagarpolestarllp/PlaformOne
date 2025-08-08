@@ -1,0 +1,282 @@
+<html>
+<head>
+<title>TestNG:  Run1</title>
+<link href="../testng.css" rel="stylesheet" type="text/css" />
+<link href="../my-testng.css" rel="stylesheet" type="text/css" />
+
+<style type="text/css">
+.log { display: none;} 
+.stack-trace { display: none;} 
+</style>
+<script type="text/javascript">
+<!--
+function flip(e) {
+  current = e.style.display;
+  if (current == 'block') {
+    e.style.display = 'none';
+    return 0;
+  }
+  else {
+    e.style.display = 'block';
+    return 1;
+  }
+}
+
+function toggleBox(szDivId, elem, msg1, msg2)
+{
+  var res = -1;  if (document.getElementById) {
+    res = flip(document.getElementById(szDivId));
+  }
+  else if (document.all) {
+    // this is the way old msie versions work
+    res = flip(document.all[szDivId]);
+  }
+  if(elem) {
+    if(res == 0) elem.innerHTML = msg1; else elem.innerHTML = msg2;
+  }
+
+}
+
+function toggleAllBoxes() {
+  if (document.getElementsByTagName) {
+    d = document.getElementsByTagName('div');
+    for (i = 0; i < d.length; i++) {
+      if (d[i].className == 'log') {
+        flip(d[i]);
+      }
+    }
+  }
+}
+
+// -->
+</script>
+
+</head>
+<body>
+<h2 align='center'>Run1</h2><table border='1' align="center">
+<tr>
+<td>Tests passed/Failed/Skipped:</td><td>24/0/0</td>
+</tr><tr>
+<td>Started on:</td><td>Mon Jul 07 14:43:46 IST 2025</td>
+</tr>
+<tr><td>Total time:</td><td>1636 seconds (1636715 ms)</td>
+</tr><tr>
+<td>Included groups:</td><td></td>
+</tr><tr>
+<td>Excluded groups:</td><td></td>
+</tr>
+</table><p/>
+<small><i>(Hover the method name to see the test class name)</i></small><p/>
+<table width='100%' border='1' class='invocation-passed'>
+<tr><td colspan='4' align='center'><b>PASSED TESTS</b></td></tr>
+<tr><td><b>Test method</b></td>
+<td><b>Attribute(s)</b></td>
+<td width="30%"><b>Exception</b></td>
+<td width="10%"><b>Time (seconds)</b></td>
+<td><b>Instance</b></td>
+</tr>
+<tr>
+<td title='testCases.ChatBot.questionsValidation()'><b>questionsValidation</b><br>Test class: testCases.ChatBot<br>Parameters: Show monthly active patient counts for NMOSD in 2024., 8, Pass, COUNT(DISTINCT "PMY_PHYN_ALEXION_ID") AS "HCP COUNT",
+"CUSTOMER_MARKET_INSIGHTS"."DP_HCP",
+REGEXP_LIKE("TERR_ID", '.*(US0Z|US1N).*'),
+ "TM_BCKT_TYP" = 'QUARTERLY'.</td>
+<td></td>
+<td>62</td>
+<td>testCases.ChatBot@5e5d171f</td></tr>
+<tr>
+<td title='testCases.ChatBot.questionsValidation()'><b>questionsValidation</b><br>Test class: testCases.ChatBot<br>Parameters: Show GMG vs NMOSD patient counts for the past year by therapy status., 18, Pass, "INDC_NM" AS "Indication Name", 
+COUNT(DISTINCT "PAT_ID") AS,
+"PATIENT_MARKET_INSIGHTS"."DP_PATIENT",
+"TM_BCKT_TYP" = 'YEARLY' ,
+"TM_BCKT_ID" LIKE TO_CHAR(DATEADD(YEAR, -1, DATE_TRUNC('YEAR', CURRENT_DATE)), 'YYYY') 
+"ACTV_STAT_IND_FLAG" = 1 ,
+"INDC_NM" IN ('GMG', 'NMOSD'),
+GROUP BY 
+    "INDC_NM"
+ORDER BY 
+</td>
+<td></td>
+<td>75</td>
+<td>testCases.ChatBot@5e5d171f</td></tr>
+<tr>
+<td title='testCases.ChatBot.questionsValidation()'><b>questionsValidation</b><br>Test class: testCases.ChatBot<br>Parameters: Which HCPs are starting new (treatment-naive) patients on Ultomiris in Q4 2024?, 1, Pass, "TM_BCKT_ID" = '20240701' ,"INDC_NM", 
+    "TM_BCKT_TYP", 
+    "TM_BCKT_ID", 
+    "EVNT_SUB_CLSS_NM" ,"DCONN_IND_FLAG" = 1 </td>
+<td></td>
+<td>57</td>
+<td>testCases.ChatBot@5e5d171f</td></tr>
+<tr>
+<td title='testCases.ChatBot.questionsValidation()'><b>questionsValidation</b><br>Test class: testCases.ChatBot<br>Parameters: Calculate time from first diagnosis to first C5 therapy for GMG patients., 14, Pass, "PHYN_PMY_SPCL" ,     SUM("NAIVE_NEW_STRT_ON_TRGT_DRUG_PAT_CNT") AS , 
+"CUSTOMER_MARKET_INSIGHTS"."DP_HCP",
+ "EVNT_SUB_CLSS_NM" = 'ULTOMIRIS',
+ "TM_BCKT_TYP" = 'QUARTERLY',
+  REGEXP_LIKE("TERR_ID", '.*(US0Z|US1N).*')
+GROUP BY 
+    "PHYN_PMY_SPCL"
+ORDER BY 
+</td>
+<td></td>
+<td>70</td>
+<td>testCases.ChatBot@5e5d171f</td></tr>
+<tr>
+<td title='testCases.ChatBot.questionsValidation()'><b>questionsValidation</b><br>Test class: testCases.ChatBot<br>Parameters: What is the average time from diagnosis to first Branded Biologic therapy among NMOSD patients?, 13, Pass, COUNT(DISTINCT "PAT_ID") AS "ACTIVE PATIENT COUNT"
+"PATIENT_MARKET_INSIGHTS"."DP_PATIENT", 
+"ACTV_STAT_IND_FLAG" = 1,
+"TM_BCKT_TYP" = 'QUARTERLY',
+ "TM_BCKT_ID" LIKE TO_CHAR(DATE_TRUNC('YEAR', CURRENT_DATE), 'YYYY');</td>
+<td></td>
+<td>60</td>
+<td>testCases.ChatBot@5e5d171f</td></tr>
+<tr>
+<td title='testCases.ChatBot.questionsValidation()'><b>questionsValidation</b><br>Test class: testCases.ChatBot<br>Parameters: Which HCPs stopped prescribing Ultomiris in the last 3 months?, 20, Pass, "TM_BCKT_ID" AS "Year", 
+COUNT(DISTINCT "PAT_ID") AS ,"PATIENT_MARKET_INSIGHTS"."DP_PATIENT" ,
+ "TM_BCKT_TYP" = 'QUARTERLY', 
+"TM_BCKT_ID=",
+ "INDC_NM" = 'NMOSD' ,
+ "ACTV_STAT_IND_FLAG" = 1 ,
+ ("HSPZ_CNT" > 0 OR "ER_VST_CNT" > 0) ,
+GROUP BY 
+    "TM_BCKT_ID" 
+ORDER BY 
+</td>
+<td></td>
+<td>84</td>
+<td>testCases.ChatBot@5e5d171f</td></tr>
+<tr>
+<td title='testCases.ChatBot.calidateChatBot()'><b>calidateChatBot</b><br>Test class: testCases.ChatBot</td>
+<td></td>
+<td>6</td>
+<td>testCases.ChatBot@5e5d171f</td></tr>
+<tr>
+<td title='testCases.ChatBot.questionsValidation()'><b>questionsValidation</b><br>Test class: testCases.ChatBot<br>Parameters: Show number of patients for each age group receiving Ultomiris for GMG in 2025., 12, Pass, COUNT(DISTINCT "PMY_PHYN_ALEXION_ID"),"CUSTOMER_MARKET_INSIGHTS"."DP_HCP","EVNT_SUB_CLSS_NM" = 'ULTOMIRIS',"TM_BCKT_TYP" = 'QUARTERLY',"TM_BCKT_ID" =,"NAIVE_NEW_STRT_ON_TRGT_DRUG_PAT_CNT" > 0,"TM_BCKT_TYP" = 'QUARTERLY',LIKE TO_CHAR(DATEADD(YEAR, -1, DATE_TRUNC('YEAR', CURRENT_DATE)), 'YYYY')</td>
+<td></td>
+<td>57</td>
+<td>testCases.ChatBot@5e5d171f</td></tr>
+<tr>
+<td title='testCases.ChatBot.questionsValidation()'><b>questionsValidation</b><br>Test class: testCases.ChatBot<br>Parameters: What is the total number of patients who restarted Ultomiris by quarter in 2024?, 5, Pass, COUNT(DISTINCT "PAT_ID"),"PATIENT_MARKET_INSIGHTS"."DP_PATIENT","TM_BCKT_TYP" = 'QUARTERLY',TM_BCKT_ID" LIKE TO_CHAR(DATEADD(QUARTER, -1, DATE_TRUNC('QUARTER', CURRENT_DATE)), 'YYYYMMDD'),"RESTRT_IND_FLAG" = 1,"INDC_NM","TM_BCKT_TYP","TM_BCKT_ID","EVNT_SUB_CLSS_NM"</td>
+<td></td>
+<td>59</td>
+<td>testCases.ChatBot@5e5d171f</td></tr>
+<tr>
+<td title='testCases.ChatBot.questionsValidation()'><b>questionsValidation</b><br>Test class: testCases.ChatBot<br>Parameters: What is the number of active GMG patients aged exactly 40?, 11, Pass, "INDC_NM" AS , 
+COUNT(DISTINCT "PAT_ID"),
+"PATIENT_MARKET_INSIGHTS"."DP_PATIENT",
+"INDC_NM" IN ('GMG', 'NMOSD'),
+ "ACTV_STAT_IND_FLAG" = 1,
+ "TM_BCKT_TYP" = 'QUARTERLY',
+ "TM_BCKT_ID" = '20240401',
+GROUP BY 
+    "INDC_NM"</td>
+<td></td>
+<td>61</td>
+<td>testCases.ChatBot@5e5d171f</td></tr>
+<tr>
+<td title='testCases.ChatBot.questionsValidation()'><b>questionsValidation</b><br>Test class: testCases.ChatBot<br>Parameters: In Q3 2024, how many patients initiated therapy within the C5 class for the first time?, 3, Pass, "ACTV_STAT_IND_FLAG" = 1,"TM_BCKT_TYP" = 'YEARLY',CHAR(DATEADD(YEAR, -1, DATE_TRUNC('YEAR', CURRENT_DATE)), 'YYYY'),"INDC_NM" IN ('GMG', 'NMOSD')</td>
+<td></td>
+<td>57</td>
+<td>testCases.ChatBot@5e5d171f</td></tr>
+<tr>
+<td title='testCases.ChatBot.questionsValidation()'><b>questionsValidation</b><br>Test class: testCases.ChatBot<br>Parameters: How many active GMG patients were on Ultomiris in March 2025?, 7, Pass, COUNT(DISTINCT "PAT_ID")</td>
+<td></td>
+<td>58</td>
+<td>testCases.ChatBot@5e5d171f</td></tr>
+<tr>
+<td title='testCases.ChatBot.questionsValidation()'><b>questionsValidation</b><br>Test class: testCases.ChatBot<br>Parameters: How many patients switched from Soliris to Ultomiris in 2024?, 6, Pass, "INDC_NM", COUNT(DISTINCT "PAT_ID") ,
+GROUP BY 
+    "INDC_NM" 
+ORDER BY 
+    "ACTIVE PATIENT COUNT" DESC;
+"PATIENT_MARKET_INSIGHTS"."DP_PATIENT" ,
+"ACTV_STAT_IND_FLAG" = 1 
+  "INDC_NM" IN ('GMG', 'NMOSD') "
+   "TM_BCKT_TYP" = 'QUARTERLY' 
+    "TM_BCKT_ID" = '20240401'</td>
+<td></td>
+<td>59</td>
+<td>testCases.ChatBot@5e5d171f</td></tr>
+<tr>
+<td title='testCases.ChatBot.questionsValidation()'><b>questionsValidation</b><br>Test class: testCases.ChatBot<br>Parameters: How many GMG vs. NMOSD patients were active in the last 12 months?, 16, Pass, "CUSTOMER_MARKET_INSIGHTS"."DP_HCP","TM_BCKT_TYP" = 'YEARLY',"TM_BCKT_ID" = '2023'</td>
+<td></td>
+<td>86</td>
+<td>testCases.ChatBot@5e5d171f</td></tr>
+<tr>
+<td title='testCases.ChatBot.questionsValidation()'><b>questionsValidation</b><br>Test class: testCases.ChatBot<br>Parameters: Which specialties are prescribing Ultomiris and how do they compare in prescribing volume?, 22, Pass, "TM_BCKT_TYP" = 'MONTHLY', "TM_BCKT_ID"</td>
+<td></td>
+<td>94</td>
+<td>testCases.ChatBot@5e5d171f</td></tr>
+<tr>
+<td title='testCases.ChatBot.questionsValidation()'><b>questionsValidation</b><br>Test class: testCases.ChatBot<br>Parameters: What is the count of active patients for GMG and NMOSD in Q4 2024?, 9, Pass, COUNT(DISTINCT "PMY_PHYN_ALEXION_ID"),
+"CUSTOMER_MARKET_INSIGHTS"."DP_HCP" , 
+"TM_BCKT_TYP" = 'MONTHLY',
+"TM_BCKT_ID" BETWEEN,
+TO_CHAR(DATEADD(MONTH, -8, DATE_TRUNC('MONTH', CURRENT_DATE)), 'YYYYMMDD'),
+ TO_CHAR(DATE_TRUNC('MONTH', CURRENT_DATE), 'YYYYMMDD'),
+ AND REGEXP_LIKE("TERR_ID", '.*(US0Z|US1N).*')</td>
+<td></td>
+<td>71</td>
+<td>testCases.ChatBot@5e5d171f</td></tr>
+<tr>
+<td title='testCases.ChatBot.questionsValidation()'><b>questionsValidation</b><br>Test class: testCases.ChatBot<br>Parameters: How many GMG patients discontinued therapy in the last quarter and which therapy was discontinued?, 4, Pass, COUNT(DISTINCT "PAT_ID"),"PATIENT_MARKET_INSIGHTS"."DP_PATIENT","TM_BCKT_TYP" = 'QUARTERLY',"TM_BCKT_ID" LIKE '20240701' ,"RESTRT_IND_FLAG" = 1,"INDC_NM","TM_BCKT_TYP","TM_BCKT_ID","EVNT_SUB_CLSS_NM"</td>
+<td></td>
+<td>60</td>
+<td>testCases.ChatBot@5e5d171f</td></tr>
+<tr>
+<td title='testCases.ChatBot.questionsValidation()'><b>questionsValidation</b><br>Test class: testCases.ChatBot<br>Parameters: How many GMG-Ultomiris patients are between 18 to 34 years old (excluding 18 and 34)?, 10, Pass, "RGN_RPT_NM" AS "REGION",
+ "TERR_NM" AS "TERRITORY",
+SUM("NAIVE_NEW_STRT_ON_TRGT_DRUG_PAT_CNT") AS "NEW STARTS ON ULTOMIRIS",
+"CUSTOMER_MARKET_INSIGHTS"."DP_HCP",
+"EVNT_SUB_CLSS_NM" = 'ULTOMIRIS',
+"TM_BCKT_TYP" = 'QUARTERLY',
+REGEXP_LIKE("TERR_ID", '.*(US0Z|US1N).*'),
+GROUP BY 
+"RGN_RPT_NM", 
+"TERR_NM"
+ORDER BY 
+</td>
+<td></td>
+<td>66</td>
+<td>testCases.ChatBot@5e5d171f</td></tr>
+<tr>
+<td title='testCases.ChatBot.questionsValidation()'><b>questionsValidation</b><br>Test class: testCases.ChatBot<br>Parameters: What is the average duration from symptom onset to confirmed diagnosis for NMOSD?, 15, Pass, COUNT(DISTINCT "PAT_ID"), "PATIENT_MARKET_INSIGHTS"."DP_PATIENT","INDC_NM" = 'NMOSD',"ACTV_STAT_IND_FLAG" = 1,"TM_BCKT_TYP" = 'QUARTERLY',"HSPZ_CNT" > 0,"ER_VST_CNT" > 0</td>
+<td></td>
+<td>70</td>
+<td>testCases.ChatBot@5e5d171f</td></tr>
+<tr>
+<td title='testCases.ChatBot.questionsValidation()'><b>questionsValidation</b><br>Test class: testCases.ChatBot<br>Parameters: Compare monthly active patient trends for GMG vs. NMOSD in 2024., 17, Pass,  SUM("NAIVE_NEW_STRT_PAT_CNT"),"CUSTOMER_MARKET_INSIGHTS"."DP_HCP","EVNT_SUB_CLSS_NM" = 'ULTOMIRIS',"TM_BCKT_TYP" = 'QUARTERLY',"TM_BCKT_ID" = '20241001'</td>
+<td></td>
+<td>69</td>
+<td>testCases.ChatBot@5e5d171f</td></tr>
+<tr>
+<td title='testCases.ChatBot.questionsValidation()'><b>questionsValidation</b><br>Test class: testCases.ChatBot<br>Parameters: Who are the top 20 prescribers by total script count for Ultomiris in the last 12 months?, 19, Pass, "HSPZ_CNT" > 0, "ER_VST_CNT" > 0, "ACTV_STAT_IND_FLAG" = 1, "INDC_NM" = 'NMOSD', "TM_BCKT_TYP" = 'YEARLY', "TM_BCKT_ID", COUNT(DISTINCT "PAT_ID")</td>
+<td></td>
+<td>87</td>
+<td>testCases.ChatBot@5e5d171f</td></tr>
+<tr>
+<td title='testCases.ChatBot.questionsValidation()'><b>questionsValidation</b><br>Test class: testCases.ChatBot<br>Parameters: List HCPs with sudden spikes in new patient initiations for GMG., 21, Pass, DP_HCP, REGEXP_LIKE("TERR_ID", '.*(US0Z|US1N).*')</td>
+<td></td>
+<td>83</td>
+<td>testCases.ChatBot@5e5d171f</td></tr>
+<tr>
+<td title='testCases.ChatBot.questionsValidation()'><b>questionsValidation</b><br>Test class: testCases.ChatBot<br>Parameters: Show a monthly breakdown of Ultomiris initiations by specialty., 23, Pass,  "INDC_NM" AS "INDICATION NAME",
+COUNT(DISTINCT "PAT_ID"),
+"PATIENT_MARKET_INSIGHTS"."DP_PATIENT" 
+    "ACTV_STAT_IND_FLAG" = 1,
+    "INDC_NM" IN ('GMG', 'NMOSD'),
+    "TM_BCKT_TYP" = 'MONTHLY',
+    "TM_BCKT_ID" LIKE ,TO_CHAR(DATE_TRUNC('MONTH', CURRENT_DATE), 'YYYYMMDD')
+GROUP BY 
+    "INDC_NM"
+ORDER BY 
+</td>
+<td></td>
+<td>88</td>
+<td>testCases.ChatBot@5e5d171f</td></tr>
+<tr>
+<td title='testCases.ChatBot.questionsValidation()'><b>questionsValidation</b><br>Test class: testCases.ChatBot<br>Parameters: How many new patients started Ultomiris in the last 3 months with no prior Soliris history?, 2, Pass, COUNT(DISTINCT "PMY_PHYN_ALEXION_ID"),"CUSTOMER_MARKET_INSIGHTS"."DP_HCP","EVNT_SUB_CLSS_NM" = 'ULTOMIRIS',"TM_BCKT_TYP" = 'QUARTERLY',"TM_BCKT_ID" =,"NAIVE_NEW_STRT_ON_TRGT_DRUG_PAT_CNT" > 0,"TM_BCKT_TYP" = 'YEARLY',LIKE TO_CHAR(DATEADD(YEAR, -1, DATE_TRUNC('YEAR', CURRENT_DATE)), 'YYYY')</td>
+<td></td>
+<td>60</td>
+<td>testCases.ChatBot@5e5d171f</td></tr>
+</table><p>
+</body>
+</html>

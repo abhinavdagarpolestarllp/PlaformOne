@@ -1,0 +1,428 @@
+package testCases;
+import java.io.FileReader;
+import java.io.IOException;
+import java.util.Properties;
+
+import org.openqa.selenium.support.ui.ExpectedConditions;
+//import org.openqa.selenium.WebDriver;
+import org.testng.Assert;
+import org.testng.annotations.BeforeMethod;
+import org.testng.annotations.Test;
+import org.testng.asserts.SoftAssert;
+
+import pageObjects.DataNexusConnection;
+import pageObjects.DataNexusDataModel;
+import pageObjects.DataNexusIngestionPipeline;
+import pageObjects.DataNexusOrchestrator;
+//import pageObjects.SharpInsightsTemporary;
+import pageObjects.dataNexusHome;
+import pageObjects.landingPage;
+import pageObjects.loginPage;
+import pageObjects.workspaceList;
+import testBase.baseClass;
+public class Regression_Testing_Script extends baseClass {
+loginPage login;// Declare here
+landingPage landing ;
+workspaceList wslist;
+DataNexusConnection conn =new DataNexusConnection(driver) ;
+DataNexusOrchestrator orch=new DataNexusOrchestrator(driver);
+final String IngestionPipelineName ="TestingIgPipeline2025.08.04.11.49.52";
+final String OrchestratorName = orch.orchestratorName;
+final String ConnectionName=conn.connectionname;
+@BeforeMethod
+public void setupTestData() {
+	login = new loginPage(driver); // initialize after driver ready
+	landing= new landingPage(driver);
+	wslist = new workspaceList(driver);
+	conn = new DataNexusConnection(driver);
+	orch = new DataNexusOrchestrator(driver);
+}
+	
+	@Test(priority=1)
+	public void loginSetup() throws IOException, InterruptedException {
+		checkRunFlag("loginSetup");
+		FileReader file = new FileReader("./src//test//resources//config.properties");
+		p=new Properties();
+		p.load(file);
+		login = new loginPage(driver);
+		SoftAssert softAssert = new SoftAssert();
+		login.clickLogin();
+		login.isObjectExist(login.blankField_Message);
+		login.messageClose();
+		login.isObjectExist(login.fieldRequire_Message);
+		//Thread.sleep(5000);
+		login.enterUsername("aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa");
+		login.enterPassword("aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa");
+		//Thread.sleep(2000);
+		login.isObjectExist(login.maxlength);
+		login.clearTextbox(login.username_textbox);
+		login.clearTextbox(login.password_textbox);
+		login.enterUsername("123@polestarllp.com");
+		login.enterPassword("123");
+		login.clickLogin();
+	    //Thread.sleep(2000);
+		String userNotExistMsg=login.getLoginMessage();
+		softAssert.assertEquals(userNotExistMsg, "This user doesn't exists");
+		//login.isObjectExist(login.userNotExist_Message),1);
+		login.messageClose();
+		//Thread.sleep(5000);
+		login.username_textbox.clear();
+		login.password_textbox.clear();
+		login.enterUsername("ankit@polestarllp.com");
+		login.enterPassword("123");
+		login.clickLogin();
+		//String invalidUserMsg=login.getLoginMessage();
+		//softAssert.assertEquals(invalidUserMsg, "Invalid credentials");
+		login.isObjectExist(login.invalidCredentials_Message);
+		login.messageClose();
+		//Thread.sleep(5000);
+		//Assert.fail();
+		login.clearTextbox(login.username_textbox);
+		login.clearTextbox(login.password_textbox);
+		login.enterUsername("ankit@polestarllp.com");
+		login.enterPassword("ankit@123");
+		login.clickLogin();
+		Thread.sleep(2000);
+		String successLoginMessage=login.getLoginMessage();
+		login.compareStrings(successLoginMessage, "Logged In Successfully.","Successful Login message");
+	}
+	
+	@Test(dependsOnMethods = {"loginSetup"},priority=2)
+	public void dataNexusHomePageNavigation() {
+		checkRunFlag("LandingPage");
+		landing.dataNexusClick();
+	}
+	@Test(dependsOnMethods = {"dataNexusHomePageNavigation"})
+	public void dataNexus() throws InterruptedException, IOException {
+		checkRunFlag("DataNexus");
+		wslist.searchBox("Automation_Testing");
+		wslist.clickWorkSpace();
+		login.isHeaderPresent("h5", "Home");
+		
+	}
+	@Test(priority=3)
+	public void dataNexusHome() throws InterruptedException, IOException {
+		dataNexusHome home = new dataNexusHome(driver);
+		checkRunFlag("DataNexusHome");
+		login.extendedWait.until(ExpectedConditions.visibilityOf(home.totalPipelines));
+		login.isHeaderPresent("h5", "Home");
+		home.searchBox(home.firstPipeline.getText());
+		login.isObjectExist(home.firstPipeline);
+		login.isValidDateFormat(home.createdDate.getText());
+		home.clickActive();
+		home.clickInctive();
+		home.clickScheduled();
+		login.isObjectExist(home.totalPipelines);
+		login.isObjectExist(home.totalFailedTrigger);
+		login.isObjectExist(home.totalSuccessTrigger);
+		
+	}
+	@Test(priority=4)
+	public void dataNexusConnection() throws InterruptedException, IOException {
+		checkRunFlag("DataNexusConnection");
+		login.clickSideNavigationModule("Connections");
+		login.isHeaderPresent("h5","Connections");
+		int initalcount=login.isPageInititiorAddedAfterCreation();
+		login.clickCreateNew();
+		//conn.clickConnectionType("Database");
+		login.isHeaderPresent("span","Connections");
+		//conn.setConnectionName(conn.connectionname);
+		conn.clickFirstConnection();
+		login.clickReset();
+		login.isTextPresentAt(conn.connectionNameTextbox, "");
+		conn.newConnectionSearchbox("ms server");
+		conn.setConnectionName(conn.connectionname);
+		conn.clickFirstConnection();
+		login.clickNext();
+		conn.setDatabase("AdventureWorks2022");
+		conn.setPassword("sql@1234");
+		conn.setUserName("sqladmin");
+		conn.setServer("psslp-genai.database.windows.net");
+		conn.setPort("1433");
+		login.testConnection();
+		login.isObjectExist(conn.connectionTestSuccessMsg);
+		login.clickSubmitButton();
+		login.isObjectExist(conn.connectionAddedMsg);
+		login.isHeaderPresent("h5","Connections");
+		login.enterInSearchbox(conn.connectionname);
+		Thread.sleep(1000);
+		login.isTextPresentInColumn("Connection Name", conn.connectionname);
+		login.isTextPresentInColumn("Source Type", "Mssql");
+		login.isTextPresentInColumn("Created By", "Ankit Rana");
+		login.isTextPresentInColumn("Created Date", login.todayDate);
+		login.clickEdit();
+		login.clearTextbox(conn.connectionNameTextbox);
+		login.isObjectExist(conn.mandatoryConnectionName);
+		login.testConnection();
+		login.isObjectExist(conn.mandatoryConnectionMessage);
+		conn.setConnectionName(conn.connectionname);
+		login.clearTextbox(conn.portTextbox);
+		conn.setPort("143");
+		login.testConnection();
+		login.isObjectExist(conn.invalidCredentials_Message);
+		login.clearTextbox(conn.portTextbox);
+		conn.setPort("1433");
+		login.testConnection();
+		login.isObjectExist(conn.connectionTestSuccessMsg);
+		login.clearTextbox(conn.serverTextbox);
+		login.testConnection();
+		login.isObjectExist(conn.invalidCredentials_Message);
+		conn.setServer("psslp-genai.database.windows.net");
+		login.testConnection();
+		login.isObjectExist(conn.connectionTestSuccessMsg);
+		login.clickSubmitButton();
+		login.isObjectExist(conn.connectionUpdatedMsg);
+		Thread.sleep(1000);
+		Assert.assertEquals(login.isPageInititiorAddedAfterCreation(), initalcount+1);
+	}@Test(priority=5)
+	public void dataNexusIngestionPipeline() throws InterruptedException, IOException {
+		DataNexusIngestionPipeline igp = new DataNexusIngestionPipeline(driver);
+		checkRunFlag("DataNexusIngestionPipeline");
+		igp.clickSideNavigationModule("Ingestion Pipeline");
+		igp.isHeaderPresent("h5","Ingestion Pipelines");
+		login.clickCreateNew();
+		igp.isHeaderPresent("span", "Create New");
+		igp.enterPipelineName(igp.iGPipelineName);
+		igp.clearTextbox(igp.pipelineName);
+		igp.clickSpanText("Save Pipeline");
+		login.isObjectExist(igp.mandatoryPipelineNameMsg);
+		igp.isObjectExist(igp.blankPipelineMsg);
+		igp.selectLakehouseName("Dev_Ingestion");
+		igp.selectDatalkeName("BDS_SAMPLE_DATA");
+		igp.selectSource(conn.connectionname);
+		igp.selectSchema("dbo");
+		igp.clickCheckBox("ADDUsers");
+		igp.clickCheckBox("addValues");
+		igp.clickCheckBox("AWBuildVersion");
+		igp.selectLoadType("addValues", "Full Load");
+		igp.selectLoadType("ADDUsers", "Incremental Load");
+		igp.selectLoadTypeColumn("ADDUsers", "user_name");
+		igp.selectLoadTypeCondition("ADDUsers", "Equal To");
+		igp.selectLoadTypeIncValue("ADDUsers", "Ankit");
+		igp.enterPipelineName(igp.iGPipelineName);
+		igp.clickSpanText("Save Pipeline");
+		login.isObjectExist(igp.columnSelectionMsg);
+		igp.selectCustomQuery("AWBuildVersion");
+		igp.enterCustomQuery("AWBuildVersion", "SELECT SystemInformationID, Database Version, VersionDate, ModifiedDate FROM dbo.AWBuildVersion");
+		login.clickSaveButton();
+		igp.columnSelector("ADDUsers");
+		login.clickSaveButton();
+		igp.columnSelector("addValues");
+		login.clickSaveButton();
+		igp.clickViewQueryBody("ADDUsers");
+		login.isHeaderPresent("h3", "Preview Query");
+		igp.clickCloseButton();
+		igp.clickViewQueryBody("addValues");
+		login.isObjectExist(igp.mandatoryColumnSelectionMsg);
+		igp.clickSpanText("Save Pipeline");
+		igp.isObjectExist(igp.pipelineCreatedMsg);
+		login.enterInSearchbox(igp.iGPipelineName);
+		login.isTextPresentInColumn("Pipeline Name", igp.iGPipelineName);
+		login.isTextPresentInColumn("Source Connection Name", conn.connectionname);
+		login.isTextPresentInColumn("Created By", "Ankit Rana");
+		login.isTextPresentInColumn("Created Date", login.todayDate);
+		login.clickSpanText(igp.iGPipelineName);
+		login.isHeaderPresent("span", "Preview");
+		login.clickSpanText("Ingestion Pipelines");
+		login.clickYesButton();
+		login.enterInSearchbox(igp.iGPipelineName);
+		login.clickEdit();
+		igp.clickCheckBox("Customers");
+		igp.clickSpanText("Update Pipeline");
+		igp.isObjectExist(igp.pipelineupdatedMsg);
+		igp.clickSortingButton("Pipeline Name");
+		igp.sortingValidation("Pipeline Name", "Ascending");
+		igp.isHeaderPresent("span", "Create New");
+		igp.enterPipelineName(igp.iGPipelineName);
+		igp.clearTextbox(igp.pipelineName);
+		igp.selectLakehouseName("Dev_Ingestion");
+		igp.selectDatalkeName("BDS_SAMPLE_DATA");
+		igp.selectSource(conn.connectionname);
+		igp.selectSchema("dbo");
+		igp.clickCheckBox("addValues");
+		igp.selectLoadType("addValues", "Full Load");
+		igp.columnSelector("addValues");
+		login.clickSaveButton();
+		igp.duplicatePipelineMsg(igp.iGPipelineName);
+		igp.enterPipelineName("Test"+login.todayDate);
+		login.clickSaveButton();
+		igp.isObjectExist(igp.pipelineCreatedMsg);
+		login.enterInSearchbox("Test"+login.todayDate);
+		login.clickDelete();
+		login.clickSpanText("Yes");
+		login.isObjectExist(igp.deletePipelineMsg);
+		
+	}@Test(priority=7)
+	public void dataNexusdataModel() throws InterruptedException, IOException {
+		DataNexusDataModel model = new DataNexusDataModel(driver);
+		checkRunFlag("DataNexusdataModel");
+		login.clickSideNavigationModule("Data Model");
+		login.isHeaderPresent("h5", "Data Model");
+		model.clickAddDataModelButton();
+		login.isHeaderPresent("div", "Create Data Model");
+		model.enterDataModelName(model.modelName);
+		model.enterDataModelDescription("Data Model For Automation Testing");
+		login.clickSpanText("Submit");
+		login.isObjectExist(model.createdDataModelMsg);
+		//login.isTextPresentInColumn("Name", model.modelName);
+		login.isTextPresentInColumn("Description", "Data Model For Automation Testing");
+		login.isTextPresentInColumn("Created Date", login.todayDate);
+		login.clickEdit();
+		login.isDialogHeaderPresent("div", "Edit Data Model");
+		model.enterDataModelDescription("Data Model For Automation Testing updated");
+		login.clickSpanText("Update");
+		login.isObjectExist(model.updatedDataModelMsg);
+		login.isTextPresentInColumn("Description", "Data Model For Automation Testing updated");
+		model.clickAddDataModelButton();
+		login.isHeaderPresent("div", "Create Data Model");
+		model.enterDataModelName(model.modelName);
+		model.enterDataModelDescription("Data Model For Automation Testing");
+		login.clickSpanText("Submit");
+		login.isObjectExist(model.duplicateDataModelMsg);
+		login.clickCancel();
+		login.clickViewButton();
+		//login.isHeaderPresent("span", model.modelName);
+		model.clickAddTablesButton();
+		login.isDialogHeaderPresent("h4", "Add New Table");
+		login.clickSpanText("Save");
+		login.isObjectExist(model.mandatoryDisplayNameMsg);
+		model.enterDisplayName("testuser1");
+		model.enterTableDescription("Automation test table");
+		login.clickSpanText("Save");
+		login.isObjectExist(model.mandatoryColumnNameMsg);
+		model.enterColumnName("id");
+		login.clickSpanText("Save");
+		login.isObjectExist(model.mandatoryDataTypeMsg);
+		model.selectDataType("Integer");
+		model.primaryKeyCheckbox.click();
+		login.clickSpanText("Take Action");
+		login.isObjectExist(model.mandatorySelectColumnMsg);
+		model.columnSelectCheckbox.click();	
+		login.clickSpanText("Take Action");
+		login.textClick("div", "Add to Group");
+		//login.isDialogHeaderPresent("div", "Add to Group");	
+		model.addGroupSelectGroup("Basic Info");
+		model.clickAddToGroupCloseIcon();
+		model.clickAddColumnButton();
+		login.clickSpanText("String");
+		model.tableAddColumnValue("Name");
+		model.clickAddColumnButton();
+		model.clickDeleteButton("2");
+		login.clickSpanText("Save");
+		login.isObjectExist(model.tableCreatedMsg);
+		//login.isTextPresentInColumn("Name", "testuser1");
+		//login.isTextPresentInColumn("Description", "Automation test table");
+		//login.isValidDateFormat(model.fristCreatedDate.getText());
+		login.clickEdit();
+		login.isDialogHeaderPresent("h4", "Edit Table");
+		model.enterTableDescription("Automation test table updated");
+		login.clickSpanText("Save");
+		login.isObjectExist(model.tableUpdatedMsg);
+		//login.isTextPresentInColumn("Description", "Automation test table updated");
+		login.clickDelete();
+		login.clickYesButton();
+		login.isObjectExist(model.tableDeleteMsg);
+	}@Test(priority=6)
+	public void DataNexusOrchestrator() throws InterruptedException, IOException {
+		DataNexusOrchestrator orch = new DataNexusOrchestrator(driver);
+		DataNexusIngestionPipeline igp = new DataNexusIngestionPipeline(driver);
+		checkRunFlag("DataNexusOrchestrator");
+		login.clickSideNavigationModule("Orchestrator");
+		login.isHeaderPresent("h5", "Process Scheduler");
+		orch.clickNewProcessButton();
+		orch.enterPipelineName(OrchestratorName);
+		orch.enterPipelineDescription("Automation Testing");
+		orch.clickAddPipelineButton();
+		orch.selectPipelineType("Ingestion");
+		orch.selectPipeline(IngestionPipelineName);
+		orch.clickSpanText("Done");
+		orch.clickAddPipelineButton();
+		orch.selectPipelineType("Transformation");
+		orch.selectPipeline("Test1234567");
+		orch.selectPipelineDependentUpon(IngestionPipelineName);
+		orch.clickSpanText("Done");
+		orch.clickSpanText("Save");
+		login.isObjectExist(orch.scheduleCreatedMsg);
+		login.enterInSearchbox(OrchestratorName);
+		login.textClick("div", OrchestratorName);
+		orch.clickProcessPipeline(IngestionPipelineName);
+		login.isHeaderPresent("h2", "View Pipeline");
+		login.clickClose();
+		login.textClick("a", "Process");
+		//login.clickYesButton();
+		login.enterInSearchbox(OrchestratorName);
+		login.clickEdit();
+		orch.clickAddedPipelineDeleteButton(IngestionPipelineName);
+		login.clickSpanText("Update");
+		login.isObjectExist(orch.processUpdatedMsg);
+		login.enterInSearchbox(OrchestratorName);
+		orch.isTextPresentInColumnOrchestrator("Process Name", OrchestratorName);
+		login.clickTrigger();
+		login.clickYesButton();
+		login.isObjectExist(orch.pipelineTriggeredMessage);
+		login.clickViewLogsButton();
+		login.isHeaderPresent("span", "Process Scheduler Logs");
+		login.enterInSearchbox("Manual");
+		orch.clickProcessId();
+		orch.waitForProcessCompleted();
+		login.getPipelineStatus();
+		login.clickSpanText("Process Scheduler Logs");
+		login.enterInSearchbox(OrchestratorName);
+		login.clickScheduleButton();
+		login.isDialogHeaderPresent("div", "Schedule Pipeline");
+		login.clickSpanText("Save & Close");
+		login.isObjectExist(orch.mandatoryTriggerDate);
+		login.isObjectExist(orch.mandatoryTriggerTime);
+		login.setTriggerDate();
+		login.setTriggerTime(-2);
+		login.isObjectExist(orch.pastTimeErrorMsg);
+		login.setTriggerTime(2);
+		login.setFocusOn(login.triggerDate);
+		login.clickSpanText("Save & Close");
+		login.isObjectExist(login.scheduleUpdatedMsg);
+		login.clickViewSchedule();
+		login.isObjectExist(orch.scheduleID);
+		login.setFocusOn(orch.scheduleID);
+		orch.clickScheduleCloseButton();
+		login.enterInSearchbox(OrchestratorName);
+		login.clickViewLogsButton();
+		login.enterInSearchbox("Scheduled");
+		orch.clickProcessId();
+		orch.waitForProcessCompleted();
+		login.getPipelineStatus();
+		login.clickSpanText("Process Scheduler Logs");
+		login.enterInSearchbox(OrchestratorName);
+		orch.clickDeactivatePipelineButton();
+		login.clickYesButton();
+		orch.isObjectExist(orch.pipelineDeativatedMsg);
+		login.enterInSearchbox(OrchestratorName);
+		orch.clickActivatePipelineButton();
+		login.clickYesButton();
+		login.isObjectExist(orch.pipelineDeacticatedMessage);
+		login.enterInSearchbox(OrchestratorName);
+		login.clickViewSchedule();
+		login.clickSpanText("Edit Schedules");
+		login.isDialogHeaderPresent("div", "Schedule Pipeline");
+		orch.clickScheduleCloseButton();
+		login.enterInSearchbox(OrchestratorName);
+		login.clickDelete();
+		login.clickYesButton();
+		login.isObjectExist(orch.pipelineDeletedMessage);
+		
+	}@Test(priority = 8)
+	public void DataNexusDataProfiler() throws InterruptedException, IOException{
+		checkRunFlag("DataNexusDataProfiler");
+		
+	}@Test(priority =9)
+	public void DataNexusMonitoring() throws InterruptedException, IOException{
+		checkRunFlag("DataNexusMonitoring");
+		login.clickSideNavigationModule("Monitoring");
+		login.isHeaderPresent("h5", "Monitoring");
+		login.enterInSearchbox(IngestionPipelineName);
+		login.isTextPresentInColumn("Pipeline Name", IngestionPipelineName);
+		login.isTextPresentInColumn("Source Connection Name", ConnectionName);
+		login.clickSortingButton("Pipeline Name");
+		login.sortingValidation("Pipeline Name", "Ascending");
+		login.clickTrigger();
+	}
+}
