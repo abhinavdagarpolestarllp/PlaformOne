@@ -1,5 +1,7 @@
 package pageObjects;
 
+import java.io.IOException;
+
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -23,16 +25,14 @@ public class dataNexusDataLake extends basePage{
 	public WebElement treeSwitch;
 	@FindBy(xpath="//input[@placeholder='Enter directory name']")
 	public WebElement directoryNameTextbox;
-	public void clickFiles() {
-		filesColumn.click();
-	}public void clickTable() {
-		tablesColumn.click();
-	}public void addRootDirectory() {
-		addRootDirectory.click();
-	}public void clickDataLake() {
-		dataLake.click();
-	}public void driectoryName(String s) {
-		directoryNameTextbox.sendKeys(s);
+	public void clickFiles() throws IOException {
+		standardClickButton(filesColumn,"Files");
+	}public void clickTable() throws IOException {
+		standardClickButton(tablesColumn,"Tables");
+	}public void addRootDirectory() throws IOException {
+		standardClickButton(addRootDirectory,"Add Root Directory");
+	}public void driectoryName(String s) throws IOException {
+		standardEnterTextbox(directoryNameTextbox,s,"Driectory Name");
 	}
 	
 }

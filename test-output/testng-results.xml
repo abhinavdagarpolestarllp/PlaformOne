@@ -1,285 +1,76 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results ignored="0" total="10" passed="4" failed="0" skipped="6">
+<testng-results ignored="0" total="27" passed="25" failed="1" skipped="1">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2025-08-08T12:17:48 IST" name="Suite" finished-at="2025-08-08T12:18:18 IST" duration-ms="29860">
+  <suite started-at="2025-11-07T11:46:18 IST" name="Suite" finished-at="2025-11-07T12:21:42 IST" duration-ms="2124487">
     <groups>
     </groups>
-    <test started-at="2025-08-08T12:17:48 IST" name="Test" finished-at="2025-08-08T12:18:18 IST" duration-ms="29860">
-      <class name="testCases.Regression_Testing_Script">
-        <test-method is-config="true" signature="setup(org.testng.ITestContext)[pri:0, instance:testCases.Regression_Testing_Script@5e4fa1da]" started-at="2025-08-08T12:17:48 IST" name="setup" finished-at="2025-08-08T12:17:53 IST" duration-ms="4928" status="PASS">
+    <test started-at="2025-11-07T11:46:18 IST" name="Test" finished-at="2025-11-07T12:21:42 IST" duration-ms="2124487">
+      <class name="testCases.sanityTesting">
+        <test-method is-config="true" signature="setup(org.testng.ITestContext)[pri:0, instance:testCases.sanityTesting@38eb2fb0]" started-at="2025-11-07T11:46:18 IST" name="setup" finished-at="2025-11-07T11:46:23 IST" duration-ms="5517" status="PASS">
           <params>
             <param index="0">
               <value>
-                <![CDATA[org.testng.TestRunner@6eda012b]]>
+                <![CDATA[org.testng.TestRunner@164c06a4]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setup -->
-        <test-method is-config="true" signature="setupTestData()[pri:0, instance:testCases.Regression_Testing_Script@5e4fa1da]" started-at="2025-08-08T12:17:53 IST" name="setupTestData" finished-at="2025-08-08T12:17:53 IST" duration-ms="16" status="PASS">
+        <test-method signature="LoginPage()[pri:1, instance:testCases.sanityTesting@38eb2fb0]" started-at="2025-11-07T11:46:23 IST" name="LoginPage" description="Login Page" finished-at="2025-11-07T11:46:27 IST" duration-ms="3968" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- setupTestData -->
-        <test-method signature="loginSetup()[pri:1, instance:testCases.Regression_Testing_Script@5e4fa1da]" started-at="2025-08-08T12:17:53 IST" name="loginSetup" finished-at="2025-08-08T12:18:04 IST" duration-ms="10562" status="PASS">
+        </test-method> <!-- LoginPage -->
+        <test-method signature="landingPage()[pri:2, instance:testCases.sanityTesting@38eb2fb0]" started-at="2025-11-07T11:46:28 IST" name="landingPage" finished-at="2025-11-07T11:46:29 IST" duration-ms="1292" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- loginSetup -->
-        <test-method is-config="true" signature="setupTestData()[pri:0, instance:testCases.Regression_Testing_Script@5e4fa1da]" started-at="2025-08-08T12:18:04 IST" name="setupTestData" finished-at="2025-08-08T12:18:04 IST" duration-ms="10" status="PASS">
+        </test-method> <!-- landingPage -->
+        <test-method signature="workspaceListDataNexus()[pri:3, instance:testCases.sanityTesting@38eb2fb0]" started-at="2025-11-07T11:46:29 IST" name="workspaceListDataNexus" finished-at="2025-11-07T11:46:34 IST" duration-ms="5143" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- setupTestData -->
-        <test-method signature="dataNexusHomePageNavigation()[pri:2, instance:testCases.Regression_Testing_Script@5e4fa1da]" started-at="2025-08-08T12:18:04 IST" name="dataNexusHomePageNavigation" finished-at="2025-08-08T12:18:06 IST" depends-on-methods="testCases.Regression_Testing_Script.loginSetup" duration-ms="2315" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- dataNexusHomePageNavigation -->
-        <test-method is-config="true" signature="setupTestData()[pri:0, instance:testCases.Regression_Testing_Script@5e4fa1da]" started-at="2025-08-08T12:18:06 IST" name="setupTestData" finished-at="2025-08-08T12:18:06 IST" duration-ms="8" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- setupTestData -->
-        <test-method signature="dataNexus()[pri:0, instance:testCases.Regression_Testing_Script@5e4fa1da]" started-at="2025-08-08T12:18:06 IST" name="dataNexus" finished-at="2025-08-08T12:18:09 IST" depends-on-methods="testCases.Regression_Testing_Script.dataNexusHomePageNavigation" duration-ms="3378" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- dataNexus -->
-        <test-method is-config="true" signature="setupTestData()[pri:0, instance:testCases.Regression_Testing_Script@5e4fa1da]" started-at="2025-08-08T12:18:09 IST" name="setupTestData" finished-at="2025-08-08T12:18:09 IST" duration-ms="5" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- setupTestData -->
-        <test-method signature="dataNexusHome()[pri:3, instance:testCases.Regression_Testing_Script@5e4fa1da]" started-at="2025-08-08T12:18:09 IST" name="dataNexusHome" finished-at="2025-08-08T12:18:09 IST" duration-ms="5" status="SKIP">
-          <exception class="org.testng.SkipException">
-            <message>
-              <![CDATA[Skipping test: DataNexusHome]]>
-            </message>
-            <full-stacktrace>
-              <![CDATA[org.testng.SkipException: Skipping test: DataNexusHome
-at testBase.baseClass.checkRunFlag(baseClass.java:128)
-at testCases.Regression_Testing_Script.dataNexusHome(Regression_Testing_Script.java:106)
-at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
-at java.base/java.lang.reflect.Method.invoke(Method.java:580)
-at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:141)
-at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:687)
-at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:230)
-at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:63)
-at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:995)
-at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:203)
-at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:154)
-at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:134)
-at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
-at org.testng.TestRunner.privateRun(TestRunner.java:741)
-at org.testng.TestRunner.run(TestRunner.java:616)
-at org.testng.SuiteRunner.runTest(SuiteRunner.java:421)
-at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:413)
-at org.testng.SuiteRunner.privateRun(SuiteRunner.java:373)
-at org.testng.SuiteRunner.run(SuiteRunner.java:312)
-at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
-at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)
-at org.testng.TestNG.runSuitesSequentially(TestNG.java:1274)
-at org.testng.TestNG.runSuitesLocally(TestNG.java:1208)
-at org.testng.TestNG.runSuites(TestNG.java:1112)
-at org.testng.TestNG.run(TestNG.java:1079)
-at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
-at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:293)
-at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
-]]>
-            </full-stacktrace>
-          </exception> <!-- org.testng.SkipException -->
+        </test-method> <!-- workspaceListDataNexus -->
+        <test-method signature="dataNexusHome()[pri:4, instance:testCases.sanityTesting@38eb2fb0]" started-at="2025-11-07T11:46:34 IST" name="dataNexusHome" finished-at="2025-11-07T11:46:42 IST" duration-ms="8454" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- dataNexusHome -->
-        <test-method is-config="true" signature="setupTestData()[pri:0, instance:testCases.Regression_Testing_Script@5e4fa1da]" started-at="2025-08-08T12:18:09 IST" name="setupTestData" finished-at="2025-08-08T12:18:09 IST" duration-ms="6" status="PASS">
+        <test-method signature="dataNexusDataLake()[pri:5, instance:testCases.sanityTesting@38eb2fb0]" started-at="2025-11-07T11:46:42 IST" name="dataNexusDataLake" finished-at="2025-11-07T11:46:55 IST" duration-ms="12791" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- setupTestData -->
-        <test-method signature="dataNexusConnection()[pri:4, instance:testCases.Regression_Testing_Script@5e4fa1da]" started-at="2025-08-08T12:18:09 IST" name="dataNexusConnection" finished-at="2025-08-08T12:18:09 IST" duration-ms="7" status="SKIP">
-          <exception class="org.testng.SkipException">
-            <message>
-              <![CDATA[Skipping test: DataNexusConnection]]>
-            </message>
-            <full-stacktrace>
-              <![CDATA[org.testng.SkipException: Skipping test: DataNexusConnection
-at testBase.baseClass.checkRunFlag(baseClass.java:128)
-at testCases.Regression_Testing_Script.dataNexusConnection(Regression_Testing_Script.java:122)
-at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
-at java.base/java.lang.reflect.Method.invoke(Method.java:580)
-at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:141)
-at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:687)
-at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:230)
-at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:63)
-at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:995)
-at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:203)
-at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:154)
-at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:134)
-at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
-at org.testng.TestRunner.privateRun(TestRunner.java:741)
-at org.testng.TestRunner.run(TestRunner.java:616)
-at org.testng.SuiteRunner.runTest(SuiteRunner.java:421)
-at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:413)
-at org.testng.SuiteRunner.privateRun(SuiteRunner.java:373)
-at org.testng.SuiteRunner.run(SuiteRunner.java:312)
-at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
-at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)
-at org.testng.TestNG.runSuitesSequentially(TestNG.java:1274)
-at org.testng.TestNG.runSuitesLocally(TestNG.java:1208)
-at org.testng.TestNG.runSuites(TestNG.java:1112)
-at org.testng.TestNG.run(TestNG.java:1079)
-at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
-at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:293)
-at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
-]]>
-            </full-stacktrace>
-          </exception> <!-- org.testng.SkipException -->
+        </test-method> <!-- dataNexusDataLake -->
+        <test-method signature="dataNexusConnections()[pri:6, instance:testCases.sanityTesting@38eb2fb0]" started-at="2025-11-07T11:46:55 IST" name="dataNexusConnections" finished-at="2025-11-07T11:47:10 IST" duration-ms="15121" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- dataNexusConnection -->
-        <test-method is-config="true" signature="setupTestData()[pri:0, instance:testCases.Regression_Testing_Script@5e4fa1da]" started-at="2025-08-08T12:18:09 IST" name="setupTestData" finished-at="2025-08-08T12:18:10 IST" duration-ms="6" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- setupTestData -->
-        <test-method signature="dataNexusIngestionPipeline()[pri:5, instance:testCases.Regression_Testing_Script@5e4fa1da]" started-at="2025-08-08T12:18:10 IST" name="dataNexusIngestionPipeline" finished-at="2025-08-08T12:18:10 IST" duration-ms="9" status="SKIP">
-          <exception class="org.testng.SkipException">
-            <message>
-              <![CDATA[Skipping test: DataNexusIngestionPipeline]]>
-            </message>
-            <full-stacktrace>
-              <![CDATA[org.testng.SkipException: Skipping test: DataNexusIngestionPipeline
-at testBase.baseClass.checkRunFlag(baseClass.java:128)
-at testCases.Regression_Testing_Script.dataNexusIngestionPipeline(Regression_Testing_Script.java:180)
-at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
-at java.base/java.lang.reflect.Method.invoke(Method.java:580)
-at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:141)
-at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:687)
-at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:230)
-at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:63)
-at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:995)
-at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:203)
-at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:154)
-at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:134)
-at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
-at org.testng.TestRunner.privateRun(TestRunner.java:741)
-at org.testng.TestRunner.run(TestRunner.java:616)
-at org.testng.SuiteRunner.runTest(SuiteRunner.java:421)
-at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:413)
-at org.testng.SuiteRunner.privateRun(SuiteRunner.java:373)
-at org.testng.SuiteRunner.run(SuiteRunner.java:312)
-at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
-at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)
-at org.testng.TestNG.runSuitesSequentially(TestNG.java:1274)
-at org.testng.TestNG.runSuitesLocally(TestNG.java:1208)
-at org.testng.TestNG.runSuites(TestNG.java:1112)
-at org.testng.TestNG.run(TestNG.java:1079)
-at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
-at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:293)
-at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
-]]>
-            </full-stacktrace>
-          </exception> <!-- org.testng.SkipException -->
+        </test-method> <!-- dataNexusConnections -->
+        <test-method signature="dataNexusIngestionPipeline()[pri:7, instance:testCases.sanityTesting@38eb2fb0]" started-at="2025-11-07T11:47:10 IST" name="dataNexusIngestionPipeline" finished-at="2025-11-07T11:48:34 IST" duration-ms="83580" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- dataNexusIngestionPipeline -->
-        <test-method is-config="true" signature="setupTestData()[pri:0, instance:testCases.Regression_Testing_Script@5e4fa1da]" started-at="2025-08-08T12:18:10 IST" name="setupTestData" finished-at="2025-08-08T12:18:10 IST" duration-ms="6" status="PASS">
+        <test-method signature="dataNexusTransformationPipeline()[pri:8, instance:testCases.sanityTesting@38eb2fb0]" started-at="2025-11-07T11:48:34 IST" name="dataNexusTransformationPipeline" finished-at="2025-11-07T11:48:50 IST" duration-ms="16499" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- setupTestData -->
-        <test-method signature="DataNexusOrchestrator()[pri:6, instance:testCases.Regression_Testing_Script@5e4fa1da]" started-at="2025-08-08T12:18:10 IST" name="DataNexusOrchestrator" finished-at="2025-08-08T12:18:10 IST" duration-ms="8" status="SKIP">
-          <exception class="org.testng.SkipException">
-            <message>
-              <![CDATA[Skipping test: DataNexusOrchestrator]]>
-            </message>
-            <full-stacktrace>
-              <![CDATA[org.testng.SkipException: Skipping test: DataNexusOrchestrator
-at testBase.baseClass.checkRunFlag(baseClass.java:128)
-at testCases.Regression_Testing_Script.DataNexusOrchestrator(Regression_Testing_Script.java:329)
-at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
-at java.base/java.lang.reflect.Method.invoke(Method.java:580)
-at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:141)
-at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:687)
-at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:230)
-at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:63)
-at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:995)
-at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:203)
-at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:154)
-at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:134)
-at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
-at org.testng.TestRunner.privateRun(TestRunner.java:741)
-at org.testng.TestRunner.run(TestRunner.java:616)
-at org.testng.SuiteRunner.runTest(SuiteRunner.java:421)
-at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:413)
-at org.testng.SuiteRunner.privateRun(SuiteRunner.java:373)
-at org.testng.SuiteRunner.run(SuiteRunner.java:312)
-at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
-at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)
-at org.testng.TestNG.runSuitesSequentially(TestNG.java:1274)
-at org.testng.TestNG.runSuitesLocally(TestNG.java:1208)
-at org.testng.TestNG.runSuites(TestNG.java:1112)
-at org.testng.TestNG.run(TestNG.java:1079)
-at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
-at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:293)
-at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
-]]>
-            </full-stacktrace>
-          </exception> <!-- org.testng.SkipException -->
+        </test-method> <!-- dataNexusTransformationPipeline -->
+        <test-method signature="dataNexusDataModel()[pri:9, instance:testCases.sanityTesting@38eb2fb0]" started-at="2025-11-07T11:48:50 IST" name="dataNexusDataModel" finished-at="2025-11-07T11:49:15 IST" duration-ms="24308" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- DataNexusOrchestrator -->
-        <test-method is-config="true" signature="setupTestData()[pri:0, instance:testCases.Regression_Testing_Script@5e4fa1da]" started-at="2025-08-08T12:18:10 IST" name="setupTestData" finished-at="2025-08-08T12:18:10 IST" duration-ms="9" status="PASS">
+        </test-method> <!-- dataNexusDataModel -->
+        <test-method signature="dataNexusTransformationPipelineV2()[pri:10, instance:testCases.sanityTesting@38eb2fb0]" started-at="2025-11-07T11:49:15 IST" name="dataNexusTransformationPipelineV2" finished-at="2025-11-07T11:50:35 IST" duration-ms="80481" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- setupTestData -->
-        <test-method signature="dataNexusdataModel()[pri:7, instance:testCases.Regression_Testing_Script@5e4fa1da]" started-at="2025-08-08T12:18:10 IST" name="dataNexusdataModel" finished-at="2025-08-08T12:18:10 IST" duration-ms="12" status="SKIP">
-          <exception class="org.testng.SkipException">
-            <message>
-              <![CDATA[Skipping test: DataNexusdataModel]]>
-            </message>
-            <full-stacktrace>
-              <![CDATA[org.testng.SkipException: Skipping test: DataNexusdataModel
-at testBase.baseClass.checkRunFlag(baseClass.java:128)
-at testCases.Regression_Testing_Script.dataNexusdataModel(Regression_Testing_Script.java:258)
-at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
-at java.base/java.lang.reflect.Method.invoke(Method.java:580)
-at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:141)
-at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:687)
-at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:230)
-at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:63)
-at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:995)
-at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:203)
-at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:154)
-at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:134)
-at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
-at org.testng.TestRunner.privateRun(TestRunner.java:741)
-at org.testng.TestRunner.run(TestRunner.java:616)
-at org.testng.SuiteRunner.runTest(SuiteRunner.java:421)
-at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:413)
-at org.testng.SuiteRunner.privateRun(SuiteRunner.java:373)
-at org.testng.SuiteRunner.run(SuiteRunner.java:312)
-at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
-at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)
-at org.testng.TestNG.runSuitesSequentially(TestNG.java:1274)
-at org.testng.TestNG.runSuitesLocally(TestNG.java:1208)
-at org.testng.TestNG.runSuites(TestNG.java:1112)
-at org.testng.TestNG.run(TestNG.java:1079)
-at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
-at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:293)
-at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
-]]>
-            </full-stacktrace>
-          </exception> <!-- org.testng.SkipException -->
+        </test-method> <!-- dataNexusTransformationPipelineV2 -->
+        <test-method signature="dataNexusOrchestrator()[pri:11, instance:testCases.sanityTesting@38eb2fb0]" started-at="2025-11-07T11:50:35 IST" name="dataNexusOrchestrator" finished-at="2025-11-07T11:57:20 IST" duration-ms="404451" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- dataNexusdataModel -->
-        <test-method is-config="true" signature="setupTestData()[pri:0, instance:testCases.Regression_Testing_Script@5e4fa1da]" started-at="2025-08-08T12:18:10 IST" name="setupTestData" finished-at="2025-08-08T12:18:10 IST" duration-ms="2" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- setupTestData -->
-        <test-method signature="DataNexusDataProfiler()[pri:8, instance:testCases.Regression_Testing_Script@5e4fa1da]" started-at="2025-08-08T12:18:10 IST" name="DataNexusDataProfiler" finished-at="2025-08-08T12:18:10 IST" duration-ms="4" status="SKIP">
+        </test-method> <!-- dataNexusOrchestrator -->
+        <test-method signature="dataNexusDataProfiler()[pri:12, instance:testCases.sanityTesting@38eb2fb0]" started-at="2025-11-07T11:57:20 IST" name="dataNexusDataProfiler" finished-at="2025-11-07T11:57:20 IST" duration-ms="5" status="SKIP">
           <exception class="org.testng.SkipException">
             <message>
               <![CDATA[Skipping test: DataNexusDataProfiler]]>
             </message>
             <full-stacktrace>
               <![CDATA[org.testng.SkipException: Skipping test: DataNexusDataProfiler
-at testBase.baseClass.checkRunFlag(baseClass.java:128)
-at testCases.Regression_Testing_Script.DataNexusDataProfiler(Regression_Testing_Script.java:414)
+at testBase.baseClass.checkRunFlagSanity(baseClass.java:244)
+at testCases.sanityTesting.dataNexusDataProfiler(sanityTesting.java:390)
 at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
 at java.base/java.lang.reflect.Method.invoke(Method.java:580)
 at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:141)
@@ -311,20 +102,141 @@ at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
           </exception> <!-- org.testng.SkipException -->
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- DataNexusDataProfiler -->
-        <test-method is-config="true" signature="setupTestData()[pri:0, instance:testCases.Regression_Testing_Script@5e4fa1da]" started-at="2025-08-08T12:18:10 IST" name="setupTestData" finished-at="2025-08-08T12:18:10 IST" duration-ms="8" status="PASS">
+        </test-method> <!-- dataNexusDataProfiler -->
+        <test-method signature="dataNexusDocumentParser()[pri:12, instance:testCases.sanityTesting@38eb2fb0]" started-at="2025-11-07T11:57:20 IST" name="dataNexusDocumentParser" finished-at="2025-11-07T11:58:24 IST" duration-ms="64634" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- setupTestData -->
-        <test-method signature="DataNexusMonitoring()[pri:9, instance:testCases.Regression_Testing_Script@5e4fa1da]" started-at="2025-08-08T12:18:10 IST" name="DataNexusMonitoring" finished-at="2025-08-08T12:18:16 IST" duration-ms="6311" status="PASS">
+        </test-method> <!-- dataNexusDocumentParser -->
+        <test-method signature="dataNexusMonitoring()[pri:13, instance:testCases.sanityTesting@38eb2fb0]" started-at="2025-11-07T11:58:24 IST" name="dataNexusMonitoring" finished-at="2025-11-07T12:14:55 IST" duration-ms="990768" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- DataNexusMonitoring -->
-        <test-method is-config="true" signature="tearDown()[pri:0, instance:testCases.Regression_Testing_Script@5e4fa1da]" started-at="2025-08-08T12:18:16 IST" name="tearDown" finished-at="2025-08-08T12:18:18 IST" duration-ms="1663" status="PASS">
+        </test-method> <!-- dataNexusMonitoring -->
+        <test-method signature="migrationCICD()[pri:13, instance:testCases.sanityTesting@38eb2fb0]" started-at="2025-11-07T12:14:55 IST" name="migrationCICD" finished-at="2025-11-07T12:18:24 IST" duration-ms="209047" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- migrationCICD -->
+        <test-method signature="tenants()[pri:14, instance:testCases.sanityTesting@38eb2fb0]" started-at="2025-11-07T12:18:24 IST" name="tenants" finished-at="2025-11-07T12:18:33 IST" duration-ms="8645" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tenants -->
+        <test-method signature="userManagement()[pri:15, instance:testCases.sanityTesting@38eb2fb0]" started-at="2025-11-07T12:18:33 IST" name="userManagement" finished-at="2025-11-07T12:18:45 IST" duration-ms="11656" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- userManagement -->
+        <test-method signature="workspaceListMDM()[pri:16, instance:testCases.sanityTesting@38eb2fb0]" started-at="2025-11-07T12:18:45 IST" name="workspaceListMDM" finished-at="2025-11-07T12:18:58 IST" duration-ms="13606" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- workspaceListMDM -->
+        <test-method signature="MDMOverview()[pri:17, instance:testCases.sanityTesting@38eb2fb0]" started-at="2025-11-07T12:18:58 IST" name="MDMOverview" finished-at="2025-11-07T12:19:05 IST" duration-ms="7122" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- MDMOverview -->
+        <test-method signature="MDMEntity()[pri:18, instance:testCases.sanityTesting@38eb2fb0]" started-at="2025-11-07T12:19:05 IST" name="MDMEntity" finished-at="2025-11-07T12:19:53 IST" duration-ms="47996" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- MDMEntity -->
+        <test-method signature="MDMTaxonomy()[pri:19, instance:testCases.sanityTesting@38eb2fb0]" started-at="2025-11-07T12:19:53 IST" name="MDMTaxonomy" finished-at="2025-11-07T12:20:00 IST" duration-ms="6656" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- MDMTaxonomy -->
+        <test-method signature="MDMMasters()[pri:20, instance:testCases.sanityTesting@38eb2fb0]" started-at="2025-11-07T12:20:00 IST" name="MDMMasters" finished-at="2025-11-07T12:20:34 IST" duration-ms="33753" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- MDMMasters -->
+        <test-method signature="MDMIntegration()[pri:21, instance:testCases.sanityTesting@38eb2fb0]" started-at="2025-11-07T12:20:34 IST" name="MDMIntegration" finished-at="2025-11-07T12:21:08 IST" duration-ms="34148" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- MDMIntegration -->
+        <test-method signature="MDMDataQuality()[pri:22, instance:testCases.sanityTesting@38eb2fb0]" started-at="2025-11-07T12:21:08 IST" name="MDMDataQuality" finished-at="2025-11-07T12:21:17 IST" duration-ms="9281" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- MDMDataQuality -->
+        <test-method signature="AuditLogs()[pri:23, instance:testCases.sanityTesting@38eb2fb0]" started-at="2025-11-07T12:21:17 IST" name="AuditLogs" finished-at="2025-11-07T12:21:23 IST" duration-ms="6314" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- AuditLogs -->
+        <test-method signature="UserManagement()[pri:24, instance:testCases.sanityTesting@38eb2fb0]" started-at="2025-11-07T12:21:23 IST" name="UserManagement" finished-at="2025-11-07T12:21:40 IST" duration-ms="16906" status="FAIL">
+          <exception class="org.openqa.selenium.NoSuchElementException">
+            <message>
+              <![CDATA[no such element: Unable to locate element: {"method":"xpath","selector":"//span[text()='Role Name']//following::p[1]"}
+  (Session info: chrome=141.0.7390.123)
+For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception
+Build info: version: '4.33.0', revision: '2c6aaad03a'
+System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '21.0.7'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [8fe76f626df0ef9f3c2cddd9f46d23a9, findElement {using=xpath, value=//span[text()='Role Name']//following::p[1]}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 141.0.7390.123, chrome: {chromedriverVersion: 141.0.7390.122 (b477534e7e1..., userDataDir: C:\Users\ABHINA~1.DAG\AppDa...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:59218}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:59218/devtoo..., se:cdpVersion: 141.0.7390.123, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 8fe76f626df0ef9f3c2cddd9f46d23a9]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {"method":"xpath","selector":"//span[text()='Role Name']//following::p[1]"}
+  (Session info: chrome=141.0.7390.123)
+For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception
+Build info: version: '4.33.0', revision: '2c6aaad03a'
+System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '21.0.7'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [8fe76f626df0ef9f3c2cddd9f46d23a9, findElement {using=xpath, value=//span[text()='Role Name']//following::p[1]}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 141.0.7390.123, chrome: {chromedriverVersion: 141.0.7390.122 (b477534e7e1..., userDataDir: C:\Users\ABHINA~1.DAG\AppDa...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:59218}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:59218/devtoo..., se:cdpVersion: 141.0.7390.123, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 8fe76f626df0ef9f3c2cddd9f46d23a9
+at java.base/jdk.internal.reflect.DirectConstructorHandleAccessor.newInstance(DirectConstructorHandleAccessor.java:62)
+at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:502)
+at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:486)
+at org.openqa.selenium.remote.ErrorCodec.decode(ErrorCodec.java:167)
+at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:138)
+at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:50)
+at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:215)
+at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:216)
+at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:174)
+at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:544)
+at org.openqa.selenium.remote.ElementLocation$ElementFinder$2.findElement(ElementLocation.java:165)
+at org.openqa.selenium.remote.ElementLocation.findElement(ElementLocation.java:59)
+at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:367)
+at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:361)
+at org.openqa.selenium.support.pagefactory.DefaultElementLocator.findElement(DefaultElementLocator.java:68)
+at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:38)
+at jdk.proxy2/jdk.proxy2.$Proxy32.getText(Unknown Source)
+at testCases.sanityTesting.UserManagement(sanityTesting.java:674)
+at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:141)
+at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:687)
+at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:230)
+at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:63)
+at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:995)
+at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:203)
+at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:154)
+at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:134)
+at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
+at org.testng.TestRunner.privateRun(TestRunner.java:741)
+at org.testng.TestRunner.run(TestRunner.java:616)
+at org.testng.SuiteRunner.runTest(SuiteRunner.java:421)
+at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:413)
+at org.testng.SuiteRunner.privateRun(SuiteRunner.java:373)
+at org.testng.SuiteRunner.run(SuiteRunner.java:312)
+at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)
+at org.testng.TestNG.runSuitesSequentially(TestNG.java:1274)
+at org.testng.TestNG.runSuitesLocally(TestNG.java:1208)
+at org.testng.TestNG.runSuites(TestNG.java:1112)
+at org.testng.TestNG.run(TestNG.java:1079)
+at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:293)
+at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
+]]>
+            </full-stacktrace>
+          </exception> <!-- org.openqa.selenium.NoSuchElementException -->
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- UserManagement -->
+        <test-method signature="logout()[pri:24, instance:testCases.sanityTesting@38eb2fb0]" started-at="2025-11-07T12:21:40 IST" name="logout" finished-at="2025-11-07T12:21:42 IST" duration-ms="1341" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- logout -->
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:testCases.sanityTesting@38eb2fb0]" started-at="2025-11-07T12:21:42 IST" name="tearDown" finished-at="2025-11-07T12:21:42 IST" duration-ms="409" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDown -->
-      </class> <!-- testCases.Regression_Testing_Script -->
+      </class> <!-- testCases.sanityTesting -->
     </test> <!-- Test -->
   </suite> <!-- Suite -->
 </testng-results>

@@ -55,11 +55,11 @@ function toggleAllBoxes() {
 <body>
 <h2 align='center'>Test</h2><table border='1' align="center">
 <tr>
-<td>Tests passed/Failed/Skipped:</td><td>4/0/6</td>
+<td>Tests passed/Failed/Skipped:</td><td>25/1/1</td>
 </tr><tr>
-<td>Started on:</td><td>Fri Aug 08 12:17:48 IST 2025</td>
+<td>Started on:</td><td>Fri Nov 07 11:46:18 IST 2025</td>
 </tr>
-<tr><td>Total time:</td><td>29 seconds (29860 ms)</td>
+<tr><td>Total time:</td><td>2124 seconds (2124487 ms)</td>
 </tr><tr>
 <td>Included groups:</td><td></td>
 </tr><tr>
@@ -67,6 +67,99 @@ function toggleAllBoxes() {
 </tr>
 </table><p/>
 <small><i>(Hover the method name to see the test class name)</i></small><p/>
+<table width='100%' border='1' class='invocation-failed'>
+<tr><td colspan='4' align='center'><b>FAILED TESTS</b></td></tr>
+<tr><td><b>Test method</b></td>
+<td><b>Attribute(s)</b></td>
+<td width="30%"><b>Exception</b></td>
+<td width="10%"><b>Time (seconds)</b></td>
+<td><b>Instance</b></td>
+</tr>
+<tr>
+<td title='testCases.sanityTesting.UserManagement()'><b>UserManagement</b><br>Test class: testCases.sanityTesting</td>
+<td><div><pre>org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {&quot;method&quot;:&quot;xpath&quot;,&quot;selector&quot;:&quot;//span[text()=&apos;Role Name&apos;]//following::p[1]&quot;}
+  (Session info: chrome=141.0.7390.123)
+For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception
+Build info: version: &apos;4.33.0&apos;, revision: &apos;2c6aaad03a&apos;
+System info: os.name: &apos;Windows 11&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;21.0.7&apos;
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [8fe76f626df0ef9f3c2cddd9f46d23a9, findElement {using=xpath, value=//span[text()=&apos;Role Name&apos;]//following::p[1]}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 141.0.7390.123, chrome: {chromedriverVersion: 141.0.7390.122 (b477534e7e1..., userDataDir: C:\Users\ABHINA~1.DAG\AppDa...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:59218}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:59218/devtoo..., se:cdpVersion: 141.0.7390.123, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 8fe76f626df0ef9f3c2cddd9f46d23a9
+	at org.openqa.selenium.remote.ErrorCodec.decode(ErrorCodec.java:167)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:138)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:50)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:215)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:216)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:174)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:544)
+	at org.openqa.selenium.remote.ElementLocation$ElementFinder$2.findElement(ElementLocation.java:165)
+	at org.openqa.selenium.remote.ElementLocation.findElement(ElementLocation.java:59)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:367)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:361)
+	at org.openqa.selenium.support.pagefactory.DefaultElementLocator.findElement(DefaultElementLocator.java:68)
+	at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:38)
+	at jdk.proxy2/jdk.proxy2.$Proxy32.getText(Unknown Source)
+	at testCases.sanityTesting.UserManagement(sanityTesting.java:674)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
+... Removed 28 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace424579387", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace424579387'><pre>org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {&quot;method&quot;:&quot;xpath&quot;,&quot;selector&quot;:&quot;//span[text()=&apos;Role Name&apos;]//following::p[1]&quot;}
+  (Session info: chrome=141.0.7390.123)
+For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception
+Build info: version: &apos;4.33.0&apos;, revision: &apos;2c6aaad03a&apos;
+System info: os.name: &apos;Windows 11&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;21.0.7&apos;
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [8fe76f626df0ef9f3c2cddd9f46d23a9, findElement {using=xpath, value=//span[text()=&apos;Role Name&apos;]//following::p[1]}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 141.0.7390.123, chrome: {chromedriverVersion: 141.0.7390.122 (b477534e7e1..., userDataDir: C:\Users\ABHINA~1.DAG\AppDa...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:59218}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:59218/devtoo..., se:cdpVersion: 141.0.7390.123, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 8fe76f626df0ef9f3c2cddd9f46d23a9
+	at java.base/jdk.internal.reflect.DirectConstructorHandleAccessor.newInstance(DirectConstructorHandleAccessor.java:62)
+	at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:502)
+	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:486)
+	at org.openqa.selenium.remote.ErrorCodec.decode(ErrorCodec.java:167)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:138)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:50)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:215)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:216)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:174)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:544)
+	at org.openqa.selenium.remote.ElementLocation$ElementFinder$2.findElement(ElementLocation.java:165)
+	at org.openqa.selenium.remote.ElementLocation.findElement(ElementLocation.java:59)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:367)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:361)
+	at org.openqa.selenium.support.pagefactory.DefaultElementLocator.findElement(DefaultElementLocator.java:68)
+	at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:38)
+	at jdk.proxy2/jdk.proxy2.$Proxy32.getText(Unknown Source)
+	at testCases.sanityTesting.UserManagement(sanityTesting.java:674)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:141)
+	at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:687)
+	at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:230)
+	at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:63)
+	at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:995)
+	at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:203)
+	at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:154)
+	at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:134)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
+	at org.testng.TestRunner.privateRun(TestRunner.java:741)
+	at org.testng.TestRunner.run(TestRunner.java:616)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:421)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:413)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:373)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:312)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1274)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1208)
+	at org.testng.TestNG.runSuites(TestNG.java:1112)
+	at org.testng.TestNG.run(TestNG.java:1079)
+	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:293)
+	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
+</pre></div></td>
+<td>16</td>
+<td>testCases.sanityTesting@38eb2fb0</td></tr>
+</table><p>
 <table width='100%' border='1' class='invocation-passed'>
 <tr><td colspan='4' align='center'><b>PASSED TESTS</b></td></tr>
 <tr><td><b>Test method</b></td>
@@ -76,25 +169,130 @@ function toggleAllBoxes() {
 <td><b>Instance</b></td>
 </tr>
 <tr>
-<td title='testCases.Regression_Testing_Script.dataNexusHomePageNavigation()'><b>dataNexusHomePageNavigation</b><br>Test class: testCases.Regression_Testing_Script</td>
+<td title='testCases.sanityTesting.dataNexusDocumentParser()'><b>dataNexusDocumentParser</b><br>Test class: testCases.sanityTesting</td>
 <td></td>
-<td>2</td>
-<td>testCases.Regression_Testing_Script@5e4fa1da</td></tr>
+<td>64</td>
+<td>testCases.sanityTesting@38eb2fb0</td></tr>
 <tr>
-<td title='testCases.Regression_Testing_Script.dataNexus()'><b>dataNexus</b><br>Test class: testCases.Regression_Testing_Script</td>
+<td title='testCases.sanityTesting.MDMDataQuality()'><b>MDMDataQuality</b><br>Test class: testCases.sanityTesting</td>
 <td></td>
-<td>3</td>
-<td>testCases.Regression_Testing_Script@5e4fa1da</td></tr>
+<td>9</td>
+<td>testCases.sanityTesting@38eb2fb0</td></tr>
 <tr>
-<td title='testCases.Regression_Testing_Script.loginSetup()'><b>loginSetup</b><br>Test class: testCases.Regression_Testing_Script</td>
+<td title='testCases.sanityTesting.migrationCICD()'><b>migrationCICD</b><br>Test class: testCases.sanityTesting</td>
 <td></td>
-<td>10</td>
-<td>testCases.Regression_Testing_Script@5e4fa1da</td></tr>
+<td>209</td>
+<td>testCases.sanityTesting@38eb2fb0</td></tr>
 <tr>
-<td title='testCases.Regression_Testing_Script.DataNexusMonitoring()'><b>DataNexusMonitoring</b><br>Test class: testCases.Regression_Testing_Script</td>
+<td title='testCases.sanityTesting.dataNexusConnections()'><b>dataNexusConnections</b><br>Test class: testCases.sanityTesting</td>
+<td></td>
+<td>15</td>
+<td>testCases.sanityTesting@38eb2fb0</td></tr>
+<tr>
+<td title='testCases.sanityTesting.AuditLogs()'><b>AuditLogs</b><br>Test class: testCases.sanityTesting</td>
 <td></td>
 <td>6</td>
-<td>testCases.Regression_Testing_Script@5e4fa1da</td></tr>
+<td>testCases.sanityTesting@38eb2fb0</td></tr>
+<tr>
+<td title='testCases.sanityTesting.LoginPage()'><b>LoginPage</b><br>Test class: testCases.sanityTesting<br>Test method: Login Page</td>
+<td></td>
+<td>3</td>
+<td>testCases.sanityTesting@38eb2fb0</td></tr>
+<tr>
+<td title='testCases.sanityTesting.dataNexusIngestionPipeline()'><b>dataNexusIngestionPipeline</b><br>Test class: testCases.sanityTesting</td>
+<td></td>
+<td>83</td>
+<td>testCases.sanityTesting@38eb2fb0</td></tr>
+<tr>
+<td title='testCases.sanityTesting.MDMTaxonomy()'><b>MDMTaxonomy</b><br>Test class: testCases.sanityTesting</td>
+<td></td>
+<td>6</td>
+<td>testCases.sanityTesting@38eb2fb0</td></tr>
+<tr>
+<td title='testCases.sanityTesting.workspaceListDataNexus()'><b>workspaceListDataNexus</b><br>Test class: testCases.sanityTesting</td>
+<td></td>
+<td>5</td>
+<td>testCases.sanityTesting@38eb2fb0</td></tr>
+<tr>
+<td title='testCases.sanityTesting.dataNexusMonitoring()'><b>dataNexusMonitoring</b><br>Test class: testCases.sanityTesting</td>
+<td></td>
+<td>990</td>
+<td>testCases.sanityTesting@38eb2fb0</td></tr>
+<tr>
+<td title='testCases.sanityTesting.dataNexusTransformationPipelineV2()'><b>dataNexusTransformationPipelineV2</b><br>Test class: testCases.sanityTesting</td>
+<td></td>
+<td>80</td>
+<td>testCases.sanityTesting@38eb2fb0</td></tr>
+<tr>
+<td title='testCases.sanityTesting.MDMEntity()'><b>MDMEntity</b><br>Test class: testCases.sanityTesting</td>
+<td></td>
+<td>47</td>
+<td>testCases.sanityTesting@38eb2fb0</td></tr>
+<tr>
+<td title='testCases.sanityTesting.MDMIntegration()'><b>MDMIntegration</b><br>Test class: testCases.sanityTesting</td>
+<td></td>
+<td>34</td>
+<td>testCases.sanityTesting@38eb2fb0</td></tr>
+<tr>
+<td title='testCases.sanityTesting.landingPage()'><b>landingPage</b><br>Test class: testCases.sanityTesting</td>
+<td></td>
+<td>1</td>
+<td>testCases.sanityTesting@38eb2fb0</td></tr>
+<tr>
+<td title='testCases.sanityTesting.dataNexusOrchestrator()'><b>dataNexusOrchestrator</b><br>Test class: testCases.sanityTesting</td>
+<td></td>
+<td>404</td>
+<td>testCases.sanityTesting@38eb2fb0</td></tr>
+<tr>
+<td title='testCases.sanityTesting.userManagement()'><b>userManagement</b><br>Test class: testCases.sanityTesting</td>
+<td></td>
+<td>11</td>
+<td>testCases.sanityTesting@38eb2fb0</td></tr>
+<tr>
+<td title='testCases.sanityTesting.MDMOverview()'><b>MDMOverview</b><br>Test class: testCases.sanityTesting</td>
+<td></td>
+<td>7</td>
+<td>testCases.sanityTesting@38eb2fb0</td></tr>
+<tr>
+<td title='testCases.sanityTesting.dataNexusTransformationPipeline()'><b>dataNexusTransformationPipeline</b><br>Test class: testCases.sanityTesting</td>
+<td></td>
+<td>16</td>
+<td>testCases.sanityTesting@38eb2fb0</td></tr>
+<tr>
+<td title='testCases.sanityTesting.logout()'><b>logout</b><br>Test class: testCases.sanityTesting</td>
+<td></td>
+<td>1</td>
+<td>testCases.sanityTesting@38eb2fb0</td></tr>
+<tr>
+<td title='testCases.sanityTesting.tenants()'><b>tenants</b><br>Test class: testCases.sanityTesting</td>
+<td></td>
+<td>8</td>
+<td>testCases.sanityTesting@38eb2fb0</td></tr>
+<tr>
+<td title='testCases.sanityTesting.MDMMasters()'><b>MDMMasters</b><br>Test class: testCases.sanityTesting</td>
+<td></td>
+<td>33</td>
+<td>testCases.sanityTesting@38eb2fb0</td></tr>
+<tr>
+<td title='testCases.sanityTesting.dataNexusDataLake()'><b>dataNexusDataLake</b><br>Test class: testCases.sanityTesting</td>
+<td></td>
+<td>12</td>
+<td>testCases.sanityTesting@38eb2fb0</td></tr>
+<tr>
+<td title='testCases.sanityTesting.dataNexusHome()'><b>dataNexusHome</b><br>Test class: testCases.sanityTesting</td>
+<td></td>
+<td>8</td>
+<td>testCases.sanityTesting@38eb2fb0</td></tr>
+<tr>
+<td title='testCases.sanityTesting.dataNexusDataModel()'><b>dataNexusDataModel</b><br>Test class: testCases.sanityTesting</td>
+<td></td>
+<td>24</td>
+<td>testCases.sanityTesting@38eb2fb0</td></tr>
+<tr>
+<td title='testCases.sanityTesting.workspaceListMDM()'><b>workspaceListMDM</b><br>Test class: testCases.sanityTesting</td>
+<td></td>
+<td>13</td>
+<td>testCases.sanityTesting@38eb2fb0</td></tr>
 </table><p>
 <table width='100%' border='1' class='invocation-skipped'>
 <tr><td colspan='4' align='center'><b>SKIPPED TESTS</b></td></tr>
@@ -105,15 +303,15 @@ function toggleAllBoxes() {
 <td><b>Instance</b></td>
 </tr>
 <tr>
-<td title='testCases.Regression_Testing_Script.DataNexusDataProfiler()'><b>DataNexusDataProfiler</b><br>Test class: testCases.Regression_Testing_Script</td>
+<td title='testCases.sanityTesting.dataNexusDataProfiler()'><b>dataNexusDataProfiler</b><br>Test class: testCases.sanityTesting</td>
 <td><div><pre>org.testng.SkipException: Skipping test: DataNexusDataProfiler
-	at testBase.baseClass.checkRunFlag(baseClass.java:128)
-	at testCases.Regression_Testing_Script.DataNexusDataProfiler(Regression_Testing_Script.java:414)
+	at testBase.baseClass.checkRunFlagSanity(baseClass.java:244)
+	at testCases.sanityTesting.dataNexusDataProfiler(sanityTesting.java:390)
 	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
-... Removed 25 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace632521219", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
-<div class='stack-trace' id='stack-trace632521219'><pre>org.testng.SkipException: Skipping test: DataNexusDataProfiler
-	at testBase.baseClass.checkRunFlag(baseClass.java:128)
-	at testCases.Regression_Testing_Script.DataNexusDataProfiler(Regression_Testing_Script.java:414)
+... Removed 25 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace1334085871", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace1334085871'><pre>org.testng.SkipException: Skipping test: DataNexusDataProfiler
+	at testBase.baseClass.checkRunFlagSanity(baseClass.java:244)
+	at testCases.sanityTesting.dataNexusDataProfiler(sanityTesting.java:390)
 	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
 	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
 	at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:141)
@@ -142,202 +340,7 @@ function toggleAllBoxes() {
 	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
 </pre></div></td>
 <td>0</td>
-<td>testCases.Regression_Testing_Script@5e4fa1da</td></tr>
-<tr>
-<td title='testCases.Regression_Testing_Script.dataNexusIngestionPipeline()'><b>dataNexusIngestionPipeline</b><br>Test class: testCases.Regression_Testing_Script</td>
-<td><div><pre>org.testng.SkipException: Skipping test: DataNexusIngestionPipeline
-	at testBase.baseClass.checkRunFlag(baseClass.java:128)
-	at testCases.Regression_Testing_Script.dataNexusIngestionPipeline(Regression_Testing_Script.java:180)
-	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
-... Removed 25 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace1777519364", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
-<div class='stack-trace' id='stack-trace1777519364'><pre>org.testng.SkipException: Skipping test: DataNexusIngestionPipeline
-	at testBase.baseClass.checkRunFlag(baseClass.java:128)
-	at testCases.Regression_Testing_Script.dataNexusIngestionPipeline(Regression_Testing_Script.java:180)
-	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
-	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
-	at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:141)
-	at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:687)
-	at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:230)
-	at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:63)
-	at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:995)
-	at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:203)
-	at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:154)
-	at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:134)
-	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
-	at org.testng.TestRunner.privateRun(TestRunner.java:741)
-	at org.testng.TestRunner.run(TestRunner.java:616)
-	at org.testng.SuiteRunner.runTest(SuiteRunner.java:421)
-	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:413)
-	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:373)
-	at org.testng.SuiteRunner.run(SuiteRunner.java:312)
-	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
-	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)
-	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1274)
-	at org.testng.TestNG.runSuitesLocally(TestNG.java:1208)
-	at org.testng.TestNG.runSuites(TestNG.java:1112)
-	at org.testng.TestNG.run(TestNG.java:1079)
-	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
-	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:293)
-	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
-</pre></div></td>
-<td>0</td>
-<td>testCases.Regression_Testing_Script@5e4fa1da</td></tr>
-<tr>
-<td title='testCases.Regression_Testing_Script.DataNexusOrchestrator()'><b>DataNexusOrchestrator</b><br>Test class: testCases.Regression_Testing_Script</td>
-<td><div><pre>org.testng.SkipException: Skipping test: DataNexusOrchestrator
-	at testBase.baseClass.checkRunFlag(baseClass.java:128)
-	at testCases.Regression_Testing_Script.DataNexusOrchestrator(Regression_Testing_Script.java:329)
-	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
-... Removed 25 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace1160326849", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
-<div class='stack-trace' id='stack-trace1160326849'><pre>org.testng.SkipException: Skipping test: DataNexusOrchestrator
-	at testBase.baseClass.checkRunFlag(baseClass.java:128)
-	at testCases.Regression_Testing_Script.DataNexusOrchestrator(Regression_Testing_Script.java:329)
-	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
-	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
-	at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:141)
-	at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:687)
-	at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:230)
-	at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:63)
-	at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:995)
-	at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:203)
-	at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:154)
-	at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:134)
-	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
-	at org.testng.TestRunner.privateRun(TestRunner.java:741)
-	at org.testng.TestRunner.run(TestRunner.java:616)
-	at org.testng.SuiteRunner.runTest(SuiteRunner.java:421)
-	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:413)
-	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:373)
-	at org.testng.SuiteRunner.run(SuiteRunner.java:312)
-	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
-	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)
-	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1274)
-	at org.testng.TestNG.runSuitesLocally(TestNG.java:1208)
-	at org.testng.TestNG.runSuites(TestNG.java:1112)
-	at org.testng.TestNG.run(TestNG.java:1079)
-	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
-	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:293)
-	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
-</pre></div></td>
-<td>0</td>
-<td>testCases.Regression_Testing_Script@5e4fa1da</td></tr>
-<tr>
-<td title='testCases.Regression_Testing_Script.dataNexusdataModel()'><b>dataNexusdataModel</b><br>Test class: testCases.Regression_Testing_Script</td>
-<td><div><pre>org.testng.SkipException: Skipping test: DataNexusdataModel
-	at testBase.baseClass.checkRunFlag(baseClass.java:128)
-	at testCases.Regression_Testing_Script.dataNexusdataModel(Regression_Testing_Script.java:258)
-	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
-... Removed 25 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace1335082762", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
-<div class='stack-trace' id='stack-trace1335082762'><pre>org.testng.SkipException: Skipping test: DataNexusdataModel
-	at testBase.baseClass.checkRunFlag(baseClass.java:128)
-	at testCases.Regression_Testing_Script.dataNexusdataModel(Regression_Testing_Script.java:258)
-	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
-	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
-	at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:141)
-	at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:687)
-	at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:230)
-	at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:63)
-	at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:995)
-	at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:203)
-	at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:154)
-	at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:134)
-	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
-	at org.testng.TestRunner.privateRun(TestRunner.java:741)
-	at org.testng.TestRunner.run(TestRunner.java:616)
-	at org.testng.SuiteRunner.runTest(SuiteRunner.java:421)
-	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:413)
-	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:373)
-	at org.testng.SuiteRunner.run(SuiteRunner.java:312)
-	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
-	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)
-	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1274)
-	at org.testng.TestNG.runSuitesLocally(TestNG.java:1208)
-	at org.testng.TestNG.runSuites(TestNG.java:1112)
-	at org.testng.TestNG.run(TestNG.java:1079)
-	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
-	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:293)
-	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
-</pre></div></td>
-<td>0</td>
-<td>testCases.Regression_Testing_Script@5e4fa1da</td></tr>
-<tr>
-<td title='testCases.Regression_Testing_Script.dataNexusHome()'><b>dataNexusHome</b><br>Test class: testCases.Regression_Testing_Script</td>
-<td><div><pre>org.testng.SkipException: Skipping test: DataNexusHome
-	at testBase.baseClass.checkRunFlag(baseClass.java:128)
-	at testCases.Regression_Testing_Script.dataNexusHome(Regression_Testing_Script.java:106)
-	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
-... Removed 25 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace1600206621", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
-<div class='stack-trace' id='stack-trace1600206621'><pre>org.testng.SkipException: Skipping test: DataNexusHome
-	at testBase.baseClass.checkRunFlag(baseClass.java:128)
-	at testCases.Regression_Testing_Script.dataNexusHome(Regression_Testing_Script.java:106)
-	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
-	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
-	at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:141)
-	at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:687)
-	at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:230)
-	at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:63)
-	at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:995)
-	at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:203)
-	at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:154)
-	at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:134)
-	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
-	at org.testng.TestRunner.privateRun(TestRunner.java:741)
-	at org.testng.TestRunner.run(TestRunner.java:616)
-	at org.testng.SuiteRunner.runTest(SuiteRunner.java:421)
-	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:413)
-	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:373)
-	at org.testng.SuiteRunner.run(SuiteRunner.java:312)
-	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
-	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)
-	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1274)
-	at org.testng.TestNG.runSuitesLocally(TestNG.java:1208)
-	at org.testng.TestNG.runSuites(TestNG.java:1112)
-	at org.testng.TestNG.run(TestNG.java:1079)
-	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
-	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:293)
-	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
-</pre></div></td>
-<td>0</td>
-<td>testCases.Regression_Testing_Script@5e4fa1da</td></tr>
-<tr>
-<td title='testCases.Regression_Testing_Script.dataNexusConnection()'><b>dataNexusConnection</b><br>Test class: testCases.Regression_Testing_Script</td>
-<td><div><pre>org.testng.SkipException: Skipping test: DataNexusConnection
-	at testBase.baseClass.checkRunFlag(baseClass.java:128)
-	at testCases.Regression_Testing_Script.dataNexusConnection(Regression_Testing_Script.java:122)
-	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
-... Removed 25 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace1495382332", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
-<div class='stack-trace' id='stack-trace1495382332'><pre>org.testng.SkipException: Skipping test: DataNexusConnection
-	at testBase.baseClass.checkRunFlag(baseClass.java:128)
-	at testCases.Regression_Testing_Script.dataNexusConnection(Regression_Testing_Script.java:122)
-	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
-	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
-	at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:141)
-	at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:687)
-	at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:230)
-	at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:63)
-	at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:995)
-	at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:203)
-	at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:154)
-	at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:134)
-	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
-	at org.testng.TestRunner.privateRun(TestRunner.java:741)
-	at org.testng.TestRunner.run(TestRunner.java:616)
-	at org.testng.SuiteRunner.runTest(SuiteRunner.java:421)
-	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:413)
-	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:373)
-	at org.testng.SuiteRunner.run(SuiteRunner.java:312)
-	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
-	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)
-	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1274)
-	at org.testng.TestNG.runSuitesLocally(TestNG.java:1208)
-	at org.testng.TestNG.runSuites(TestNG.java:1112)
-	at org.testng.TestNG.run(TestNG.java:1079)
-	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
-	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:293)
-	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
-</pre></div></td>
-<td>0</td>
-<td>testCases.Regression_Testing_Script@5e4fa1da</td></tr>
+<td>testCases.sanityTesting@38eb2fb0</td></tr>
 </table><p>
 </body>
 </html>

@@ -29,79 +29,52 @@ public class excelUtility {
 	public CellStyle style;
 	String path;
 	
-	public excelUtility(String path) 
+	public excelUtility(String path,String sheetName) throws IOException 
 	{
-		this.path=path;
-	}
-	
-	public int getRowCount(String sheetName) throws IOException{
-		fi=new FileInputStream(path);
-		wb=new XSSFWorkbook(fi);
-		ws=wb.getSheet(sheetName);
-		int rowcount=ws.getLastRowNum();
-		wb.close();
-		fi.close();
-		return rowcount;
-	}
-	
-	public int getCellCount(String sheetName, int rownum) throws IOException{
-		fi=new FileInputStream(path);
-		wb=new XSSFWorkbook(fi);
-		ws=wb.getSheet(sheetName);
-		row=ws.getRow(rownum);
-		int cellcount=row.getLastCellNum();
-		wb.close();
-		fi.close();
-		return cellcount;
-	}
-	
-	public String getCellData(String sheetName, int rownum,int colnum) throws IOException{
-		fi=new FileInputStream(path);
-		wb=new XSSFWorkbook(fi);
-		ws=wb.getSheet(sheetName);
-		row=ws.getRow(rownum);
-		cell=row.getCell(colnum);
-		
-		String data;
-		try {
-			//data=cell.toString();
-			DataFormatter formatter=new DataFormatter();  //from poi
-			data=formatter.formatCellValue(cell);
-		}catch(Exception e) {
-			data="";
-		}
-		wb.close();
-		fi.close();
-		return data;
-	}
-	
-	public void setCellData(String sheetName, int rownum,int colnum,String data) throws IOException{
-		File xlFile=new File(path);
-		if(!xlFile.exists()) {
-			wb=new XSSFWorkbook();
-			fo=new FileOutputStream(path);
-			wb.write(fo);
-		}
-		
-		fi=new FileInputStream(path);
-		wb=new XSSFWorkbook(fi);
+		this.path = path;
+        File file = new File(path);
+        
+        if (file.exists()) {
+            fi = new FileInputStream(file);
+            wb = new XSSFWorkbook(fi);
+            fi.close();
+        } else {
+            wb = new XSSFWorkbook(); // new workbook if file doesn't exist
+        }
 
-		if(wb.getSheetIndex(sheetName)==-1)
-			wb.createSheet(sheetName);
-		ws=wb.getSheet(sheetName);
-		
-		if(ws.getRow(rownum)==null)
-			ws.createRow(rownum);
-		row=ws.getRow(rownum);
-		
-		cell=row.createCell(colnum);
-		cell.setCellValue(data);
-		fo=new FileOutputStream(path);
-		wb.write(fo);
-		wb.close();
-		fi.close();
-		fo.close();
-	}
+        if (wb.getSheetIndex(sheetName) == -1) {
+            wb.createSheet(sheetName);
+        }
+        ws = wb.getSheet(sheetName);
+    }
+	
+	public int getRowCount() {
+        return ws.getLastRowNum();
+    }
+	
+	public int getCellCount(int rownum) {
+        return ws.getRow(rownum).getLastCellNum();
+    }
+	
+	public String getCellData(int rownum,int colnum) throws IOException{
+		DataFormatter formatter = new DataFormatter();
+        try {
+            return formatter.formatCellValue(ws.getRow(rownum).getCell(colnum));
+        } catch (Exception e) {
+            return "";
+        }
+    }
+	
+	public void setCellData(int rownum, int colnum, String data) throws IOException {
+        if (ws.getRow(rownum) == null) {
+            ws.createRow(rownum);
+        }
+        XSSFRow row = ws.getRow(rownum);
+        XSSFCell cell = row.createCell(colnum);
+        cell.setCellValue(data);
+        fo = new FileOutputStream(path);
+        wb.write(fo);
+    }
 	
 	//Optional method
 	public void fillGreenColor(String sheetName, int rownum,int colnum) throws IOException{
@@ -110,12 +83,10 @@ public class excelUtility {
 		ws=wb.getSheet(sheetName);
 		row=ws.getRow(rownum);
 		cell=row.getCell(colnum);
-		
 		style=wb.createCellStyle();
 		style.setFillForegroundColor(IndexedColors.GREEN.getIndex());
 		style.setFillPattern(FillPatternType.SOLID_FOREGROUND);
 		cell.setCellStyle(style);
-		
 		wb.write(fo);
 		wb.close();
 		fi.close();
@@ -171,5 +142,25 @@ public class excelUtility {
             e.printStackTrace();
         }
         return executionMap;
+    }public void close() throws IOException {
+        wb.close();
+        fi.close();
+        if (fo != null) fo.close();
+    }public void createExcelFile(String filePath, String sheetName) throws IOException {
+        // Create workbook
+        XSSFWorkbook workbook = new XSSFWorkbook();
+
+        // Create sheet with the given name
+        XSSFSheet sheet = workbook.createSheet(sheetName);
+
+        // Save file at provided path
+        FileOutputStream fos = new FileOutputStream(filePath);
+        workbook.write(fos);
+        
+        // Cleanup
+        fos.close();
+        workbook.close();
+
+        System.out.println("Excel file created successfully at: " + filePath);
     }
 }

@@ -1,5 +1,6 @@
 package pageObjects;
 
+import java.io.IOException;
 import java.util.List;
 
 import org.openqa.selenium.By;
@@ -16,7 +17,7 @@ public class DataNexusConnection extends basePage{
 	public WebElement firstConnection;
 	@FindBy(id="basic_source_name")
 	public WebElement connectionNameTextbox;
-	@FindBy(xpath="(//div[@class='Sourcecard '])[1]")
+	@FindBy(xpath="(//div[@class='Sourcecard '])[2]")
 	public WebElement firstConnectionName;
 	@FindBy(xpath="//input[@id='basic_server']")
 	public WebElement serverTextbox;
@@ -42,6 +43,12 @@ public class DataNexusConnection extends basePage{
 	public WebElement mandatoryConnectionName;
 	@FindBy(xpath="//p[text()='Connection name is required!']")
 	public WebElement mandatoryConnectionMessage;
+	@FindBy(xpath="//div[contains(@class,'editIcon')]")
+	WebElement editConnectionType;
+	@FindBy(xpath="//p[text()='This connection already exists']")
+	public WebElement duplicateNameMsg;
+	@FindBy(xpath="//p[text()='PostgreSQL connection successful']")
+	public WebElement postgreMsg;
 	public void clickConnectionType(String s) {
 		List<WebElement> lis = driver.findElements(By.xpath("//div[@class='ant-tabs-tab']"));
 		for(WebElement e:lis) {
@@ -49,24 +56,25 @@ public class DataNexusConnection extends basePage{
 				e.click();
 			}
 		}
-	}public void clickFirstConnection() {
-		firstConnectionName.click();
-	}public void setConnectionName(String s) {
-		connectionNameTextbox.sendKeys(s);
+	}public void clickFirstConnection() throws IOException {
+		standardClickButton(firstConnectionName,"Connection Type");
+	}public void setConnectionName(String s) throws IOException {
+		standardEnterTextbox(connectionNameTextbox,s,"Connection Textbox");
 	}public void setServer(String s) {
 		serverTextbox.sendKeys(s);
-	}public void setPort(String s) {
-		portTextbox.sendKeys(s);
+	}public void setPort(String s) throws IOException {
+		standardEnterTextbox(portTextbox,s,"Port");
+		
 	}public void setDatabase(String s) {
 		databaseTextbox.sendKeys(s);
 	}public void setUserName(String s) {
 		userTextbox.sendKeys(s);
 	}public void setPassword(String s) {
 		passwordTextbox.sendKeys(s);
-	}public void selectConnectionType() {
-		firstConnectionName.click();
 	}public void newConnectionSearchbox(String data) {
 		newConnectionSearchbox.sendKeys(data);
+	}public void clickEditConnectionType() throws IOException {
+		standardClickButton(editConnectionType,"Edit Connection Type");
 	}
 	
 }

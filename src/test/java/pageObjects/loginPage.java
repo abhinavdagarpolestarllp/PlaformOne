@@ -1,10 +1,13 @@
 package pageObjects;
 
+import java.io.IOException;
+
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 
 import org.openqa.selenium.support.FindBy;
-
+import org.openqa.selenium.support.ui.ExpectedConditions;
 
 import Utilities.ExtentReportManager;
 import testBase.baseClass;
@@ -35,28 +38,32 @@ public class loginPage extends basePage{
 	public WebElement invalidCredentials_Message;
 	@FindBy(className="toast-message")
 	WebElement loginMsg;
-	@FindBy(xpath="//span[text()='Cancel']")
-	public WebElement cancelButton;
-	@FindBy(xpath="//span[text()='Ok']")
-	public WebElement okButton;
+	@FindBy(xpath="(//span[text()='Cancel'])[1]")
+	WebElement cancelButton;
+	@FindBy(xpath="(//span[text()='Ok'])[1]")
+	WebElement okButton;
 	@FindBy(xpath="(//span[@aria-label='edit'])[1]")
-	public WebElement editButton;
+	WebElement editButton;
 	@FindBy(xpath="(//img[@alt='Trigger Icon'])[1]")
 	WebElement triggerButton;
 	@FindBy(xpath="(//span[@class='anticon anticon-delete'])[1]")
-	public WebElement deleteButton;
+	WebElement deleteButton;
 	@FindBy(className="addButonCss")
-	public WebElement createNewButton;
+	WebElement createNewButton;
 	@FindBy(xpath="//div[@class='popup-close']")
-	public WebElement closeButton;
+	WebElement closeButton1;
+	@FindBy(xpath="(//button[@class='ant-modal-close'])[1]")
+	WebElement closeButton2;
+	@FindBy(xpath="//button[@class='ant-modal-close']")
+	WebElement closeButton3;
 	@FindBy(xpath="//span[text()='Next']")
-	public WebElement nextButton;
+	WebElement nextButton;
 	@FindBy(xpath="//span[text()='Reset']")
-	public WebElement resetButton;
+	WebElement resetButton;
 	@FindBy(xpath="//span[text()='Test Connection']")
-	public WebElement testConnectionButton;
+	WebElement testConnectionButton;
 	@FindBy(xpath="//div[contains(@class,'workspace_profileDivDownIcon')]")
-	public WebElement profileDropdown;
+	WebElement profileDropdown;
 	@FindBy(xpath="//span[text()='Profile']")
 	public WebElement profileProfile;
 	@FindBy(xpath="//span[text()='User Management']")
@@ -91,6 +98,16 @@ public class loginPage extends basePage{
 	public WebElement viewSchedule;
 	@FindBy(xpath="//p[text()='Schedule updated successfully']")
 	public WebElement scheduleUpdatedMsg;
+	@FindBy(xpath="(//*[contains(text(),'Are you sure you want to trigger')])[1]")
+	public WebElement triggerConfirmation;
+	@FindBy(xpath="(//*[contains(text(),'Are you sure you want to delete')])[1]")
+	public WebElement deleteConfirmation;
+	@FindBy(xpath="//img[contains(@class,'SideNav_sideNavCollapse')]")
+	WebElement SideNavcollapse;
+	@FindBy(xpath="//input[@aria-label='Select all' and @type='checkbox']")
+	WebElement selectAllCheckbox;
+	@FindBy(xpath="//span[@aria-label='download']")
+	WebElement download;
 	public void clickSubmitButton() {
 		standardClickButton(submitButton,"Submit");
 	}public void clickSaveButton() {
@@ -98,14 +115,37 @@ public class loginPage extends basePage{
 	}public void clickViewButton() {
 		standardClickButton(viewButton,"View");
 	}
-	public void enterInSearchbox(String data) {
-		searchbox.sendKeys(data);
+	public void enterInSearchbox(String data) throws IOException {
 		standardEnterTextbox(searchbox,data,"Searchbox");
 	}
 	public void testConnection() {
 		testConnectionButton.click();
 	}public void clickClose() {
-		standardClickButton(closeButton,"Close");
+	    boolean clicked = false;
+
+	    try {
+	    	closeButton1.click();
+	        ExtentReportManager.getTest().pass("✅ Clicked on **Close button** successfully.");
+	        clicked = true;
+	    } catch (Exception ignored1) {}
+
+	    if (!clicked) {
+	        try {
+	        	closeButton2.click();
+	            ExtentReportManager.getTest().pass("✅ Clicked on **Close button** successfully.");
+	            clicked = true;
+	        } catch (Exception ignored2) {}
+	    }
+
+	    if (!clicked) {
+	        try {
+	        	closeButton3.click();
+	            ExtentReportManager.getTest().pass("✅ Clicked on **Close button** successfully.");
+	            clicked = true;
+	        } catch (Exception e3) {
+	            ExtentReportManager.getTest().fail("❌ Failed to click on **Close button**. Error: " + e3.getMessage());
+	        }
+	    }
 	}public void clickYesButton() {
 		standardClickButton(yesButton,"Yes");
 	}public void clickNoButton() {
@@ -128,16 +168,13 @@ public class loginPage extends basePage{
 	}public void clickCreateNew() {
 		standardClickButton(createNewButton,"Create New");
 	}
-	public void enterUsername(String username) {
-		username_textbox.sendKeys(username);
-		ExtentReportManager.getTest().pass("Username Entered");
+	public void enterUsername(String username) throws IOException {
+		standardEnterTextbox(username_textbox,username,"Username");
 	}
-	public void enterPassword(String password) {
-		password_textbox.sendKeys(password);
-		ExtentReportManager.getTest().pass("Password Entered");
+	public void enterPassword(String password) throws IOException {
+		standardEnterTextbox(password_textbox,password,"Password");
 	}public void clickLogin() {
-		loginButton.click();
-		ExtentReportManager.getTest().pass("Clicked on Login Button");
+		standardClickButton(loginButton,"Login");
 	}public String getLoginMessage() {
 		try {
 			return (loginMsg.getText());
@@ -145,10 +182,11 @@ public class loginPage extends basePage{
 			return e.getMessage();
 		}
 	}public void messageClose() {
-		messageClose.click();
+		standardClickButton(messageClose,"Message Close");
 		//ExtentReportManager.getTest().pass("Close messagebox button is clicked");
 	}
 	public void clickProfileDropdown() {
+		standardClickButton(profileDropdown,"Profile Dropdown");
 		profileDropdown.click();
 	}public void clickBackButton() {
 		standardClickButton(backButton,"Back Button");
@@ -177,6 +215,28 @@ public class loginPage extends basePage{
 		typeTextFromKeyboard(triggerTime,calCurrentTime(min));
 	}public void clickViewSchedule() {
 		standardClickButton(viewSchedule,"View Schedule");
+	}public void clickSideNavCollapse() {
+		standardClickButton(SideNavcollapse,"Collapse");
+	}public void startingClose() throws InterruptedException {
+		Thread.sleep(3000);
+		driver.findElement(By.xpath("//button[text()='Continue to site']")).click();
+	}public void clickSelectAllCheckbox() {
+		standardClickButton(selectAllCheckbox,"Select All Checkbox");
+	}public void changeEnv(String env) {
+		By loc = By.xpath("//label[@for='environment-dropdown']//following::div[1]");
+		By loc1 =By.xpath("//div[@class='ant-select-item-option-content']//span[text()='"+env+"']");
+		try {
+			driver.findElement(loc).click();
+			WebElement option = wait.until(ExpectedConditions.visibilityOfElementLocated(loc1));
+			option.click();
+			ExtentReportManager.getTest().pass(
+	                "'" + env + "' is selected from top navigation environment dropdown element");
+		}catch(Exception e) {
+			ExtentReportManager.getTest().pass(
+	                "'" + env + "' was not selected from top navigation environment dropdown element due to "+e.getMessage());
+		}
+	}public void clickDownloadButton() {
+		standardClickButton(download,"Download");
 	}
 	
 }

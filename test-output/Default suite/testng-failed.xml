@@ -3,17 +3,38 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="testCases.Regression_Testing_Script">
+      <class name="testCases.sanityTesting">
         <methods>
-          <include name="dataNexusHomePageNavigation"/>
-          <include name="tearDown"/>
-          <include name="setup"/>
+          <include name="UserManagement"/>
+          <include name="MDMEntity"/>
+          <include name="MDMOverview"/>
+          <include name="dataNexusConnections"/>
+          <include name="dataNexusDataLake"/>
           <include name="dataNexusIngestionPipeline"/>
-          <include name="setupTestData"/>
-          <include name="dataNexus"/>
-          <include name="loginSetup"/>
+          <include name="workspaceListDataNexus"/>
+          <include name="dataNexusTransformationPipeline"/>
+          <include name="dataNexusDocumentParser"/>
+          <include name="dataNexusOrchestrator"/>
+          <include name="dataNexusMonitoring"/>
+          <include name="AuditLogs"/>
+          <include name="tenants"/>
+          <include name="landingPage"/>
+          <include name="workspaceListMDM"/>
+          <include name="dataNexusHome"/>
+          <include name="MDMDataQuality"/>
+          <include name="setup"/>
+          <include name="MDMTaxonomy"/>
+          <include name="dataNexusDataProfiler"/>
+          <include name="logout"/>
+          <include name="MDMMasters"/>
+          <include name="MDMIntegration"/>
+          <include name="tearDown"/>
+          <include name="dataNexusTransformationPipelineV2"/>
+          <include name="LoginPage"/>
+          <include name="userManagement"/>
+          <include name="dataNexusDataModel"/>
         </methods>
-      </class> <!-- testCases.Regression_Testing_Script -->
+      </class> <!-- testCases.sanityTesting -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

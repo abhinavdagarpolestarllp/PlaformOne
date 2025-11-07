@@ -7,19 +7,14 @@
   <test thread-count="5" name="Test(failed)">
     <parameter name="browser" value="chrome"/>
     <classes>
-      <class name="testCases.Regression_Testing_Script">
+      <class name="testCases.sanityTesting">
         <methods>
+          <include name="UserManagement"/>
           <include name="tearDown"/>
-          <include name="DataNexusOrchestrator"/>
-          <include name="dataNexusHome"/>
+          <include name="dataNexusDataProfiler"/>
           <include name="setup"/>
-          <include name="dataNexusIngestionPipeline"/>
-          <include name="setupTestData"/>
-          <include name="dataNexusConnection"/>
-          <include name="DataNexusDataProfiler"/>
-          <include name="dataNexusdataModel"/>
         </methods>
-      </class> <!-- testCases.Regression_Testing_Script -->
+      </class> <!-- testCases.sanityTesting -->
     </classes>
   </test> <!-- Test(failed) -->
 </suite> <!-- Failed suite [Suite] -->

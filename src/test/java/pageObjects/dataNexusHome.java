@@ -1,5 +1,7 @@
 package pageObjects;
 
+import java.io.IOException;
+
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -34,8 +36,8 @@ public class dataNexusHome extends basePage{
 	public WebElement totalFailedTrigger;
 	@FindBy(xpath="(//span[text()='Created Date']//following-sibling::div)[1]")
 	public WebElement createdDate;
-	public void searchBox(String text) {
-		searchBox.sendKeys(text);
+	public void searchBox(String text) throws IOException {
+		standardEnterTextbox(searchBox,text,"Searchbox");
 	}public void addWorkspace() {
 		addWorkspace.click();
 	}public void selectWorlspace() {

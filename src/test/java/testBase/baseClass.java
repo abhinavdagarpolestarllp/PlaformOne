@@ -6,8 +6,13 @@ import java.io.IOException;
 import java.text.SimpleDateFormat;
 import java.time.Duration;
 import java.util.Date;
+import java.util.HashMap;
 import java.util.Map;
 import java.util.Properties;
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.nio.file.Paths;
+import java.nio.file.StandardCopyOption;
 
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
@@ -26,14 +31,46 @@ import org.testng.SkipException;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
 
+//import com.google.common.io.Files;
+
+import Utilities.ExtentReportManager;
 import Utilities.excelUtility;
+import io.github.bonigarcia.wdm.WebDriverManager;
 
 public class baseClass {
-    public WebDriver driver;
+    // ThreadLocal driver to support parallel execution safely
+    private static ThreadLocal<WebDriver> threadDriver = new ThreadLocal<>();
+
     public Logger logger;
     public Properties p;
-    public static Map<String, String> testRunMap = excelUtility.getTestExecutionMap(".\\testData\\Driver.xlsx");
 
+    public static Map<String, String> testRunMap = excelUtility.getTestExecutionMap(
+        System.getProperty("user.dir") + File.separator + "testData" + File.separator + "Driver.xlsx"
+    );
+
+    public static Map<String, String> testRunMapSanity = excelUtility.getTestExecutionMap(
+        System.getProperty("user.dir") + File.separator + "testData" + File.separator + "Driver_Sanity.xlsx"
+    );
+
+    /**
+     * Thread-safe getter for WebDriver
+     */
+    public static WebDriver getDriver() {
+        return threadDriver.get();
+    }
+
+    /**
+     * Thread-safe setter for WebDriver
+     */
+    public static void setDriver(WebDriver driver) {
+        threadDriver.set(driver);
+    }
+
+    /**
+     * Setup method - initializes WebDriver according to config and places it into TestNG context
+     * Note: This is @BeforeClass similar to your original. If you want driver per test method,
+     * change to @BeforeMethod.
+     */
     @BeforeClass
     public void setup(ITestContext context) throws IOException {
         FileReader file = new FileReader("./src/test/resources/config.properties");
@@ -41,34 +78,60 @@ public class baseClass {
         p.load(file);
 
         logger = LogManager.getLogger(this.getClass());
-        String br = p.getProperty("browser").toLowerCase();
+        String br = p.getProperty("browser") != null ? p.getProperty("browser").toLowerCase() : "chrome";
+
+        WebDriver driver = null;
 
         switch (br) {
             case "edge":
-                System.setProperty("webdriver.edge.driver", "C:\\Selenium WebDriver\\EdgeDriver\\msedgedriver.exe");
+                WebDriverManager.edgedriver().setup();
+
+                // 🔹 Set Edge preferences
+                Map<String, Object> prefsEdge = new HashMap<>();
+                prefsEdge.put("credentials_enable_service", false);
+                prefsEdge.put("profile.password_manager_enabled", false);
+                prefsEdge.put("download.prompt_for_download", true);
+                prefsEdge.put("download.directory_upgrade", true);
+                prefsEdge.put("safebrowsing.enabled", true);
+
+                // 🔹 Set Edge options
                 EdgeOptions edgeOptions = new EdgeOptions();
-                edgeOptions.setExperimentalOption("prefs", Map.of(
-                        "credentials_enable_service", false,
-                        "profile.password_manager_enabled", false
-                ));
-                edgeOptions.addArguments("-inprivate");
+                edgeOptions.setExperimentalOption("prefs", prefsEdge);
+                edgeOptions.addArguments("--inprivate");
+                edgeOptions.addArguments("--force-device-scale-factor=0.9");
+                edgeOptions.addArguments("--disable-blink-features=AutomationControlled");
+                edgeOptions.setExperimentalOption("excludeSwitches", new String[] { "enable-automation" });
+                edgeOptions.setExperimentalOption("useAutomationExtension", false);
+
                 driver = new EdgeDriver(edgeOptions);
                 break;
 
             case "chrome":
-                System.setProperty("webdriver.chrome.driver", "C:\\Selenium WebDriver\\ChromeDriver\\chromedriver.exe");
+                WebDriverManager.chromedriver().setup();
+
+                // 🔹 Set Chrome preferences
+                Map<String, Object> prefsChrome = new HashMap<>();
+                prefsChrome.put("credentials_enable_service", false);
+                prefsChrome.put("profile.password_manager_enabled", false);
+                prefsChrome.put("download.prompt_for_download", true);
+                prefsChrome.put("download.directory_upgrade", true);
+                prefsChrome.put("safebrowsing.enabled", true);
+
+                // 🔹 Set Chrome options
                 ChromeOptions chromeOptions = new ChromeOptions();
-                chromeOptions.setExperimentalOption("prefs", Map.of(
-                        "credentials_enable_service", false,
-                        "profile.password_manager_enabled", false
-                ));
+                chromeOptions.setExperimentalOption("prefs", prefsChrome);
                 chromeOptions.addArguments("--incognito");
-                chromeOptions.addArguments("user-data-dir=C:/temp/cleanChromeProfile");
+                chromeOptions.addArguments("--force-device-scale-factor=0.9");
+                chromeOptions.addArguments("--disable-blink-features=AutomationControlled");
+                chromeOptions.setExperimentalOption("excludeSwitches", new String[] { "enable-automation" });
+                chromeOptions.setExperimentalOption("useAutomationExtension", false);
+
                 driver = new ChromeDriver(chromeOptions);
                 break;
 
             case "firefox":
-                System.setProperty("webdriver.gecko.driver", "C:\\Selenium WebDriver\\GeckoDriver\\geckodriver.exe");
+                WebDriverManager.firefoxdriver().setup();
+
                 FirefoxProfile profile = new FirefoxProfile();
                 profile.setPreference("signon.rememberSignons", false);
                 profile.setPreference("signon.autofillForms", false);
@@ -78,6 +141,7 @@ public class baseClass {
                 FirefoxOptions firefoxOptions = new FirefoxOptions();
                 firefoxOptions.setProfile(profile);
                 firefoxOptions.addArguments("-private");
+
                 driver = new FirefoxDriver(firefoxOptions);
                 break;
 
@@ -85,46 +149,98 @@ public class baseClass {
                 throw new IllegalArgumentException("❌ Unsupported browser: " + br);
         }
 
-        driver.get(p.getProperty("url"));
-        driver.manage().window().maximize();
-        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
+        // Set thread-local driver
+        setDriver(driver);
+
+        // basic navigation & waits
+        if (getDriver() != null) {
+            getDriver().get(p.getProperty("url"));
+            getDriver().manage().window().maximize();
+            getDriver().manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
+        } else {
+            throw new IllegalStateException("WebDriver initialization failed - driver is null");
+        }
 
         // ✅ Set WebDriver into TestNG context for ExtentReportManager to access
-        context.setAttribute("WebDriver", driver);
+        context.setAttribute("WebDriver", getDriver());
     }
 
+    /**
+     * Tear down driver at class end
+     */
     @AfterClass
     public void tearDown() {
-        if (driver != null) {
-            driver.quit();
+        try {
+            WebDriver d = getDriver();
+            if (d != null) {
+                d.quit();
+            }
+        } finally {
+            // remove from ThreadLocal to avoid memory leaks
+            threadDriver.remove();
         }
     }
 
     // ✅ Safe screenshot method with null-check
-    public static String captureScreen(WebDriver driver, String tname) throws IOException {
+    public static String captureScreen(WebDriver driver, String tname) {
         if (driver == null) {
-            System.out.println("⚠️ Cannot take screenshot: WebDriver is null.");
+            System.err.println("⚠️ Cannot take screenshot: WebDriver is null.");
             return null;
         }
 
-        String timeStamp = new SimpleDateFormat("yyyyMMddhhmmss").format(new Date());
-        TakesScreenshot takesScreenshot = (TakesScreenshot) driver;
-        File sourceFile = takesScreenshot.getScreenshotAs(OutputType.FILE);
+        try {
+            // timestamped filename
+            String timeStamp = new SimpleDateFormat("yyyyMMddHHmmss").format(new Date());
+            String screenshotFileName = tname + "_" + timeStamp + ".png";
 
-        String screenshotDir = System.getProperty("user.dir") + "\\screenshots\\";
-        new File(screenshotDir).mkdirs(); // Ensure directory exists
+            // Prefer ExtentReportManager's screenshotFolderPath (listener creates correct run folder)
+            String screenshotDir = ExtentReportManager.screenshotFolderPath;
 
-        String targetFilePath = screenshotDir + tname + "_" + timeStamp + ".png";
-        File targetFile = new File(targetFilePath);
+            // If not set, construct a fallback Run Results path with timestamp (use the manager timestamp if available)
+            if (screenshotDir == null || screenshotDir.trim().isEmpty()) {
+                String useTs = (ExtentReportManager.timeStamp != null && !ExtentReportManager.timeStamp.isEmpty())
+                        ? ExtentReportManager.timeStamp
+                        : new SimpleDateFormat("yyyy.MM.dd.HH.mm.ss").format(new Date());
 
-        sourceFile.renameTo(targetFile); // Or use Files.copy() for better OS support
+                String fallbackRunFolder = System.getProperty("user.dir") + File.separator + "Run Results"
+                        + File.separator + "Run-" + useTs;
+                screenshotDir = fallbackRunFolder + File.separator + "Screenshot"; // singular per your request
+            }
 
-        return targetFilePath;
+            Path screenshotsFolder = Paths.get(screenshotDir);
+            Files.createDirectories(screenshotsFolder);
+
+            // capture and copy
+            TakesScreenshot ts = (TakesScreenshot) driver;
+            File sourceFile = ts.getScreenshotAs(OutputType.FILE);
+            Path targetPath = screenshotsFolder.resolve(screenshotFileName);
+            Files.copy(sourceFile.toPath(), targetPath, StandardCopyOption.REPLACE_EXISTING);
+
+            // Because the report HTML is inside Report/, the relative path from report -> screenshot is ../Screenshot/<file>
+            String relativePath = "../Screenshot/" + screenshotFileName;
+
+            //System.out.println("📸 Screenshot saved: " + targetPath.toAbsolutePath() + " (relative: " + relativePath + ")");
+            return relativePath.replace("\\", "/");
+
+        } catch (IOException e) {
+            System.err.println("❌ Failed to capture screenshot: " + e.getMessage());
+            e.printStackTrace();
+            return null;
+        } catch (Exception e) {
+            System.err.println("❌ Unexpected error while taking screenshot: " + e.getMessage());
+            e.printStackTrace();
+            return null;
+        }
     }
 
     // ✅ Skip logic from Excel map
     public void checkRunFlag(String testName) {
         if (!"Yes".equalsIgnoreCase(testRunMap.getOrDefault(testName, "No"))) {
+            throw new SkipException("Skipping test: " + testName);
+        }
+    }
+    public void checkRunFlagSanity(String testName) {
+        if (!"Yes".equalsIgnoreCase(testRunMapSanity.getOrDefault(testName, "No"))) {
             throw new SkipException("Skipping test: " + testName);
         }
     }

@@ -1,10 +1,14 @@
 package pageObjects;
 
+import java.io.IOException;
+import java.time.Duration;
+
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 
 import Utilities.ExtentReportManager;
 
@@ -13,7 +17,7 @@ public class DataNexusOrchestrator extends basePage{
 		super(driver);
 	}public final String orchestratorName="Orchestrator"+dateNTime;
 	@FindBy(xpath="//button[text()='Create New Process']")
-	public WebElement createNewProcessButton;
+	WebElement createNewProcessButton;
 	@FindBy(xpath="//span[text()='+ Add Pipeline']")
 	public WebElement addPipeline;
 	@FindBy(xpath="//input[@name='processName']")
@@ -60,13 +64,17 @@ public class DataNexusOrchestrator extends basePage{
 	public WebElement pipelineDeativatedMsg;
 	@FindBy(xpath="//p[text()='Process activated successfully']")
 	public WebElement pipelineAtivatedMsg;
+	@FindBy(xpath="(//div[text()='Select Pipeline Type'])[2]//following::div[2]")
+	WebElement MDMSelectFIleType;
+	@FindBy(xpath="(//div[text()='Select Pipeline Type'])[2]//following::div[2]")
+	WebElement selectPipelineDropdownTextbox;
 	public void clickNewProcessButton() {
 		standardClickButton(createNewProcessButton,"New Process");
 	}public void clickAddPipelineButton() {
 		standardClickButton(addPipeline,"Add Pipeline");
-	}public void enterPipelineName(String pName) {
+	}public void enterPipelineName(String pName) throws IOException {
 		standardEnterTextbox(processName,pName,"Process Name");
-	}public void enterPipelineDescription(String description) {
+	}public void enterPipelineDescription(String description) throws IOException {
 		standardEnterTextbox(processDescription,description,"Process Description");
 	}public void selectPipelineType(String pipeline) {
 		dropdownElement(selectPipelineType,pipeline,"Pipeline Type");
@@ -75,7 +83,7 @@ public class DataNexusOrchestrator extends basePage{
 		WebElement e = driver.findElement(By.xpath(xpath));
 		standardClickButton(e,pName+" Delete");
 	}public void selectPipeline(String pipeline) {
-		dropdownElement(selectPipeline,pipeline,"Pipeline");
+		dropdownElementByTextbox(selectPipeline,selectPipelineDropdownTextbox,pipeline,"Pipeline");
 	}public void selectPipelineDependentUpon(String pipeline) {
 		dropdownElement(dependentUpon,pipeline,"Pipeline Depend Upon");
 	}public void isTextPresentInColumnOrchestrator(String columnName, String text) {
@@ -97,8 +105,46 @@ public class DataNexusOrchestrator extends basePage{
             e.printStackTrace();
         }
     }public void waitForProcessCompleted() {
-    	String loc = "(//span[text()='Time Taken']//following-sibling::span)[2]";
-    	waitForGeneration(loc);	
+    	By loc =By.xpath("(//div[contains(@class,'ProcessLogs_statusContainer')])[1]");
+    	int maxAttempts = 10;
+		WebElement Searchbox=driver.findElement(By.xpath("(//input[@class='searchInput'])[1]"));
+		for (int i = 0; i < maxAttempts; i++) {
+		    try {
+		    	Thread.sleep(10000);
+		  
+		    	clearTextbox(Searchbox);
+		    	//Searchbox.sendKeys("Manual");
+		    	Thread.sleep(2000);
+		        WebDriverWait wait1 = new WebDriverWait(driver, Duration.ofSeconds(60));
+		        
+
+		        // Wait up to 60s for the element to be present in the DOM (not necessarily visible)
+		        wait1.until(ExpectedConditions.presenceOfElementLocated(loc));
+		        WebElement element=driver.findElement(loc);
+		        // If present, exit the function early
+		        if(element.getText().equals("InProgress") || element.getText().equals("NotStarted")) {
+		        	Thread.sleep(60000);
+		        	WebElement refreshButton = driver.findElement(
+			                By.xpath("(//button[contains(@class,'refreshButton')])")
+			            );
+			            refreshButton.click();
+		        	continue;
+		        }
+		        getPipelineStatus(driver.findElement(loc),orchestratorName);
+		        //captureScreenshot();
+		        return;
+
+		    } catch (Exception e) {
+		        // If not present → click Refresh and continue to next attempt
+		        try {
+		            WebElement refreshButton = driver.findElement(
+		                By.xpath("(//button[contains(@class,'refreshButton')])")
+		            );
+		            refreshButton.click();
+		        } catch (Exception ignored) {}
+		    }
+		}
+		
     }public void clickProcessId() {
     	standardClickButton(firstProcessId,firstProcessId.getText());
     }public void clickProcessPipeline(String pName) {
@@ -111,5 +157,16 @@ public class DataNexusOrchestrator extends basePage{
     	standardClickButton(activePipeline,"Deactivate Pipeline");
     }public void clickActivatePipelineButton() {
     	standardClickButton(inactivePipeline,"Activate Pipeline");
+    }public void clickCreateNewProcess() {
+    	standardClickButton(createNewProcessButton,"Create New Process");
+    }public void selectMDMFIleType(String value) {
+    	dropdownElement(MDMSelectFIleType,value,"Select MDM FIle Type");
+    }public void waitForPipelineVisible( String name) {
+    	By loc = By.xpath("//td[text()='"+name+"']");
+    	try {
+    		wait.until(ExpectedConditions.presenceOfElementLocated(loc));
+    	}catch(Exception e) {
+    		
+    	}
     }
 }

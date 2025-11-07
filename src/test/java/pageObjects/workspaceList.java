@@ -2,9 +2,11 @@ package pageObjects;
 
 import java.io.IOException;
 
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
+import org.openqa.selenium.support.ui.ExpectedConditions;
 
 public class workspaceList extends basePage{
 	WebDriver driver;
@@ -43,10 +45,12 @@ public class workspaceList extends basePage{
 		dataNexusButton.click();
 	}public void searchBox(String name) {
 		searchBox.sendKeys(name);
-	}public void createNewWorkspace() {
-		createNewWorkspace.click();
-	}public void clickWorkSpace() {
-		firstWorkspace.click();
+	}public void createNewWorkspace(String wName) {
+		standardClickButton(createNewWorkspace,"Create New Workspace");
+	}public void clickWorkSpace(String wName) {
+		By loc =By.xpath("(//h5[contains(@class,'ant-typography') and text()='"+wName+"'])");
+		WebElement option = wait.until(ExpectedConditions.visibilityOfElementLocated(loc));
+		standardClickButton(option,wName+"Worspace");
 	}public void clickPAIButton(){
 		pAIButton.click();
 	}public void workspaceHeaderValidation() throws InterruptedException, IOException {

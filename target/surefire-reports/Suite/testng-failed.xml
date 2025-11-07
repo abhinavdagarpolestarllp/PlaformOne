@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite name="Failed suite [Suite]" guice-stage="DEVELOPMENT" verbose="0">
+  <listeners>
+    <listener class-name="Utilities.ExtentReportManager"/>
+  </listeners>
+  <test thread-count="5" name="Test(failed)" verbose="0">
+    <parameter name="browser" value="chrome"/>
+    <classes>
+      <class name="testCases.sanityTesting">
+        <methods>
+          <include name="MDMEntity"/>
+          <include name="UserManagement"/>
+          <include name="MDMOverview"/>
+          <include name="dataNexusDataLake"/>
+          <include name="MDMDataQuality"/>
+          <include name="setup"/>
+          <include name="dataNexusDataProfiler"/>
+          <include name="MDMTaxonomy"/>
+          <include name="logout"/>
+          <include name="MDMMasters"/>
+          <include name="MDMIntegration"/>
+          <include name="dataNexusDocumentParser"/>
+          <include name="dataNexusOrchestrator"/>
+          <include name="dataNexusMonitoring"/>
+          <include name="tearDown"/>
+          <include name="dataNexusTransformationPipelineV2"/>
+          <include name="userManagement"/>
+          <include name="AuditLogs"/>
+          <include name="tenants"/>
+          <include name="workspaceListMDM"/>
+        </methods>
+      </class> <!-- testCases.sanityTesting -->
+    </classes>
+  </test> <!-- Test(failed) -->
+</suite> <!-- Failed suite [Suite] -->

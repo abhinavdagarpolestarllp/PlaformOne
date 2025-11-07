@@ -1,6 +1,7 @@
 package pageObjects;
 
 import java.io.IOException;
+import java.time.Duration;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
@@ -8,16 +9,18 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 
 import Utilities.ExtentReportManager;
 
 public class DataNexusIngestionPipeline extends basePage{
 	//WebDriver driver;
 	loginPage login = new loginPage(driver);
-	 public final String iGPipelineName = "TestingIgPipeline" + dateNTime;
+	
 	public DataNexusIngestionPipeline(WebDriver driver){
 		super(driver);
-	}@FindBy(xpath="//input[@id='pipeline_name']")
+	}public final String iGPipelineName = "TestingIgPipeline" + dateNTime;
+	@FindBy(xpath="//input[@id='pipeline_name']")
 	public WebElement pipelineName;
 	@FindBy(xpath="//input[@id='lake_house_name']")
 	public WebElement lakehouseName;
@@ -35,7 +38,7 @@ public class DataNexusIngestionPipeline extends basePage{
 	public WebElement blankPipelineMsg;
 	@FindBy(xpath="(//span[text()='Pipeline Name']//following-sibling::span)[2]")
 	public WebElement firstPipeline;
-	@FindBy(xpath="//p[text()='Pipeline Created Successfully']")
+	@FindBy(xpath="//p[text()='Pipeline Saved Successfully']")
 	public WebElement pipelineCreatedMsg;
 	@FindBy(xpath="//p[text()='Pipeline Updated Successfully']")
 	public WebElement pipelineupdatedMsg;
@@ -51,6 +54,12 @@ public class DataNexusIngestionPipeline extends basePage{
 	public WebElement columnSelectionMsg;
 	@FindBy(xpath="//p[text()='Pipeline deleted Successfully']")
 	public WebElement deletePipelineMsg;
+	@FindBy(xpath="//label[text()='Data Lake Path']//following::div[@class='ant-select-selector'][1]")
+	WebElement dataLakePath;
+	@FindBy(xpath="(//div[contains(@class,'columnSelectorTable')]//th)[1]//input/..")
+	WebElement columnSelectorSelectAll;
+	@FindBy(xpath="//p[text()='Pipeline run successfully']")
+	public WebElement pipelineTriggerMsg;
 	public void selectCustomQuery(String tname) {
 		try {
 		String obj="(//div[text()='"+tname+"']//following::button[@role='switch'])[1]";
@@ -74,16 +83,16 @@ public class DataNexusIngestionPipeline extends basePage{
 		String text ="(//div[text()='"+tname+"']//following::input[@role='combobox'])[1]";
 		WebElement textbox = driver.findElement(By.xpath(text));
 		multipleSameDropdown(dropdown,textbox,ltype,"Load Type");
-	}public void enterPipelineName(String name) {
+	}public void enterPipelineName(String name) throws IOException {
 		standardEnterTextbox(pipelineName,name,"Pipeline Name");
 	}public void selectLakehouseName(String name) {
-		login.dropdownElement(lakehouseName, name,"Lakehouse Name");
+		dropdownElement(lakehouseName, name,"Lakehouse Name");
 	}public void selectDatalkeName(String name) {
-		login.dropdownElement(datalakeName, name,"Datalake Name");
+		dropdownElement(datalakeName, name,"Datalake Name");
 	}public void selectSource(String name) {
-		login.dropdownElement(source, name,"Source");
+		dropdownElement(source, name,"Select Source");
 	}public void selectSchema(String name) {
-		login.dropdownElement(schema, name,"Schema");
+		dropdownElement(schema, name,"Schema");
 	}public void savePipeline() {
 		savePipeline.click();
 	}public void selectLoadTypeColumn(String Tname,String Cvalue) {
@@ -111,17 +120,64 @@ public class DataNexusIngestionPipeline extends basePage{
 			ExtentReportManager.getTest().fail(Cvalue+" is not selected from selct value dropdown due to "+e.getMessage());
 		}
 	}public void columnSelector(String tname) throws InterruptedException, IOException {
-		String xpath="(//div[text()='"+tname+"']//following::div[contains(@class,'AddNewIngestionPipeline_columnSelectorContainer')])[1]";
-		driver.findElement(By.xpath(xpath)).click();
-		waitForPageLoad(driver.findElement(By.xpath("//h3[text()='Column Selector']")));
+		By xpath=By.xpath("(//div[text()='"+tname+"']//following::div[contains(@class,'AddNewIngestionPipeline_columnSelectorContainer')])[1]");
+		WebElement option = dropdownWait.until(ExpectedConditions.visibilityOfElementLocated(xpath));
+		option.click();
+		//waitForPageLoad(driver.findElement(By.xpath("//h3[text()='Column Selector']")));
 		isHeaderPresent("h3","Column Selector");
 	}public void clickViewQueryBody(String tname) throws InterruptedException, IOException {
 		String xpath="(//div[text()='"+tname+"']//following::div[contains(@class,'AddNewIngestionPipeline_previewQueryBody')])[1]";
 		driver.findElement(By.xpath(xpath)).click();
 	}public void clickCloseButton() {
 		standardClickButton(closeButton,"Close");
-	}public void duplicatePipelineMsg(String pName) {
+	}public void duplicatePipelineMsg(String pName) throws IOException {
 		String locator ="//p[text()='Ingestion with name "+pName+" already exists']";
 		isObjectExist(driver.findElement(By.xpath(locator)));
+	}public void selectDataLakePath(String value) {
+		dropdownElement(dataLakePath,value,"Data Lake Path");
+	}public void clickColumnSelectorSelectAll() {
+		standardClickButton(columnSelectorSelectAll,"Select All");
+	}public void waitForIngestionPipelineExecution(String pName) {
+		By loc =By.xpath("//span[contains(@class,'undefined Execution_completed')]");
+		int maxAttempts = 15;
+
+		for (int i = 0; i < maxAttempts; i++) {
+		    try {
+		    	Thread.sleep(10000);
+		    	login.enterInSearchbox(pName);
+		        WebDriverWait wait1 = new WebDriverWait(driver, Duration.ofSeconds(60));
+		        
+
+		        // Wait up to 60s for the element to be present in the DOM (not necessarily visible)
+		        wait1.until(ExpectedConditions.presenceOfElementLocated(loc));
+
+		        // If present, exit the function early
+		        getPipelineStatus(driver.findElement(loc),pName);
+		        return;
+
+		    } catch (Exception e) {
+		        // If not present → click Refresh and continue to next attempt
+		        try {
+		            WebElement refreshButton = driver.findElement(
+		                By.xpath("//button[contains(@class,'refreshButton')]")
+		            );
+		            refreshButton.click();
+		        } catch (Exception ignored) {}
+		    }
+		}
+	}public void clickCustomSelectorCheckBox(String s) {
+		String obj = "(//div[text()='" + s + "']//parent::td//preceding::input[@type='checkbox']/..)[count(//div[text()='" + s + "']//parent::td//preceding::input[@type='checkbox'])]";
+
+		try {
+		    //WebElement checkbox = wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(obj)));
+		    //checkbox.click();
+			Thread.sleep(5000);
+			driver.findElement(By.xpath(obj)).click();
+		    ExtentReportManager.getTest().pass("**"+s + "** checkbox is clicked");
+		} catch (Exception e) {
+			ExtentReportManager.getTest().fail(s + " checkbox is not clicked due to: " + e.getMessage());
+		}
 	}
+		
+		
 }

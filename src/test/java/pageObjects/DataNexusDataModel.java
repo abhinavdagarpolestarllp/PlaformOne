@@ -1,5 +1,7 @@
 package pageObjects;
 
+import java.io.IOException;
+
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -63,37 +65,38 @@ public class DataNexusDataModel extends basePage{
 	public WebElement addColumn;
 	@FindBy(xpath="(//tr[@role='row'][1]//span[@class='p-column-title' and text()='Created On']//following-sibling::span)[2]")
 	public WebElement fristCreatedDate;
-	
-	public void clickAddDataModelButton() {
+	@FindBy(xpath="//span[text()='File uploaded and processed successfully!']")
+	public WebElement fileUploadedMsg;
+	public void clickAddDataModelButton() throws IOException {
 		standardClickButton(addDataModel,"Add Data Model");
-	}public void enterDataModelName(String name) {
+	}public void enterDataModelName(String name) throws IOException {
 		standardEnterTextbox(dataModelName,name,"Model Name");
-	}public void enterDataModelDescription(String desc) {
+	}public void enterDataModelDescription(String desc) throws IOException {
 		standardEnterTextbox(dataModelDescription,desc,"Data Model Description");
-	}public void clickAddTablesButton() {
+	}public void clickAddTablesButton() throws IOException {
 		standardClickButton(addTablesButton,"Add Tables");
-	}public void clickDeleteButton(String index) {
+	}public void clickDeleteButton(String index) throws IOException {
 		String obj = "(//th[text()='Delete']//following::span[contains(@class,'anticon anticon-delete')])["+index+"]";
 		By locator = By.xpath(obj);
 
         // Wait for the element to be present in the DOM
         wait.until(ExpectedConditions.presenceOfElementLocated(locator));
         standardClickButton(driver.findElement(locator),"Delete");
-	}public void enterDisplayName(String name) {
+	}public void enterDisplayName(String name) throws IOException {
 		standardEnterTextbox(tableDisplayName,name,"Display Name");
-	}public void enterTableDescription(String name) {
+	}public void enterTableDescription(String name) throws IOException {
 		standardEnterTextbox(tableDescription,name,"Table Description");
-	}public void enterColumnName(String name) {
+	}public void enterColumnName(String name) throws IOException {
 		standardEnterTextbox(columnName,name,"Column Name");
 	}public void selectDataType(String name) {
 		dropdownElement(dataType,name,"Data Type");
 	}public void addGroupSelectGroup(String name) {
 		dropdownElement(addToSelectGroup,name,"Add to group");
-	}public void clickAddToGroupCloseIcon() {
+	}public void clickAddToGroupCloseIcon() throws IOException {
 		standardClickButton(addToGroupCloseIcon,"Close");
-	}public void clickAddColumnButton() {
+	}public void clickAddColumnButton() throws IOException {
 		standardClickButton(addColumn,"Add Column");
-	}public void tableAddColumnValue(String value) {
+	}public void tableAddColumnValue(String value) throws IOException {
 		String xpath ="//span[@class='dropdown-option-label' and text()='"+value+"']";
 		standardClickButton(driver.findElement(By.xpath(xpath)),value);
 	}

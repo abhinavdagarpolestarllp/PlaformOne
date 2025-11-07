@@ -25,6 +25,8 @@ public class DataNexusTransformationPipeline extends basePage{
 	public WebElement dataLakeSelectLakeHouseType;
 	@FindBy(xpath="//button[@aria-label='Close']")
 	public WebElement selectDataLakeCloseIcon;
+	@FindBy(xpath="(//div[@type='custom_script'])[1]")
+	public WebElement customScriptDialog;
 	public void clickSourceTable(String cname) {
 		List<WebElement> lis = driver.findElements(By.xpath("//img[@alt='Source Table']//parent::span//following-sibling::span[1]"));
 		for(WebElement e:lis) {
