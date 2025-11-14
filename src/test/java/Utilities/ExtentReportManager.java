@@ -133,18 +133,14 @@ public class ExtentReportManager implements ITestListener {
     public void onFinish(ITestContext testContext) {
         extent.flush();
 
-        File reportFile = new File(reportFolderPath + File.separator + repName);
-
         try {
-            // Auto-zip for sharing
             zipRunFolder(runFolderPath);
-            System.out.println("📦 Zipped report: " + runFolderPath + ".zip");
-
-            // Auto-open report
-            if (reportFile.exists()) Desktop.getDesktop().browse(reportFile.toURI());
         } catch (Exception e) {
-            System.err.println("⚠️ Could not open or zip report: " + e.getMessage());
+            System.err.println("⚠️ Zip failed: " + e.getMessage());
         }
+
+        // IMPORTANT: Remove Desktop.getDesktop().browse(...)
+        // Never attempt to open desktop GUI on Jenkins
     }
 
     public static ExtentTest getTest() {
