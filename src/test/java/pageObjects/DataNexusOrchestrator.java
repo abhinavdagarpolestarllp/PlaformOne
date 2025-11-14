@@ -68,6 +68,7 @@ public class DataNexusOrchestrator extends basePage{
 	WebElement MDMSelectFIleType;
 	@FindBy(xpath="(//div[text()='Select Pipeline Type'])[2]//following::div[2]")
 	WebElement selectPipelineDropdownTextbox;
+	//@FindBy(xpath="")
 	public void clickNewProcessButton() {
 		standardClickButton(createNewProcessButton,"New Process");
 	}public void clickAddPipelineButton() {

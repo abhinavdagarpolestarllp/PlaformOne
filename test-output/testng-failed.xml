@@ -10,9 +10,33 @@
       <class name="testCases.sanityTesting">
         <methods>
           <include name="UserManagement"/>
-          <include name="tearDown"/>
+          <include name="MDMEntity"/>
+          <include name="MDMOverview"/>
+          <include name="dataNexusConnections"/>
+          <include name="dataNexusDataLake"/>
+          <include name="dataNexusIngestionPipeline"/>
+          <include name="workspaceListDataNexus"/>
+          <include name="dataNexusTransformationPipeline"/>
+          <include name="dataNexusDocumentParser"/>
+          <include name="dataNexusMonitoring"/>
+          <include name="dataNexusOrchestrator"/>
+          <include name="AuditLogs"/>
+          <include name="landingPage"/>
+          <include name="tenants"/>
+          <include name="workspaceListMDM"/>
+          <include name="dataNexusHome"/>
+          <include name="MDMDataQuality"/>
           <include name="dataNexusDataProfiler"/>
           <include name="setup"/>
+          <include name="migrationCICD"/>
+          <include name="MDMTaxonomy"/>
+          <include name="logout"/>
+          <include name="MDMMasters"/>
+          <include name="MDMIntegration"/>
+          <include name="tearDown"/>
+          <include name="dataNexusTransformationPipelineV2"/>
+          <include name="userManagement"/>
+          <include name="dataNexusDataModel"/>
         </methods>
       </class> <!-- testCases.sanityTesting -->
     </classes>

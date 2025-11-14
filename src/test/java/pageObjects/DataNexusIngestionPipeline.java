@@ -60,6 +60,8 @@ public class DataNexusIngestionPipeline extends basePage{
 	WebElement columnSelectorSelectAll;
 	@FindBy(xpath="//p[text()='Pipeline run successfully']")
 	public WebElement pipelineTriggerMsg;
+	@FindBy(xpath="//p[contains(text(),'already exists in this workspace')]")
+	public WebElement duplicateIngestionMsg;
 	public void selectCustomQuery(String tname) {
 		try {
 		String obj="(//div[text()='"+tname+"']//following::button[@role='switch'])[1]";
@@ -130,9 +132,6 @@ public class DataNexusIngestionPipeline extends basePage{
 		driver.findElement(By.xpath(xpath)).click();
 	}public void clickCloseButton() {
 		standardClickButton(closeButton,"Close");
-	}public void duplicatePipelineMsg(String pName) throws IOException {
-		String locator ="//p[text()='Ingestion with name "+pName+" already exists']";
-		isObjectExist(driver.findElement(By.xpath(locator)));
 	}public void selectDataLakePath(String value) {
 		dropdownElement(dataLakePath,value,"Data Lake Path");
 	}public void clickColumnSelectorSelectAll() {

@@ -1,0 +1,4894 @@
+
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<title>Automation Test Report</title>
+<link rel="apple-touch-icon" href="https://cdn.jsdelivr.net/gh/extent-framework/extent-github-cdn@b00a2d0486596e73dd7326beacf352c639623a0e/commons/img/logo.png">
+<link rel="shortcut icon" href="https://cdn.jsdelivr.net/gh/extent-framework/extent-github-cdn@b00a2d0486596e73dd7326beacf352c639623a0e/commons/img/logo.png">
+<link href="https://cdn.jsdelivr.net/gh/extent-framework/extent-github-cdn@ce8b10435bcbae260c334c0d0c6b61d2c19b6168/spark/css/spark-style.css" rel="stylesheet" />
+<link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+<script src="https://cdn.jsdelivr.net/gh/extent-framework/extent-github-cdn@7cc78ce/spark/js/jsontree.js"></script>
+<style type="text/css"></style></head><body class="spa -report dark">
+  <div class="app">
+    <div class="layout">
+<div class="header navbar">
+<div class="vheader">
+<div class="nav-logo">
+<a href="#">
+<div class="logo" style="background-image: url('https://cdn.jsdelivr.net/gh/extent-framework/extent-github-cdn@b00a2d0486596e73dd7326beacf352c639623a0e/commons/img/logo.png')"></div>
+</a>
+</div>
+<ul class="nav-left">
+<li class="search-box">
+<a class="search-toggle" href="#">
+<i class="search-icon fa fa-search"></i>
+<i class="search-icon-close fa fa-close"></i>
+</a>
+</li>
+<li class="search-input"><input id="search-tests" class="form-control" type="text" placeholder="Search..."></li>
+</ul>
+<ul class="nav-right">
+<li class="m-r-10">
+<a href="#"><span class="badge badge-primary">Functional Test Execution</span></a>
+</li>
+<li class="m-r-10">
+<a href="#"><span class="badge badge-primary">Nov 13, 2025 02:59:37 pm</span></a>
+</li>
+</ul>
+</div>
+</div><div class="side-nav">
+<div class="side-nav-inner">
+<ul class="side-nav-menu">
+<li class="nav-item dropdown" onclick="toggleView('test-view')">
+<a id="nav-test" class="dropdown-toggle" href="#">
+<span class="ico"><i class="fa fa-list"></i></span>
+</a>
+</li>
+<li class="nav-item dropdown" onclick="toggleView('category-view')">
+<a id="nav-category" class="dropdown-toggle" href="#">
+<span class="ico"><i class="fa fa-tag"></i></span>
+</a>
+</li>
+<li class="nav-item dropdown" onclick="toggleView('dashboard-view')">
+<a id="nav-dashboard" class="dropdown-toggle" href="#">
+<span class="ico"><i class="fa fa-bar-chart"></i></span>
+</a>
+</li>
+</ul>
+</div>
+</div>      <div class="vcontainer">
+        <div class="main-content">
+<div class="test-wrapper row view test-view">
+  <div class="test-list">
+    <div class="test-list-tools">
+<ul class="tools pull-left">
+<li><a href="#"><span class="font-size-14">Tests</span></a></li>
+</ul>
+<ul class="tools text-right">
+<li class="dropdown">
+<a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-exclamation-circle"></i></a>
+<ul id="status-toggle" class="dropdown-menu dropdown-md p-v-0">
+<a class="dropdown-item" status="pass" href="#"><span>Pass</span><span class="status success"></span></a>
+<a class="dropdown-item" status="fail" href="#"><span>Fail</span><span class="status danger"></span></a>
+<a class="dropdown-item" status="skip" href="#"><span>Skip</span><span class="status warning"></span></a>
+<div class="dropdown-divider"></div>
+<a status="clear" class="dropdown-item" href="#"><span>Clear</span><span class="pull-right"><i class="fa fa-close"></i></span></a>
+</ul>
+</li>
+<li class="dropdown">
+<a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-tag"></i></a>
+<ul id="tag-toggle" class="dropdown-menu dropdown-md p-v-0">
+<a class="dropdown-item" href="#">testCases.sanityTesting</a>
+</ul>
+</li>
+</ul>
+</div>    <div class="test-list-wrapper scrollable">
+      <ul class="test-list-item">
+        <li class="test-item"  status="pass" test-id="1"
+          author=""
+          tag="testCases.sanityTesting"
+          device="">
+          <div class="test-detail">
+            <p class="name">Login Page</p>
+            <p class="text-sm">
+              <span>2:59:42 pm</span> / <span>00:00:04:381</span>
+              <span class="badge pass-bg log float-right">Pass</span>
+            </p>
+          </div>
+          <div class="test-contents d-none">
+<div class="detail-head">
+<div class="p-v-10">
+<div class="info">
+<h5 class="test-status text-pass">Login Page</h5>
+<span class='badge badge-success'>11.13.2025 2:59:42 pm</span>
+<span class='badge badge-danger'>11.13.2025 2:59:47 pm</span>
+<span class='badge badge-default'>00:00:04:381</span>
+&middot; <span class='uri-anchor badge badge-default'>#test-id=1</span>
+<span title='Skip to the next failed step' class='badge badge-danger pointer float-right ne ml-1'><i class="fa fa-fast-forward"></i></span>
+<span title='Collapse all nodes' class='badge badge-default pointer float-right ct ml-1'><i class="fa fa-compress"></i></span>
+<span title='Expand all nodes' class='badge badge-default pointer float-right et'><i class="fa fa-expand"></i></span>
+</div>
+<div class="m-t-15"><span class="badge badge-pill badge-default">testCases.sanityTesting</span></div>
+</div>
+</div><div class="detail-body mt-4">
+<table class="table table-sm">
+  <thead><tr><th class="status-col">Status</th><th class="timestamp-col">Timestamp</th><th class="details-col">Details</th></tr></thead>
+  <tbody>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>2:59:43 pm</td>
+        <td>
+          Entered **ankit@polestarllp.com** into **Username** textbox successfully.
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>2:59:43 pm</td>
+        <td>
+          Entered **ankit@123** into **Password** textbox successfully.
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>2:59:44 pm</td>
+        <td>
+          Clicked on **Login** button successfully.
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>2:59:47 pm</td>
+        <td>
+          Successful Login messageLogged In Successfully. is present
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>2:59:47 pm</td>
+        <td>
+          LoginPage passed successfully.
+        </td>
+      </tr>
+  </tbody>
+</table>
+</div>
+          </div>
+        </li>
+        <li class="test-item"  status="pass" test-id="2"
+          author=""
+          tag="testCases.sanityTesting"
+          device="">
+          <div class="test-detail">
+            <p class="name">landingPage</p>
+            <p class="text-sm">
+              <span>2:59:47 pm</span> / <span>00:00:01:126</span>
+              <span class="badge pass-bg log float-right">Pass</span>
+            </p>
+          </div>
+          <div class="test-contents d-none">
+<div class="detail-head">
+<div class="p-v-10">
+<div class="info">
+<h5 class="test-status text-pass">landingPage</h5>
+<span class='badge badge-success'>11.13.2025 2:59:47 pm</span>
+<span class='badge badge-danger'>11.13.2025 2:59:48 pm</span>
+<span class='badge badge-default'>00:00:01:126</span>
+&middot; <span class='uri-anchor badge badge-default'>#test-id=2</span>
+<span title='Skip to the next failed step' class='badge badge-danger pointer float-right ne ml-1'><i class="fa fa-fast-forward"></i></span>
+<span title='Collapse all nodes' class='badge badge-default pointer float-right ct ml-1'><i class="fa fa-compress"></i></span>
+<span title='Expand all nodes' class='badge badge-default pointer float-right et'><i class="fa fa-expand"></i></span>
+</div>
+<div class="m-t-15"><span class="badge badge-pill badge-default">testCases.sanityTesting</span></div>
+</div>
+</div><div class="detail-body mt-4">
+<table class="table table-sm">
+  <thead><tr><th class="status-col">Status</th><th class="timestamp-col">Timestamp</th><th class="details-col">Details</th></tr></thead>
+  <tbody>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>2:59:48 pm</td>
+        <td>
+          Data Nexus Logo is present
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>2:59:48 pm</td>
+        <td>
+          landingPage passed successfully.
+        </td>
+      </tr>
+  </tbody>
+</table>
+</div>
+          </div>
+        </li>
+        <li class="test-item"  status="pass" test-id="3"
+          author=""
+          tag="testCases.sanityTesting"
+          device="">
+          <div class="test-detail">
+            <p class="name">workspaceListDataNexus</p>
+            <p class="text-sm">
+              <span>2:59:48 pm</span> / <span>00:00:05:136</span>
+              <span class="badge pass-bg log float-right">Pass</span>
+            </p>
+          </div>
+          <div class="test-contents d-none">
+<div class="detail-head">
+<div class="p-v-10">
+<div class="info">
+<h5 class="test-status text-pass">workspaceListDataNexus</h5>
+<span class='badge badge-success'>11.13.2025 2:59:48 pm</span>
+<span class='badge badge-danger'>11.13.2025 2:59:53 pm</span>
+<span class='badge badge-default'>00:00:05:136</span>
+&middot; <span class='uri-anchor badge badge-default'>#test-id=3</span>
+<span title='Skip to the next failed step' class='badge badge-danger pointer float-right ne ml-1'><i class="fa fa-fast-forward"></i></span>
+<span title='Collapse all nodes' class='badge badge-default pointer float-right ct ml-1'><i class="fa fa-compress"></i></span>
+<span title='Expand all nodes' class='badge badge-default pointer float-right et'><i class="fa fa-expand"></i></span>
+</div>
+<div class="m-t-15"><span class="badge badge-pill badge-default">testCases.sanityTesting</span></div>
+</div>
+</div>    <div class="row mb-3"><div class="col-md-3">
+    
+
+<img data-featherlight='../Screenshot/Workspaces_HeaderIsPresent_20251113145951.png' src="../Screenshot/Workspaces_HeaderIsPresent_20251113145951.png">
+  
+    
+
+    </div></div>
+<div class="detail-body mt-4">
+<table class="table table-sm">
+  <thead><tr><th class="status-col">Status</th><th class="timestamp-col">Timestamp</th><th class="details-col">Details</th></tr></thead>
+  <tbody>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>2:59:49 pm</td>
+        <td>
+          One Platform Logo is present
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>2:59:51 pm</td>
+        <td>
+          **Workspaces** header is present.
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>2:59:51 pm</td>
+        <td>
+          'MDM' is present on the page.
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>2:59:52 pm</td>
+        <td>
+          'P.AI' is present on the page.
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>2:59:53 pm</td>
+        <td>
+          Clicked on **Automation_DataNexusWorspace** button successfully.
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>2:59:53 pm</td>
+        <td>
+          workspaceListDataNexus passed successfully.
+        </td>
+      </tr>
+  </tbody>
+</table>
+</div>
+          </div>
+        </li>
+        <li class="test-item"  status="pass" test-id="4"
+          author=""
+          tag="testCases.sanityTesting"
+          device="">
+          <div class="test-detail">
+            <p class="name">dataNexusHome</p>
+            <p class="text-sm">
+              <span>2:59:53 pm</span> / <span>00:00:05:895</span>
+              <span class="badge pass-bg log float-right">Pass</span>
+            </p>
+          </div>
+          <div class="test-contents d-none">
+<div class="detail-head">
+<div class="p-v-10">
+<div class="info">
+<h5 class="test-status text-pass">dataNexusHome</h5>
+<span class='badge badge-success'>11.13.2025 2:59:53 pm</span>
+<span class='badge badge-danger'>11.13.2025 2:59:59 pm</span>
+<span class='badge badge-default'>00:00:05:895</span>
+&middot; <span class='uri-anchor badge badge-default'>#test-id=4</span>
+<span title='Skip to the next failed step' class='badge badge-danger pointer float-right ne ml-1'><i class="fa fa-fast-forward"></i></span>
+<span title='Collapse all nodes' class='badge badge-default pointer float-right ct ml-1'><i class="fa fa-compress"></i></span>
+<span title='Expand all nodes' class='badge badge-default pointer float-right et'><i class="fa fa-expand"></i></span>
+</div>
+<div class="m-t-15"><span class="badge badge-pill badge-default">testCases.sanityTesting</span></div>
+</div>
+</div>    <div class="row mb-3"><div class="col-md-3">
+    
+
+<img data-featherlight='../Screenshot/Home_HeaderIsPresent_20251113145958.png' src="../Screenshot/Home_HeaderIsPresent_20251113145958.png">
+  
+    
+
+    </div></div>
+<div class="detail-body mt-4">
+<table class="table table-sm">
+  <thead><tr><th class="status-col">Status</th><th class="timestamp-col">Timestamp</th><th class="details-col">Details</th></tr></thead>
+  <tbody>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>2:59:58 pm</td>
+        <td>
+          **Home** header is present.
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>2:59:59 pm</td>
+        <td>
+          Entered **Test** into **Searchbox** textbox successfully.
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>2:59:59 pm</td>
+        <td>
+          dataNexusHome passed successfully.
+        </td>
+      </tr>
+  </tbody>
+</table>
+</div>
+          </div>
+        </li>
+        <li class="test-item"  status="pass" test-id="5"
+          author=""
+          tag="testCases.sanityTesting"
+          device="">
+          <div class="test-detail">
+            <p class="name">dataNexusDataLake</p>
+            <p class="text-sm">
+              <span>2:59:59 pm</span> / <span>00:00:13:908</span>
+              <span class="badge pass-bg log float-right">Pass</span>
+            </p>
+          </div>
+          <div class="test-contents d-none">
+<div class="detail-head">
+<div class="p-v-10">
+<div class="info">
+<h5 class="test-status text-pass">dataNexusDataLake</h5>
+<span class='badge badge-success'>11.13.2025 2:59:59 pm</span>
+<span class='badge badge-danger'>11.13.2025 3:00:13 pm</span>
+<span class='badge badge-default'>00:00:13:908</span>
+&middot; <span class='uri-anchor badge badge-default'>#test-id=5</span>
+<span title='Skip to the next failed step' class='badge badge-danger pointer float-right ne ml-1'><i class="fa fa-fast-forward"></i></span>
+<span title='Collapse all nodes' class='badge badge-default pointer float-right ct ml-1'><i class="fa fa-compress"></i></span>
+<span title='Expand all nodes' class='badge badge-default pointer float-right et'><i class="fa fa-expand"></i></span>
+</div>
+<div class="m-t-15"><span class="badge badge-pill badge-default">testCases.sanityTesting</span></div>
+</div>
+</div>    <div class="row mb-3"><div class="col-md-3">
+    
+
+<img data-featherlight='../Screenshot/Data Lake_HeaderIsPresent_20251113150003.png' src="../Screenshot/Data Lake_HeaderIsPresent_20251113150003.png">
+  
+    
+
+    </div></div>
+    <div class="row mb-3"><div class="col-md-3">
+    
+
+<img data-featherlight='../Screenshot/Directory Structure_HeaderIsPresent_20251113150010.png' src="../Screenshot/Directory Structure_HeaderIsPresent_20251113150010.png">
+  
+    
+
+    </div></div>
+    <div class="row mb-3"><div class="col-md-3">
+    
+
+<img data-featherlight='../Screenshot/Tables_HeaderIsPresent_20251113150013.png' src="../Screenshot/Tables_HeaderIsPresent_20251113150013.png">
+  
+    
+
+    </div></div>
+<div class="detail-body mt-4">
+<table class="table table-sm">
+  <thead><tr><th class="status-col">Status</th><th class="timestamp-col">Timestamp</th><th class="details-col">Details</th></tr></thead>
+  <tbody>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>3:00:01 pm</td>
+        <td>
+          Data Lake is clicked from side Navigation Module
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>3:00:03 pm</td>
+        <td>
+          **Data Lake** header is present.
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>3:00:11 pm</td>
+        <td>
+          **Directory Structure** header is present.
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>3:00:11 pm</td>
+        <td>
+          Clicked on **Tables** button successfully.
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>3:00:13 pm</td>
+        <td>
+          **Tables** header is present.
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>3:00:13 pm</td>
+        <td>
+          dataNexusDataLake passed successfully.
+        </td>
+      </tr>
+  </tbody>
+</table>
+</div>
+          </div>
+        </li>
+        <li class="test-item"  status="pass" test-id="6"
+          author=""
+          tag="testCases.sanityTesting"
+          device="">
+          <div class="test-detail">
+            <p class="name">dataNexusConnections</p>
+            <p class="text-sm">
+              <span>3:00:13 pm</span> / <span>00:00:16:126</span>
+              <span class="badge pass-bg log float-right">Pass</span>
+            </p>
+          </div>
+          <div class="test-contents d-none">
+<div class="detail-head">
+<div class="p-v-10">
+<div class="info">
+<h5 class="test-status text-pass">dataNexusConnections</h5>
+<span class='badge badge-success'>11.13.2025 3:00:13 pm</span>
+<span class='badge badge-danger'>11.13.2025 3:00:29 pm</span>
+<span class='badge badge-default'>00:00:16:126</span>
+&middot; <span class='uri-anchor badge badge-default'>#test-id=6</span>
+<span title='Skip to the next failed step' class='badge badge-danger pointer float-right ne ml-1'><i class="fa fa-fast-forward"></i></span>
+<span title='Collapse all nodes' class='badge badge-default pointer float-right ct ml-1'><i class="fa fa-compress"></i></span>
+<span title='Expand all nodes' class='badge badge-default pointer float-right et'><i class="fa fa-expand"></i></span>
+</div>
+<div class="m-t-15"><span class="badge badge-pill badge-default">testCases.sanityTesting</span></div>
+</div>
+</div>    <div class="row mb-3"><div class="col-md-3">
+    
+
+<img data-featherlight='../Screenshot/Connections_HeaderIsPresent_20251113150017.png' src="../Screenshot/Connections_HeaderIsPresent_20251113150017.png">
+  
+    
+
+    </div></div>
+    <div class="row mb-3"><div class="col-md-3">
+    
+
+<img data-featherlight='../Screenshot/New Connection_HeaderIsPresent_20251113150020.png' src="../Screenshot/New Connection_HeaderIsPresent_20251113150020.png">
+  
+    
+
+    </div></div>
+    <div class="row mb-3"><div class="col-md-3">
+    
+
+<img data-featherlight='../Screenshot/2025.11.13.14.59.53_20251113150029.png' src="../Screenshot/2025.11.13.14.59.53_20251113150029.png">
+  
+    
+
+    </div></div>
+<div class="detail-body mt-4">
+<table class="table table-sm">
+  <thead><tr><th class="status-col">Status</th><th class="timestamp-col">Timestamp</th><th class="details-col">Details</th></tr></thead>
+  <tbody>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>3:00:15 pm</td>
+        <td>
+          Connections is clicked from side Navigation Module
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>3:00:17 pm</td>
+        <td>
+          **Connections** header is present.
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>3:00:17 pm</td>
+        <td>
+          Clicked on **Create New** button successfully.
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>3:00:20 pm</td>
+        <td>
+          **New Connection** header is present.
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>3:00:20 pm</td>
+        <td>
+          'Database' is clicked
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>3:00:20 pm</td>
+        <td>
+          Entered **ms server** into **New Connection Searchbox** textbox successfully.
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>3:00:21 pm</td>
+        <td>
+          Entered **Conn2025.11.13.15.00.20** into **Connection Textbox** textbox successfully.
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>3:00:21 pm</td>
+        <td>
+          Clicked on **Connection Type** button successfully.
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>3:00:21 pm</td>
+        <td>
+          Clicked on **Next** button successfully.
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>3:00:21 pm</td>
+        <td>
+          Entered **AdventureWorks2022** into **Database** textbox successfully.
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>3:00:21 pm</td>
+        <td>
+          Entered **sql@1234** into **Password** textbox successfully.
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>3:00:22 pm</td>
+        <td>
+          Entered **sqladmin** into **User** textbox successfully.
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>3:00:22 pm</td>
+        <td>
+          Entered **psslp-genai.database.windows.net** into **Set Server** textbox successfully.
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>3:00:22 pm</td>
+        <td>
+          Entered **1433** into **Port** textbox successfully.
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>3:00:26 pm</td>
+        <td>
+          'Connection Validated Successfully' is present on the page.
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>3:00:26 pm</td>
+        <td>
+          Clicked on **Message Close** button successfully.
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>3:00:27 pm</td>
+        <td>
+          ✅ Clicked on **Close button** successfully.
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>3:00:27 pm</td>
+        <td>
+          Clicked on **Edit** button successfully.
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>3:00:29 pm</td>
+        <td>
+          ✅ Clicked on **Close button** successfully.
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>3:00:29 pm</td>
+        <td>
+          dataNexusConnections passed successfully.
+        </td>
+      </tr>
+  </tbody>
+</table>
+</div>
+          </div>
+        </li>
+        <li class="test-item"  status="pass" test-id="7"
+          author=""
+          tag="testCases.sanityTesting"
+          device="">
+          <div class="test-detail">
+            <p class="name">dataNexusIngestionPipeline</p>
+            <p class="text-sm">
+              <span>3:00:29 pm</span> / <span>00:01:16:062</span>
+              <span class="badge pass-bg log float-right">Pass</span>
+            </p>
+          </div>
+          <div class="test-contents d-none">
+<div class="detail-head">
+<div class="p-v-10">
+<div class="info">
+<h5 class="test-status text-pass">dataNexusIngestionPipeline</h5>
+<span class='badge badge-success'>11.13.2025 3:00:29 pm</span>
+<span class='badge badge-danger'>11.13.2025 3:01:45 pm</span>
+<span class='badge badge-default'>00:01:16:062</span>
+&middot; <span class='uri-anchor badge badge-default'>#test-id=7</span>
+<span title='Skip to the next failed step' class='badge badge-danger pointer float-right ne ml-1'><i class="fa fa-fast-forward"></i></span>
+<span title='Collapse all nodes' class='badge badge-default pointer float-right ct ml-1'><i class="fa fa-compress"></i></span>
+<span title='Expand all nodes' class='badge badge-default pointer float-right et'><i class="fa fa-expand"></i></span>
+</div>
+<div class="m-t-15"><span class="badge badge-pill badge-default">testCases.sanityTesting</span></div>
+</div>
+</div>    <div class="row mb-3"><div class="col-md-3">
+    
+
+<img data-featherlight='../Screenshot/Ingestion Pipelines_HeaderIsPresent_20251113150033.png' src="../Screenshot/Ingestion Pipelines_HeaderIsPresent_20251113150033.png">
+  
+    
+
+    </div></div>
+    <div class="row mb-3"><div class="col-md-3">
+    
+
+<img data-featherlight='../Screenshot/Column Selector_HeaderIsPresent_20251113150111.png' src="../Screenshot/Column Selector_HeaderIsPresent_20251113150111.png">
+  
+    
+
+    </div></div>
+    <div class="row mb-3"><div class="col-md-3">
+    
+
+<img data-featherlight='../Screenshot/2025.11.13.15.00.34_20251113150113.png' src="../Screenshot/2025.11.13.15.00.34_20251113150113.png">
+  
+    
+
+    </div></div>
+    <div class="row mb-3"><div class="col-md-3">
+    
+
+<img data-featherlight='../Screenshot/Edit_HeaderIsPresent_20251113150126.png' src="../Screenshot/Edit_HeaderIsPresent_20251113150126.png">
+  
+    
+
+    </div></div>
+    <div class="row mb-3"><div class="col-md-3">
+    
+
+<img data-featherlight='../Screenshot/Column Selector_HeaderIsPresent_20251113150130.png' src="../Screenshot/Column Selector_HeaderIsPresent_20251113150130.png">
+  
+    
+
+    </div></div>
+<div class="detail-body mt-4">
+<table class="table table-sm">
+  <thead><tr><th class="status-col">Status</th><th class="timestamp-col">Timestamp</th><th class="details-col">Details</th></tr></thead>
+  <tbody>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>3:00:31 pm</td>
+        <td>
+          Ingestion Pipeline is clicked from side Navigation Module
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>3:00:33 pm</td>
+        <td>
+          **Ingestion Pipelines** header is present.
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>3:00:34 pm</td>
+        <td>
+          Clicked on **Create New** button successfully.
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>3:00:34 pm</td>
+        <td>
+          Entered **TestingIgPipeline2025.11.13.15.00.34** into **Pipeline Name** textbox successfully.
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>3:00:35 pm</td>
+        <td>
+          'LAK1' is selected from 'Lakehouse Name' dropdown element
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>3:00:58 pm</td>
+        <td>
+          'Customers' is selected from 'Data Lake Path' dropdown element
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>3:00:59 pm</td>
+        <td>
+          'SQL Server' is selected from 'Select Source' dropdown element
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>3:01:03 pm</td>
+        <td>
+          'HumanResources' is selected from 'Schema' dropdown element
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>3:01:08 pm</td>
+        <td>
+          **Customers** checkbox is clicked
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>3:01:12 pm</td>
+        <td>
+          **Column Selector** header is present.
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>3:01:12 pm</td>
+        <td>
+          Clicked on **Save** button successfully.
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>3:01:13 pm</td>
+        <td>
+          Clicked on **Save Pipeline** button successfully.
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>3:01:24 pm</td>
+        <td>
+          'Pipeline Saved Successfully' is present on the page.
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>3:01:24 pm</td>
+        <td>
+          Entered **TestingIgPipeline2025.11.13.15.00.34** into **Searchbox** textbox successfully.
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>3:01:24 pm</td>
+        <td>
+          Clicked on **Edit** button successfully.
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>3:01:26 pm</td>
+        <td>
+          **Edit** header is present.
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>3:01:31 pm</td>
+        <td>
+          **Column Selector** header is present.
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>3:01:31 pm</td>
+        <td>
+          Clicked on **Save** button successfully.
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>3:01:31 pm</td>
+        <td>
+          Clicked on **Update Pipeline** button successfully.
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>3:01:43 pm</td>
+        <td>
+          'Pipeline Updated Successfully' is present on the page.
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>3:01:44 pm</td>
+        <td>
+          Clicked on **Trigger** button successfully.
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>3:01:44 pm</td>
+        <td>
+          'Are you sure you want to trigger this pipeline ?' is present on the page.
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>3:01:44 pm</td>
+        <td>
+          Clicked on **Delete** button successfully.
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>3:01:45 pm</td>
+        <td>
+          'Are you sure you want to delete ?' is present on the page.
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>3:01:45 pm</td>
+        <td>
+          dataNexusIngestionPipeline passed successfully.
+        </td>
+      </tr>
+  </tbody>
+</table>
+</div>
+          </div>
+        </li>
+        <li class="test-item"  status="pass" test-id="8"
+          author=""
+          tag="testCases.sanityTesting"
+          device="">
+          <div class="test-detail">
+            <p class="name">dataNexusTransformationPipeline</p>
+            <p class="text-sm">
+              <span>3:01:45 pm</span> / <span>00:00:15:270</span>
+              <span class="badge pass-bg log float-right">Pass</span>
+            </p>
+          </div>
+          <div class="test-contents d-none">
+<div class="detail-head">
+<div class="p-v-10">
+<div class="info">
+<h5 class="test-status text-pass">dataNexusTransformationPipeline</h5>
+<span class='badge badge-success'>11.13.2025 3:01:45 pm</span>
+<span class='badge badge-danger'>11.13.2025 3:02:00 pm</span>
+<span class='badge badge-default'>00:00:15:270</span>
+&middot; <span class='uri-anchor badge badge-default'>#test-id=8</span>
+<span title='Skip to the next failed step' class='badge badge-danger pointer float-right ne ml-1'><i class="fa fa-fast-forward"></i></span>
+<span title='Collapse all nodes' class='badge badge-default pointer float-right ct ml-1'><i class="fa fa-compress"></i></span>
+<span title='Expand all nodes' class='badge badge-default pointer float-right et'><i class="fa fa-expand"></i></span>
+</div>
+<div class="m-t-15"><span class="badge badge-pill badge-default">testCases.sanityTesting</span></div>
+</div>
+</div>    <div class="row mb-3"><div class="col-md-3">
+    
+
+<img data-featherlight='../Screenshot/Transformation Pipeline_HeaderIsPresent_20251113150149.png' src="../Screenshot/Transformation Pipeline_HeaderIsPresent_20251113150149.png">
+  
+    
+
+    </div></div>
+    <div class="row mb-3"><div class="col-md-3">
+    
+
+<img data-featherlight='../Screenshot/Select Data Lake_HeaderIsPresent_20251113150152.png' src="../Screenshot/Select Data Lake_HeaderIsPresent_20251113150152.png">
+  
+    
+
+    </div></div>
+    <div class="row mb-3"><div class="col-md-3">
+    
+
+<img data-featherlight='../Screenshot/Select Source Connections_HeaderIsPresent_20251113150158.png' src="../Screenshot/Select Source Connections_HeaderIsPresent_20251113150158.png">
+  
+    
+
+    </div></div>
+<div class="detail-body mt-4">
+<table class="table table-sm">
+  <thead><tr><th class="status-col">Status</th><th class="timestamp-col">Timestamp</th><th class="details-col">Details</th></tr></thead>
+  <tbody>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>3:01:47 pm</td>
+        <td>
+          Transformation Pipeline is clicked from side Navigation Module
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>3:01:49 pm</td>
+        <td>
+          **Transformation Pipeline** header is present.
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>3:01:50 pm</td>
+        <td>
+          Clicked on **Create New** button successfully.
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>3:01:50 pm</td>
+        <td>
+          Mouse Over done on Add Source
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>3:01:50 pm</td>
+        <td>
+          Clicked on **Delta Lake** button successfully.
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>3:01:53 pm</td>
+        <td>
+          **Select Data Lake** header is present.
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>3:01:54 pm</td>
+        <td>
+          'Lakehouse_Datalake_Analytics_Dev.Lakehouse' is selected from 'Select Lake House' dropdown element
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>3:01:55 pm</td>
+        <td>
+          'Tables' is selected from 'Select Lake House Type' dropdown element
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>3:01:55 pm</td>
+        <td>
+          Mouse Over done on Add Source
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>3:01:56 pm</td>
+        <td>
+          Clicked on **Datasource Connection** button successfully.
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>3:01:58 pm</td>
+        <td>
+          **Select Source Connections** header is present.
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>3:01:58 pm</td>
+        <td>
+          ✅ Clicked on **Close button** successfully.
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>3:01:58 pm</td>
+        <td>
+          Mouse Over done on Add Source
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>3:01:59 pm</td>
+        <td>
+          Clicked on **Custom Script** button successfully.
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>3:01:59 pm</td>
+        <td>
+          'Custom Scripts' is present on the page.
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>3:01:59 pm</td>
+        <td>
+          Pipelines is clicked
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>3:02:00 pm</td>
+        <td>
+          Clicked on **Yes** button successfully.
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>3:02:00 pm</td>
+        <td>
+          Clicked on **Delete** button successfully.
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>3:02:00 pm</td>
+        <td>
+          'Are you sure you want to delete TestingTransformPipeline2025.11.12.18.48.58?' is present on the page.
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>3:02:00 pm</td>
+        <td>
+          Clicked on **No** button successfully.
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>3:02:00 pm</td>
+        <td>
+          dataNexusTransformationPipeline passed successfully.
+        </td>
+      </tr>
+  </tbody>
+</table>
+</div>
+          </div>
+        </li>
+        <li class="test-item"  status="pass" test-id="9"
+          author=""
+          tag="testCases.sanityTesting"
+          device="">
+          <div class="test-detail">
+            <p class="name">dataNexusDataModel</p>
+            <p class="text-sm">
+              <span>3:02:00 pm</span> / <span>00:00:24:217</span>
+              <span class="badge pass-bg log float-right">Pass</span>
+            </p>
+          </div>
+          <div class="test-contents d-none">
+<div class="detail-head">
+<div class="p-v-10">
+<div class="info">
+<h5 class="test-status text-pass">dataNexusDataModel</h5>
+<span class='badge badge-success'>11.13.2025 3:02:00 pm</span>
+<span class='badge badge-danger'>11.13.2025 3:02:25 pm</span>
+<span class='badge badge-default'>00:00:24:217</span>
+&middot; <span class='uri-anchor badge badge-default'>#test-id=9</span>
+<span title='Skip to the next failed step' class='badge badge-danger pointer float-right ne ml-1'><i class="fa fa-fast-forward"></i></span>
+<span title='Collapse all nodes' class='badge badge-default pointer float-right ct ml-1'><i class="fa fa-compress"></i></span>
+<span title='Expand all nodes' class='badge badge-default pointer float-right et'><i class="fa fa-expand"></i></span>
+</div>
+<div class="m-t-15"><span class="badge badge-pill badge-default">testCases.sanityTesting</span></div>
+</div>
+</div>    <div class="row mb-3"><div class="col-md-3">
+    
+
+<img data-featherlight='../Screenshot/Data Model_HeaderIsPresent_20251113150205.png' src="../Screenshot/Data Model_HeaderIsPresent_20251113150205.png">
+  
+    
+
+    </div></div>
+    <div class="row mb-3"><div class="col-md-3">
+    
+
+<img data-featherlight='../Screenshot/Create Data Model_HeaderIsPresent_20251113150207.png' src="../Screenshot/Create Data Model_HeaderIsPresent_20251113150207.png">
+  
+    
+
+    </div></div>
+    <div class="row mb-3"><div class="col-md-3">
+    
+
+<img data-featherlight='../Screenshot/2025.11.13.14.59.53_20251113150210.png' src="../Screenshot/2025.11.13.14.59.53_20251113150210.png">
+  
+    
+
+    </div></div>
+    <div class="row mb-3"><div class="col-md-3">
+    
+
+<img data-featherlight='../Screenshot/2025.11.13.14.59.53_20251113150212.png' src="../Screenshot/2025.11.13.14.59.53_20251113150212.png">
+  
+    
+
+    </div></div>
+    <div class="row mb-3"><div class="col-md-3">
+    
+
+<img data-featherlight='../Screenshot/2025.11.13.14.59.53_20251113150214.png' src="../Screenshot/2025.11.13.14.59.53_20251113150214.png">
+  
+    
+
+    </div></div>
+<div class="detail-body mt-4">
+<table class="table table-sm">
+  <thead><tr><th class="status-col">Status</th><th class="timestamp-col">Timestamp</th><th class="details-col">Details</th></tr></thead>
+  <tbody>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>3:02:02 pm</td>
+        <td>
+          Data Model is clicked from side Navigation Module
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>3:02:05 pm</td>
+        <td>
+          **Data Model** header is present.
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>3:02:05 pm</td>
+        <td>
+          Clicked on **Add Data Model** button successfully.
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>3:02:07 pm</td>
+        <td>
+          **Create Data Model** header is present.
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>3:02:07 pm</td>
+        <td>
+          Entered **TestingModel2025.11.13.15.02.00** into **Data Model Name** textbox successfully.
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>3:02:07 pm</td>
+        <td>
+          Entered **Testing1234** into **Description** textbox successfully.
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>3:02:07 pm</td>
+        <td>
+          Clicked on **Cancel** button successfully.
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>3:02:07 pm</td>
+        <td>
+          Clicked on **Edit** button successfully.
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>3:02:10 pm</td>
+        <td>
+          Clicked on **Cancel** button successfully.
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>3:02:10 pm</td>
+        <td>
+          Clicked on **View** button successfully.
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>3:02:10 pm</td>
+        <td>
+          Clicked on **Add Tables** button successfully.
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>3:02:12 pm</td>
+        <td>
+          Clicked on **Upload Excel** button successfully.
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>3:02:15 pm</td>
+        <td>
+          Clicked on **Click to Upload Excel File** button successfully.
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>3:02:23 pm</td>
+        <td>
+          File uploaded successfully
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>3:02:24 pm</td>
+        <td>
+          Clicked on **Upload** button successfully using JavaScript.
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>3:02:25 pm</td>
+        <td>
+          'File uploaded and processed successfully!' is present on the page.
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>3:02:25 pm</td>
+        <td>
+          dataNexusDataModel passed successfully.
+        </td>
+      </tr>
+  </tbody>
+</table>
+</div>
+          </div>
+        </li>
+        <li class="test-item"  status="pass" test-id="10"
+          author=""
+          tag="testCases.sanityTesting"
+          device="">
+          <div class="test-detail">
+            <p class="name">dataNexusTransformationPipelineV2</p>
+            <p class="text-sm">
+              <span>3:02:25 pm</span> / <span>00:01:21:552</span>
+              <span class="badge pass-bg log float-right">Pass</span>
+            </p>
+          </div>
+          <div class="test-contents d-none">
+<div class="detail-head">
+<div class="p-v-10">
+<div class="info">
+<h5 class="test-status text-pass">dataNexusTransformationPipelineV2</h5>
+<span class='badge badge-success'>11.13.2025 3:02:25 pm</span>
+<span class='badge badge-danger'>11.13.2025 3:03:46 pm</span>
+<span class='badge badge-default'>00:01:21:552</span>
+&middot; <span class='uri-anchor badge badge-default'>#test-id=10</span>
+<span title='Skip to the next failed step' class='badge badge-danger pointer float-right ne ml-1'><i class="fa fa-fast-forward"></i></span>
+<span title='Collapse all nodes' class='badge badge-default pointer float-right ct ml-1'><i class="fa fa-compress"></i></span>
+<span title='Expand all nodes' class='badge badge-default pointer float-right et'><i class="fa fa-expand"></i></span>
+</div>
+<div class="m-t-15"><span class="badge badge-pill badge-default">testCases.sanityTesting</span></div>
+</div>
+</div>    <div class="row mb-3"><div class="col-md-3">
+    
+
+<img data-featherlight='../Screenshot/Transformation Pipeline_HeaderIsPresent_20251113150229.png' src="../Screenshot/Transformation Pipeline_HeaderIsPresent_20251113150229.png">
+  
+    
+
+    </div></div>
+    <div class="row mb-3"><div class="col-md-3">
+    
+
+<img data-featherlight='../Screenshot/2025.11.13.14.59.53_20251113150231.png' src="../Screenshot/2025.11.13.14.59.53_20251113150231.png">
+  
+    
+
+    </div></div>
+    <div class="row mb-3"><div class="col-md-3">
+    
+
+<img data-featherlight='../Screenshot/2025.11.13.14.59.53_20251113150235.png' src="../Screenshot/2025.11.13.14.59.53_20251113150235.png">
+  
+    
+
+    </div></div>
+    <div class="row mb-3"><div class="col-md-3">
+    
+
+<img data-featherlight='../Screenshot/2025.11.13.14.59.53_20251113150300.png' src="../Screenshot/2025.11.13.14.59.53_20251113150300.png">
+  
+    
+
+    </div></div>
+    <div class="row mb-3"><div class="col-md-3">
+    
+
+<img data-featherlight='../Screenshot/2025.11.13.14.59.53_20251113150303.png' src="../Screenshot/2025.11.13.14.59.53_20251113150303.png">
+  
+    
+
+    </div></div>
+    <div class="row mb-3"><div class="col-md-3">
+    
+
+<img data-featherlight='../Screenshot/2025.11.13.14.59.53_20251113150323.png' src="../Screenshot/2025.11.13.14.59.53_20251113150323.png">
+  
+    
+
+    </div></div>
+    <div class="row mb-3"><div class="col-md-3">
+    
+
+<img data-featherlight='../Screenshot/2025.11.13.14.59.53_20251113150340.png' src="../Screenshot/2025.11.13.14.59.53_20251113150340.png">
+  
+    
+
+    </div></div>
+<div class="detail-body mt-4">
+<table class="table table-sm">
+  <thead><tr><th class="status-col">Status</th><th class="timestamp-col">Timestamp</th><th class="details-col">Details</th></tr></thead>
+  <tbody>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>3:02:27 pm</td>
+        <td>
+          Transformation Pipeline v2 is clicked from side Navigation Module
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>3:02:29 pm</td>
+        <td>
+          **Transformation Pipeline** header is present.
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>3:02:29 pm</td>
+        <td>
+          Clicked on **Create New** button successfully.
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>3:02:31 pm</td>
+        <td>
+          Entered **TestingTransformPipeline2025.11.13.15.02.25** into **Pipeline Name** textbox successfully.
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>3:02:32 pm</td>
+        <td>
+          Entered **Automation Testing** into **Pipeline Description** textbox successfully.
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>3:02:32 pm</td>
+        <td>
+          Clicked on **Create & Proceed** button successfully.
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>3:02:33 pm</td>
+        <td>
+          Clicked on **Select Source -> Data Lake** button successfully.
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>3:02:36 pm</td>
+        <td>
+          'LAK1' is selected from 'Select Lakehouse' dropdown element
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>3:02:37 pm</td>
+        <td>
+          'Tables' is selected from 'Select Lakehouse Type' dropdown element
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>3:02:55 pm</td>
+        <td>
+          Clicked on **Proceed** button successfully.
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>3:02:56 pm</td>
+        <td>
+          Clicked on **Zoom Out** button successfully using JavaScript.
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>3:02:57 pm</td>
+        <td>
+          Clicked on **Zoom Out** button successfully using JavaScript.
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>3:02:58 pm</td>
+        <td>
+          Clicked on **Zoom Out** button successfully using JavaScript.
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>3:02:58 pm</td>
+        <td>
+          Clicked on **Add Target -> Data Lake** button successfully.
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>3:03:01 pm</td>
+        <td>
+          Clicked on **Source Selection Model -> Delta Lake / Lakehouse** button successfully.
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>3:03:04 pm</td>
+        <td>
+          'LAK1' is selected from 'Select Lakehouse' dropdown element
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>3:03:06 pm</td>
+        <td>
+          'Tables' is selected from 'Select Lakehouse Type' dropdown element
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>3:03:09 pm</td>
+        <td>
+          Clicked on **Proceed** button successfully.
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>3:03:19 pm</td>
+        <td>
+           is drag and dropped at the target location
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>3:03:19 pm</td>
+        <td>
+          Clicked on **Save** button successfully.
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>3:03:21 pm</td>
+        <td>
+          'Pipeline saved to draft successfully' is present on the page.
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>3:03:21 pm</td>
+        <td>
+          Double clicked on **customertargetdim** successfully.
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>3:03:23 pm</td>
+        <td>
+          'Column Mapping' is clicked
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>3:03:27 pm</td>
+        <td>
+          Clicked on **Auto Map** button successfully.
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>3:03:28 pm</td>
+        <td>
+          incremental_id was selected from tranformation output column
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>3:03:28 pm</td>
+        <td>
+          Clicked on **Close** button successfully.
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>3:03:28 pm</td>
+        <td>
+          Clicked on **Save** button successfully.
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>3:03:29 pm</td>
+        <td>
+          Clicked on **Deploy** button successfully.
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>3:03:35 pm</td>
+        <td>
+          'Notebook created successfully' is present on the page.
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>3:03:35 pm</td>
+        <td>
+          Entered **TestingTransformPipeline2025.11.13.15.02.25** into **Searchbox** textbox successfully.
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>3:03:35 pm</td>
+        <td>
+          Clicked on **Edit** button successfully.
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>3:03:36 pm</td>
+        <td>
+          'Pipeline loaded successfully for editing' is present on the page.
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>3:03:36 pm</td>
+        <td>
+          Clicked on **Make a copy** button successfully.
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>3:03:37 pm</td>
+        <td>
+          Clicked on **Save** button successfully.
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>3:03:38 pm</td>
+        <td>
+          'Pipeline saved to draft successfully' is present on the page.
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>3:03:38 pm</td>
+        <td>
+          Clicked on **Commit** button successfully.
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>3:03:40 pm</td>
+        <td>
+          Entered **Pipeline updated for testing purpose** into **Commit Message** textbox successfully.
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>3:03:40 pm</td>
+        <td>
+          Clicked on **Commit** button successfully.
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>3:03:41 pm</td>
+        <td>
+          Clicked on **Deploy** button successfully.
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>3:03:41 pm</td>
+        <td>
+          Entered **Pipeline updated for testing purpose** into **Change Summary Description** textbox successfully.
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>3:03:41 pm</td>
+        <td>
+          'Pipeline committed successfully' is present on the page.
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>3:03:42 pm</td>
+        <td>
+          Clicked on **Submit** button successfully.
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>3:03:44 pm</td>
+        <td>
+          'Notebook updated successfully' is present on the page.
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>3:03:44 pm</td>
+        <td>
+          Entered **TestingTransformPipeline2025.11.13.15.02.25** into **Searchbox** textbox successfully.
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>3:03:44 pm</td>
+        <td>
+          Clicked on **Trigger** button successfully.
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>3:03:46 pm</td>
+        <td>
+          'Notebook triggered successfully' is present on the page.
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>3:03:46 pm</td>
+        <td>
+          dataNexusTransformationPipelineV2 passed successfully.
+        </td>
+      </tr>
+  </tbody>
+</table>
+</div>
+          </div>
+        </li>
+        <li class="test-item"  status="fail" test-id="11"
+          author=""
+          tag="testCases.sanityTesting"
+          device="">
+          <div class="test-detail">
+            <p class="name">dataNexusOrchestrator</p>
+            <p class="text-sm">
+              <span>3:03:46 pm</span> / <span>00:08:09:719</span>
+              <span class="badge fail-bg log float-right">Fail</span>
+            </p>
+          </div>
+          <div class="test-contents d-none">
+<div class="detail-head">
+<div class="p-v-10">
+<div class="info">
+<h5 class="test-status text-fail">dataNexusOrchestrator</h5>
+<span class='badge badge-success'>11.13.2025 3:03:46 pm</span>
+<span class='badge badge-danger'>11.13.2025 3:11:56 pm</span>
+<span class='badge badge-default'>00:08:09:719</span>
+&middot; <span class='uri-anchor badge badge-default'>#test-id=11</span>
+<span title='Skip to the next failed step' class='badge badge-danger pointer float-right ne ml-1'><i class="fa fa-fast-forward"></i></span>
+<span title='Collapse all nodes' class='badge badge-default pointer float-right ct ml-1'><i class="fa fa-compress"></i></span>
+<span title='Expand all nodes' class='badge badge-default pointer float-right et'><i class="fa fa-expand"></i></span>
+</div>
+<div class="m-t-15"><span class="badge badge-pill badge-default">testCases.sanityTesting</span></div>
+</div>
+</div>    <div class="row mb-3"><div class="col-md-3">
+    
+
+<img data-featherlight='../Screenshot/Process Scheduler_HeaderIsPresent_20251113150350.png' src="../Screenshot/Process Scheduler_HeaderIsPresent_20251113150350.png">
+  
+    
+
+    </div></div>
+    <div class="row mb-3"><div class="col-md-3">
+    
+
+<img data-featherlight='../Screenshot/Select Pipeline_HeaderIsPresent_20251113150353.png' src="../Screenshot/Select Pipeline_HeaderIsPresent_20251113150353.png">
+  
+    
+
+    </div></div>
+    <div class="row mb-3"><div class="col-md-3">
+    
+
+<img data-featherlight='../Screenshot/2025.11.13.14.59.53_20251113150419.png' src="../Screenshot/2025.11.13.14.59.53_20251113150419.png">
+  
+    
+
+    </div></div>
+    <div class="row mb-3"><div class="col-md-3">
+    
+
+<img data-featherlight='../Screenshot/Process Scheduler Logs_HeaderIsPresent_20251113150428.png' src="../Screenshot/Process Scheduler Logs_HeaderIsPresent_20251113150428.png">
+  
+    
+
+    </div></div>
+    <div class="row mb-3"><div class="col-md-3">
+    
+
+<img data-featherlight='../Screenshot/2025.11.13.14.59.53_20251113151156.png' src="../Screenshot/2025.11.13.14.59.53_20251113151156.png">
+  
+    
+
+    </div></div>
+<div class="detail-body mt-4">
+<table class="table table-sm">
+  <thead><tr><th class="status-col">Status</th><th class="timestamp-col">Timestamp</th><th class="details-col">Details</th></tr></thead>
+  <tbody>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>3:03:48 pm</td>
+        <td>
+          Orchestrator is clicked from side Navigation Module
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>3:03:50 pm</td>
+        <td>
+          **Process Scheduler** header is present.
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>3:03:51 pm</td>
+        <td>
+          Clicked on **Create New Process** button successfully.
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>3:03:51 pm</td>
+        <td>
+          Entered **Orchestrator2025.11.13.15.03.50** into **Process Name** textbox successfully.
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>3:03:51 pm</td>
+        <td>
+          Clicked on **Add Pipeline** button successfully.
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>3:03:53 pm</td>
+        <td>
+          **Select Pipeline** header is present.
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>3:03:54 pm</td>
+        <td>
+          'Ingestion' is selected from 'Pipeline Type' dropdown element
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>3:03:55 pm</td>
+        <td>
+          'TestingIgPipeline2025.11.13.15.00.34' is selected from 'Pipeline' dropdown element
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>3:03:55 pm</td>
+        <td>
+          Clicked on **Done** button successfully.
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>3:03:56 pm</td>
+        <td>
+          Clicked on **Save** button successfully.
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log fail-bg">Fail</span></td>
+        <td>3:04:19 pm</td>
+        <td>
+          'Schedules are created successfully' is not present. Exception: Expected condition failed: waiting for visibility of [[ChromeDriver: chrome on windows (53f3163d986ccd1ee6ffe74fb0ddd5e2)] -> xpath: //p[text()='Schedules are created successfully']] (tried for 20 second(s) with 500 milliseconds interval)
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>3:04:19 pm</td>
+        <td>
+          Entered **Orchestrator2025.11.13.15.03.50** into **Searchbox** textbox successfully.
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>3:04:19 pm</td>
+        <td>
+          Clicked on **Edit** button successfully.
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>3:04:19 pm</td>
+        <td>
+          Process is clicked
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>3:04:20 pm</td>
+        <td>
+          Clicked on **Yes** button successfully.
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>3:04:20 pm</td>
+        <td>
+          Clicked on **Trigger** button successfully.
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>3:04:21 pm</td>
+        <td>
+          Clicked on **Yes** button successfully.
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>3:04:22 pm</td>
+        <td>
+          'Pipeline triggered successfully' is present on the page.
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>3:04:26 pm</td>
+        <td>
+          Entered **Orchestrator2025.11.13.15.03.50** into **Searchbox** textbox successfully.
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>3:04:26 pm</td>
+        <td>
+          Clicked on **View Logs** button successfully.
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>3:04:28 pm</td>
+        <td>
+          **Process Scheduler Logs** header is present.
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>3:11:54 pm</td>
+        <td>
+          Pipeline Orchestrator2025.11.13.15.03.50 is failed
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>3:11:54 pm</td>
+        <td>
+          Clicked on **d4f7b84b-0827-4b59-91e2-251f50c96f52** button successfully.
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>3:11:56 pm</td>
+        <td>
+          dataNexusOrchestrator passed successfully.
+        </td>
+      </tr>
+  </tbody>
+</table>
+</div>
+          </div>
+        </li>
+        <li class="test-item"  status="skip" test-id="12"
+          author=""
+          tag="testCases.sanityTesting"
+          device="">
+          <div class="test-detail">
+            <p class="name">dataNexusDataProfiler</p>
+            <p class="text-sm">
+              <span>3:11:56 pm</span> / <span>00:00:00:000</span>
+              <span class="badge skip-bg log float-right">Skip</span>
+            </p>
+          </div>
+          <div class="test-contents d-none">
+<div class="detail-head">
+<div class="p-v-10">
+<div class="info">
+<h5 class="test-status text-skip">dataNexusDataProfiler</h5>
+<span class='badge badge-success'>11.13.2025 3:11:56 pm</span>
+<span class='badge badge-danger'>11.13.2025 3:11:56 pm</span>
+<span class='badge badge-default'>00:00:00:000</span>
+&middot; <span class='uri-anchor badge badge-default'>#test-id=12</span>
+<span title='Skip to the next failed step' class='badge badge-danger pointer float-right ne ml-1'><i class="fa fa-fast-forward"></i></span>
+<span title='Collapse all nodes' class='badge badge-default pointer float-right ct ml-1'><i class="fa fa-compress"></i></span>
+<span title='Expand all nodes' class='badge badge-default pointer float-right et'><i class="fa fa-expand"></i></span>
+</div>
+<div class="m-t-15"><span class="badge badge-pill badge-default">testCases.sanityTesting</span></div>
+</div>
+</div><div class="detail-body mt-4">
+<table class="table table-sm">
+  <thead><tr><th class="status-col">Status</th><th class="timestamp-col">Timestamp</th><th class="details-col">Details</th></tr></thead>
+  <tbody>
+      <tr class="event-row">
+        <td><span class="badge log skip-bg">Skip</span></td>
+        <td>3:11:56 pm</td>
+        <td>
+          dataNexusDataProfiler was skipped.
+        </td>
+      </tr>
+  </tbody>
+</table>
+</div>
+          </div>
+        </li>
+        <li class="test-item"  status="pass" test-id="13"
+          author=""
+          tag="testCases.sanityTesting"
+          device="">
+          <div class="test-detail">
+            <p class="name">dataNexusDocumentParser</p>
+            <p class="text-sm">
+              <span>3:11:56 pm</span> / <span>00:01:07:455</span>
+              <span class="badge pass-bg log float-right">Pass</span>
+            </p>
+          </div>
+          <div class="test-contents d-none">
+<div class="detail-head">
+<div class="p-v-10">
+<div class="info">
+<h5 class="test-status text-pass">dataNexusDocumentParser</h5>
+<span class='badge badge-success'>11.13.2025 3:11:56 pm</span>
+<span class='badge badge-danger'>11.13.2025 3:13:03 pm</span>
+<span class='badge badge-default'>00:01:07:455</span>
+&middot; <span class='uri-anchor badge badge-default'>#test-id=13</span>
+<span title='Skip to the next failed step' class='badge badge-danger pointer float-right ne ml-1'><i class="fa fa-fast-forward"></i></span>
+<span title='Collapse all nodes' class='badge badge-default pointer float-right ct ml-1'><i class="fa fa-compress"></i></span>
+<span title='Expand all nodes' class='badge badge-default pointer float-right et'><i class="fa fa-expand"></i></span>
+</div>
+<div class="m-t-15"><span class="badge badge-pill badge-default">testCases.sanityTesting</span></div>
+</div>
+</div>    <div class="row mb-3"><div class="col-md-3">
+    
+
+<img data-featherlight='../Screenshot/Document Parser_HeaderIsPresent_20251113151200.png' src="../Screenshot/Document Parser_HeaderIsPresent_20251113151200.png">
+  
+    
+
+    </div></div>
+    <div class="row mb-3"><div class="col-md-3">
+    
+
+<img data-featherlight='../Screenshot/2025.11.13.14.59.53_20251113151202.png' src="../Screenshot/2025.11.13.14.59.53_20251113151202.png">
+  
+    
+
+    </div></div>
+    <div class="row mb-3"><div class="col-md-3">
+    
+
+<img data-featherlight='../Screenshot/2025.11.13.14.59.53_20251113151256.png' src="../Screenshot/2025.11.13.14.59.53_20251113151256.png">
+  
+    
+
+    </div></div>
+    <div class="row mb-3"><div class="col-md-3">
+    
+
+<img data-featherlight='../Screenshot/2025.11.13.14.59.53_20251113151303.png' src="../Screenshot/2025.11.13.14.59.53_20251113151303.png">
+  
+    
+
+    </div></div>
+<div class="detail-body mt-4">
+<table class="table table-sm">
+  <thead><tr><th class="status-col">Status</th><th class="timestamp-col">Timestamp</th><th class="details-col">Details</th></tr></thead>
+  <tbody>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>3:11:58 pm</td>
+        <td>
+          Document Parser is clicked from side Navigation Module
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>3:12:00 pm</td>
+        <td>
+          **Document Parser** header is present.
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>3:12:00 pm</td>
+        <td>
+          Clicked on **Add Process** button successfully.
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>3:12:03 pm</td>
+        <td>
+          Entered **Automation_Test_Parser** into **Process Name** textbox successfully.
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>3:12:04 pm</td>
+        <td>
+          'LAK1' is selected from 'Choose Lakehouse' dropdown element
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>3:12:27 pm</td>
+        <td>
+          'DevPras/Files/FORM_C/' is selected from 'Define Path' dropdown element
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>3:12:52 pm</td>
+        <td>
+          'DevPras/to_be_processed/files/' is selected from 'Target Path' dropdown element
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>3:12:52 pm</td>
+        <td>
+          'Save' is clicked
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>3:12:53 pm</td>
+        <td>
+          'Process saved successfully!' is present on the page.
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>3:12:54 pm</td>
+        <td>
+          Entered **Automation_Test_Parser** into **Searchbox** textbox successfully.
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>3:12:54 pm</td>
+        <td>
+          Clicked on **Edit** button successfully.
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>3:12:56 pm</td>
+        <td>
+          Entered **TestingProcess2025.11.13.15.12.00** into **Process Name** textbox successfully.
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>3:13:00 pm</td>
+        <td>
+          'Update' is clicked
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>3:13:00 pm</td>
+        <td>
+          'Process updated successfully!' is present on the page.
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>3:13:01 pm</td>
+        <td>
+          Entered **TestingProcess2025.11.13.15.12.00** into **Searchbox** textbox successfully.
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>3:13:01 pm</td>
+        <td>
+          Clicked on **View** button successfully.
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>3:13:03 pm</td>
+        <td>
+          'Close' is clicked
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>3:13:03 pm</td>
+        <td>
+          dataNexusDocumentParser passed successfully.
+        </td>
+      </tr>
+  </tbody>
+</table>
+</div>
+          </div>
+        </li>
+        <li class="test-item"  status="pass" test-id="14"
+          author=""
+          tag="testCases.sanityTesting"
+          device="">
+          <div class="test-detail">
+            <p class="name">dataNexusMonitoring</p>
+            <p class="text-sm">
+              <span>3:13:03 pm</span> / <span>00:00:12:481</span>
+              <span class="badge pass-bg log float-right">Pass</span>
+            </p>
+          </div>
+          <div class="test-contents d-none">
+<div class="detail-head">
+<div class="p-v-10">
+<div class="info">
+<h5 class="test-status text-pass">dataNexusMonitoring</h5>
+<span class='badge badge-success'>11.13.2025 3:13:03 pm</span>
+<span class='badge badge-danger'>11.13.2025 3:13:16 pm</span>
+<span class='badge badge-default'>00:00:12:481</span>
+&middot; <span class='uri-anchor badge badge-default'>#test-id=14</span>
+<span title='Skip to the next failed step' class='badge badge-danger pointer float-right ne ml-1'><i class="fa fa-fast-forward"></i></span>
+<span title='Collapse all nodes' class='badge badge-default pointer float-right ct ml-1'><i class="fa fa-compress"></i></span>
+<span title='Expand all nodes' class='badge badge-default pointer float-right et'><i class="fa fa-expand"></i></span>
+</div>
+<div class="m-t-15"><span class="badge badge-pill badge-default">testCases.sanityTesting</span></div>
+</div>
+</div>    <div class="row mb-3"><div class="col-md-3">
+    
+
+<img data-featherlight='../Screenshot/Monitoring_HeaderIsPresent_20251113151307.png' src="../Screenshot/Monitoring_HeaderIsPresent_20251113151307.png">
+  
+    
+
+    </div></div>
+    <div class="row mb-3"><div class="col-md-3">
+    
+
+<img data-featherlight='../Screenshot/TestingTransformPipeline2025.11.13.15.02.25Pipiline is executed successfully_20251113151316.png' src="../Screenshot/TestingTransformPipeline2025.11.13.15.02.25Pipiline is executed successfully_20251113151316.png">
+  
+    
+
+    </div></div>
+<div class="detail-body mt-4">
+<table class="table table-sm">
+  <thead><tr><th class="status-col">Status</th><th class="timestamp-col">Timestamp</th><th class="details-col">Details</th></tr></thead>
+  <tbody>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>3:13:05 pm</td>
+        <td>
+          Monitoring is clicked from side Navigation Module
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>3:13:08 pm</td>
+        <td>
+          **Monitoring** header is present.
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>3:13:09 pm</td>
+        <td>
+          Clicked on **Trigger** button successfully.
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>3:13:11 pm</td>
+        <td>
+          'Transformation And Data Quality' is clicked
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>3:13:16 pm</td>
+        <td>
+          Pipeline TestingTransformPipeline2025.11.13.15.02.25 is successfully completed
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>3:13:16 pm</td>
+        <td>
+          **TestingTransformPipeline2025.11.13.15.02.25** header is present.
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>3:13:16 pm</td>
+        <td>
+          dataNexusMonitoring passed successfully.
+        </td>
+      </tr>
+  </tbody>
+</table>
+</div>
+          </div>
+        </li>
+        <li class="test-item"  status="fail" test-id="15"
+          author=""
+          tag="testCases.sanityTesting"
+          device="">
+          <div class="test-detail">
+            <p class="name">migrationCICD</p>
+            <p class="text-sm">
+              <span>3:13:16 pm</span> / <span>00:06:15:595</span>
+              <span class="badge fail-bg log float-right">Fail</span>
+            </p>
+          </div>
+          <div class="test-contents d-none">
+<div class="detail-head">
+<div class="p-v-10">
+<div class="info">
+<h5 class="test-status text-fail">migrationCICD</h5>
+<span class='badge badge-success'>11.13.2025 3:13:16 pm</span>
+<span class='badge badge-danger'>11.13.2025 3:19:31 pm</span>
+<span class='badge badge-default'>00:06:15:595</span>
+&middot; <span class='uri-anchor badge badge-default'>#test-id=15</span>
+<span title='Skip to the next failed step' class='badge badge-danger pointer float-right ne ml-1'><i class="fa fa-fast-forward"></i></span>
+<span title='Collapse all nodes' class='badge badge-default pointer float-right ct ml-1'><i class="fa fa-compress"></i></span>
+<span title='Expand all nodes' class='badge badge-default pointer float-right et'><i class="fa fa-expand"></i></span>
+</div>
+<div class="m-t-15"><span class="badge badge-pill badge-default">testCases.sanityTesting</span></div>
+</div>
+</div>    <div class="row mb-3"><div class="col-md-3">
+    
+
+<img data-featherlight='../Screenshot/Migration Pipelines_HeaderIsPresent_20251113151323.png' src="../Screenshot/Migration Pipelines_HeaderIsPresent_20251113151323.png">
+  
+    
+
+    </div></div>
+    <div class="row mb-3"><div class="col-md-3">
+    
+
+<img data-featherlight='../Screenshot/2025.11.13.14.59.53_20251113151349.png' src="../Screenshot/2025.11.13.14.59.53_20251113151349.png">
+  
+    
+
+    </div></div>
+    <div class="row mb-3"><div class="col-md-3">
+    
+
+<img data-featherlight='../Screenshot/2025.11.13.14.59.53_20251113151351.png' src="../Screenshot/2025.11.13.14.59.53_20251113151351.png">
+  
+    
+
+    </div></div>
+    <div class="row mb-3"><div class="col-md-3">
+    
+
+<img data-featherlight='../Screenshot/2025.11.13.15.13.23_20251113151352.png' src="../Screenshot/2025.11.13.15.13.23_20251113151352.png">
+  
+    
+
+    </div></div>
+    <div class="row mb-3"><div class="col-md-3">
+    
+
+<img data-featherlight='../Screenshot/2025.11.13.15.13.23_20251113151352.png' src="../Screenshot/2025.11.13.15.13.23_20251113151352.png">
+  
+    
+
+    </div></div>
+    <div class="row mb-3"><div class="col-md-3">
+    
+
+<img data-featherlight='../Screenshot/2025.11.13.15.13.23_20251113151353.png' src="../Screenshot/2025.11.13.15.13.23_20251113151353.png">
+  
+    
+
+    </div></div>
+    <div class="row mb-3"><div class="col-md-3">
+    
+
+<img data-featherlight='../Screenshot/2025.11.13.14.59.53_20251113151407.png' src="../Screenshot/2025.11.13.14.59.53_20251113151407.png">
+  
+    
+
+    </div></div>
+    <div class="row mb-3"><div class="col-md-3">
+    
+
+<img data-featherlight='../Screenshot/2025.11.13.15.13.23_20251113151408.png' src="../Screenshot/2025.11.13.15.13.23_20251113151408.png">
+  
+    
+
+    </div></div>
+    <div class="row mb-3"><div class="col-md-3">
+    
+
+<img data-featherlight='../Screenshot/2025.11.13.14.59.53_20251113151553.png' src="../Screenshot/2025.11.13.14.59.53_20251113151553.png">
+  
+    
+
+    </div></div>
+    <div class="row mb-3"><div class="col-md-3">
+    
+
+<img data-featherlight='../Screenshot/2025.11.13.14.59.53_20251113151737.png' src="../Screenshot/2025.11.13.14.59.53_20251113151737.png">
+  
+    
+
+    </div></div>
+    <div class="row mb-3"><div class="col-md-3">
+    
+
+<img data-featherlight='../Screenshot/2025.11.13.14.59.53_20251113151901.png' src="../Screenshot/2025.11.13.14.59.53_20251113151901.png">
+  
+    
+
+    </div></div>
+<div class="detail-body mt-4">
+<table class="table table-sm">
+  <thead><tr><th class="status-col">Status</th><th class="timestamp-col">Timestamp</th><th class="details-col">Details</th></tr></thead>
+  <tbody>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>3:13:17 pm</td>
+        <td>
+          'uat' is selected from top navigation environment dropdown element
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>3:13:19 pm</td>
+        <td>
+          Admin is clicked from side Navigation Module
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>3:13:21 pm</td>
+        <td>
+          Migration CI/CD is clicked from side Navigation Module
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>3:13:23 pm</td>
+        <td>
+          **Migration Pipelines** header is present.
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>3:13:24 pm</td>
+        <td>
+          Clicked on **Ingestion migration pipeline type** button successfully.
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>3:13:24 pm</td>
+        <td>
+          Entered **TestingIgPipeline2025.11.13.15.00.34** into **Searchbox** textbox successfully.
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>3:13:29 pm</td>
+        <td>
+          **TestingIgPipeline2025.11.13.15.00.34** checkbox is clicked
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>3:13:29 pm</td>
+        <td>
+          Clicked on **Transformation migration pipeline type** button successfully.
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>3:13:30 pm</td>
+        <td>
+          Entered **TestingTransformPipeline2025.11.13.15.02.25** into **Searchbox** textbox successfully.
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>3:13:35 pm</td>
+        <td>
+          **TestingTransformPipeline2025.11.13.15.02.25** checkbox is clicked
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>3:13:35 pm</td>
+        <td>
+          Clicked on **OCR migration pipeline type** button successfully.
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>3:13:36 pm</td>
+        <td>
+          Entered **TestingProcess2025.11.13.15.12.00** into **Searchbox** textbox successfully.
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>3:13:41 pm</td>
+        <td>
+          **TestingProcess2025.11.13.15.12.00** checkbox is clicked
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>3:13:41 pm</td>
+        <td>
+          Clicked on **Migrate changes from dev** button successfully.
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>3:13:42 pm</td>
+        <td>
+          Clicked on **Move Pipeline** button successfully.
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>3:13:42 pm</td>
+        <td>
+          'Pipeline movement is in progress' is present on the page.
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>3:13:47 pm</td>
+        <td>
+          Clicked on **Deployment Logs** button successfully.
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>3:13:49 pm</td>
+        <td>
+          Clicked on **#f8f41 Transaction id** button successfully.
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>3:13:52 pm</td>
+        <td>
+          Entered **TestingIgPipeline2025.11.13.15.00.34** into **Searchbox** textbox successfully.
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log fail-bg">Fail</span></td>
+        <td>3:13:52 pm</td>
+        <td>
+          Pipeline TestingIgPipeline2025.11.13.15.00.34 deployment is failed
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>3:13:52 pm</td>
+        <td>
+          Entered **TestingTransformPipeline2025.11.13.15.02.25** into **Searchbox** textbox successfully.
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log fail-bg">Fail</span></td>
+        <td>3:13:52 pm</td>
+        <td>
+          Pipeline TestingTransformPipeline2025.11.13.15.02.25 deployment is failed
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>3:13:53 pm</td>
+        <td>
+          Entered **TestingProcess2025.11.13.15.12.00** into **Searchbox** textbox successfully.
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>3:13:53 pm</td>
+        <td>
+          Pipeline TestingProcess2025.11.13.15.12.00 pipeline is succesfully deployed
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>3:13:53 pm</td>
+        <td>
+          ✅ Clicked on **Close button** successfully.
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>3:13:53 pm</td>
+        <td>
+          Clicked on **Orchestrator migration pipeline type** button successfully.
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>3:13:54 pm</td>
+        <td>
+          Entered **Orchestrator2025.11.13.15.03.50** into **Searchbox** textbox successfully.
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>3:13:59 pm</td>
+        <td>
+          **Orchestrator2025.11.13.15.03.50** checkbox is clicked
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>3:13:59 pm</td>
+        <td>
+          Clicked on **Migrate changes from dev** button successfully.
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>3:13:59 pm</td>
+        <td>
+          Clicked on **Move Pipeline** button successfully.
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>3:14:00 pm</td>
+        <td>
+          'Pipeline movement is in progress' is present on the page.
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>3:14:05 pm</td>
+        <td>
+          Clicked on **Deployment Logs** button successfully.
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>3:14:07 pm</td>
+        <td>
+          Clicked on **#dac04 Transaction id** button successfully.
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>3:14:07 pm</td>
+        <td>
+          Entered **Orchestrator2025.11.13.15.03.50** into **Searchbox** textbox successfully.
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log fail-bg">Fail</span></td>
+        <td>3:14:08 pm</td>
+        <td>
+          Pipeline Orchestrator2025.11.13.15.03.50 deployment is failed
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>3:14:10 pm</td>
+        <td>
+          Transformation Pipeline v2 is clicked from side Navigation Module
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>3:14:10 pm</td>
+        <td>
+          Clicked on **Collapse** button successfully.
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>3:14:11 pm</td>
+        <td>
+          Entered **TestingTransformPipeline2025.11.13.15.02.25** into **Searchbox** textbox successfully.
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log fail-bg">Fail</span></td>
+        <td>3:14:41 pm</td>
+        <td>
+          Failed to click on **Delete** button. Exception: Expected condition failed: waiting for element to be clickable: Proxy element for: DefaultElementLocator 'By.xpath: (//span[@class='anticon anticon-delete'])[1]' (tried for 20 second(s) with 500 milliseconds interval)
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log fail-bg">Fail</span></td>
+        <td>3:15:12 pm</td>
+        <td>
+          Failed to click on **Yes** button. Exception: Expected condition failed: waiting for element to be clickable: Proxy element for: DefaultElementLocator 'By.xpath: //button[text()='Yes']' (tried for 20 second(s) with 500 milliseconds interval)
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log fail-bg">Fail</span></td>
+        <td>3:15:53 pm</td>
+        <td>
+          'Element' is not present. Exception: Expected condition failed: waiting for visibility of Proxy element for: DefaultElementLocator 'By.xpath: //p[text()='Transformation deleted successfully']' (tried for 20 second(s) with 500 milliseconds interval)
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>3:15:53 pm</td>
+        <td>
+          Clicked on **Collapse** button successfully.
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>3:15:55 pm</td>
+        <td>
+          Orchestrator is clicked from side Navigation Module
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log fail-bg">Fail</span></td>
+        <td>3:16:26 pm</td>
+        <td>
+          Failed to click on **Delete** button. Exception: Expected condition failed: waiting for element to be clickable: Proxy element for: DefaultElementLocator 'By.xpath: (//span[@class='anticon anticon-delete'])[1]' (tried for 20 second(s) with 500 milliseconds interval)
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log fail-bg">Fail</span></td>
+        <td>3:16:56 pm</td>
+        <td>
+          Failed to click on **Yes** button. Exception: Expected condition failed: waiting for element to be clickable: Proxy element for: DefaultElementLocator 'By.xpath: //button[text()='Yes']' (tried for 20 second(s) with 500 milliseconds interval)
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log fail-bg">Fail</span></td>
+        <td>3:17:37 pm</td>
+        <td>
+          'Element' is not present. Exception: Expected condition failed: waiting for visibility of Proxy element for: DefaultElementLocator 'By.xpath: //p[text()='Process deleted successfully']' (tried for 20 second(s) with 500 milliseconds interval)
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>3:17:39 pm</td>
+        <td>
+          Ingestion Pipeline is clicked from side Navigation Module
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>3:17:40 pm</td>
+        <td>
+          Entered **TestingIgPipeline2025.11.13.15.00.34** into **Searchbox** textbox successfully.
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log fail-bg">Fail</span></td>
+        <td>3:18:10 pm</td>
+        <td>
+          Failed to click on **Delete** button. Exception: Expected condition failed: waiting for element to be clickable: Proxy element for: DefaultElementLocator 'By.xpath: (//span[@class='anticon anticon-delete'])[1]' (tried for 20 second(s) with 500 milliseconds interval)
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log fail-bg">Fail</span></td>
+        <td>3:18:21 pm</td>
+        <td>
+          Failed to click on element Yes no such element: Unable to locate element: {"method":"xpath","selector":"(//span[normalize-space(text())='Yes'])[1]"}
+  (Session info: chrome=142.0.7444.135)
+For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception
+Build info: version: '4.33.0', revision: '2c6aaad03a'
+System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '21.0.7'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [53f3163d986ccd1ee6ffe74fb0ddd5e2, findElement {using=xpath, value=(//span[normalize-space(text())='Yes'])[1]}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 142.0.7444.135, chrome: {chromedriverVersion: 142.0.7444.162 (c076baf266c..., userDataDir: C:\Users\ABHINA~1.DAG\AppDa...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:52649}, goog:processID: 23232, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:52649/devtoo..., se:cdpVersion: 142.0.7444.135, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 53f3163d986ccd1ee6ffe74fb0ddd5e2
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log fail-bg">Fail</span></td>
+        <td>3:19:01 pm</td>
+        <td>
+          'Element' is not present. Exception: Expected condition failed: waiting for visibility of Proxy element for: DefaultElementLocator 'By.xpath: //p[text()='Pipeline deleted Successfully']' (tried for 20 second(s) with 500 milliseconds interval)
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>3:19:04 pm</td>
+        <td>
+          Document Parser is clicked from side Navigation Module
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>3:19:04 pm</td>
+        <td>
+          Entered **TestingProcess2025.11.13.15.12.00** into **Searchbox** textbox successfully.
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>3:19:04 pm</td>
+        <td>
+          Clicked on **Delete** button successfully.
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>3:19:05 pm</td>
+        <td>
+          Clicked on **Yes** button successfully.
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>3:19:05 pm</td>
+        <td>
+          'Process Deleted Successfully' is present on the page.
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>3:19:06 pm</td>
+        <td>
+          'dev' is selected from top navigation environment dropdown element
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>3:19:13 pm</td>
+        <td>
+          Transformation Pipeline v2 is clicked from side Navigation Module
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>3:19:14 pm</td>
+        <td>
+          Clicked on **Collapse** button successfully.
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>3:19:14 pm</td>
+        <td>
+          Entered **TestingTransformPipeline2025.11.13.15.02.25** into **Searchbox** textbox successfully.
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>3:19:14 pm</td>
+        <td>
+          Clicked on **Delete** button successfully.
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>3:19:14 pm</td>
+        <td>
+          Clicked on **Yes** button successfully.
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>3:19:16 pm</td>
+        <td>
+          'Transformation deleted successfully' is present on the page.
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>3:19:16 pm</td>
+        <td>
+          Clicked on **Collapse** button successfully.
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>3:19:18 pm</td>
+        <td>
+          Orchestrator is clicked from side Navigation Module
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>3:19:18 pm</td>
+        <td>
+          Clicked on **Delete** button successfully.
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>3:19:19 pm</td>
+        <td>
+          Clicked on **Yes** button successfully.
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>3:19:20 pm</td>
+        <td>
+          'Process deleted successfully' is present on the page.
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>3:19:22 pm</td>
+        <td>
+          Ingestion Pipeline is clicked from side Navigation Module
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>3:19:22 pm</td>
+        <td>
+          Entered **TestingIgPipeline2025.11.13.15.00.34** into **Searchbox** textbox successfully.
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>3:19:23 pm</td>
+        <td>
+          Clicked on **Delete** button successfully.
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>3:19:24 pm</td>
+        <td>
+          Clicked on **Yes** button successfully using JavaScript.
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>3:19:28 pm</td>
+        <td>
+          'Pipeline deleted Successfully' is present on the page.
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>3:19:30 pm</td>
+        <td>
+          Document Parser is clicked from side Navigation Module
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>3:19:30 pm</td>
+        <td>
+          Entered **TestingProcess2025.11.13.15.12.00** into **Searchbox** textbox successfully.
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>3:19:31 pm</td>
+        <td>
+          Clicked on **Delete** button successfully.
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>3:19:31 pm</td>
+        <td>
+          Clicked on **Yes** button successfully.
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>3:19:31 pm</td>
+        <td>
+          'Process Deleted Successfully' is present on the page.
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>3:19:31 pm</td>
+        <td>
+          migrationCICD passed successfully.
+        </td>
+      </tr>
+  </tbody>
+</table>
+</div>
+          </div>
+        </li>
+        <li class="test-item"  status="pass" test-id="16"
+          author=""
+          tag="testCases.sanityTesting"
+          device="">
+          <div class="test-detail">
+            <p class="name">tenants</p>
+            <p class="text-sm">
+              <span>3:19:31 pm</span> / <span>00:00:08:918</span>
+              <span class="badge pass-bg log float-right">Pass</span>
+            </p>
+          </div>
+          <div class="test-contents d-none">
+<div class="detail-head">
+<div class="p-v-10">
+<div class="info">
+<h5 class="test-status text-pass">tenants</h5>
+<span class='badge badge-success'>11.13.2025 3:19:31 pm</span>
+<span class='badge badge-danger'>11.13.2025 3:19:40 pm</span>
+<span class='badge badge-default'>00:00:08:918</span>
+&middot; <span class='uri-anchor badge badge-default'>#test-id=16</span>
+<span title='Skip to the next failed step' class='badge badge-danger pointer float-right ne ml-1'><i class="fa fa-fast-forward"></i></span>
+<span title='Collapse all nodes' class='badge badge-default pointer float-right ct ml-1'><i class="fa fa-compress"></i></span>
+<span title='Expand all nodes' class='badge badge-default pointer float-right et'><i class="fa fa-expand"></i></span>
+</div>
+<div class="m-t-15"><span class="badge badge-pill badge-default">testCases.sanityTesting</span></div>
+</div>
+</div>    <div class="row mb-3"><div class="col-md-3">
+    
+
+<img data-featherlight='../Screenshot/Tenants_HeaderIsPresent_20251113151938.png' src="../Screenshot/Tenants_HeaderIsPresent_20251113151938.png">
+  
+    
+
+    </div></div>
+    <div class="row mb-3"><div class="col-md-3">
+    
+
+<img data-featherlight='../Screenshot/Add New Tenant_HeaderIsPresent_20251113151940.png' src="../Screenshot/Add New Tenant_HeaderIsPresent_20251113151940.png">
+  
+    
+
+    </div></div>
+<div class="detail-body mt-4">
+<table class="table table-sm">
+  <thead><tr><th class="status-col">Status</th><th class="timestamp-col">Timestamp</th><th class="details-col">Details</th></tr></thead>
+  <tbody>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>3:19:34 pm</td>
+        <td>
+          Admin is clicked from side Navigation Module
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>3:19:36 pm</td>
+        <td>
+          Tenants is clicked from side Navigation Module
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>3:19:38 pm</td>
+        <td>
+          **Tenants** header is present.
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>3:19:38 pm</td>
+        <td>
+          Clicked on **Add Tenant** button successfully.
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>3:19:40 pm</td>
+        <td>
+          **Add New Tenant** header is present.
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>3:19:40 pm</td>
+        <td>
+          ✅ Clicked on **Close button** successfully.
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>3:19:40 pm</td>
+        <td>
+          tenants passed successfully.
+        </td>
+      </tr>
+  </tbody>
+</table>
+</div>
+          </div>
+        </li>
+        <li class="test-item"  status="pass" test-id="17"
+          author=""
+          tag="testCases.sanityTesting"
+          device="">
+          <div class="test-detail">
+            <p class="name">userManagement</p>
+            <p class="text-sm">
+              <span>3:19:40 pm</span> / <span>00:00:11:624</span>
+              <span class="badge pass-bg log float-right">Pass</span>
+            </p>
+          </div>
+          <div class="test-contents d-none">
+<div class="detail-head">
+<div class="p-v-10">
+<div class="info">
+<h5 class="test-status text-pass">userManagement</h5>
+<span class='badge badge-success'>11.13.2025 3:19:40 pm</span>
+<span class='badge badge-danger'>11.13.2025 3:19:52 pm</span>
+<span class='badge badge-default'>00:00:11:624</span>
+&middot; <span class='uri-anchor badge badge-default'>#test-id=17</span>
+<span title='Skip to the next failed step' class='badge badge-danger pointer float-right ne ml-1'><i class="fa fa-fast-forward"></i></span>
+<span title='Collapse all nodes' class='badge badge-default pointer float-right ct ml-1'><i class="fa fa-compress"></i></span>
+<span title='Expand all nodes' class='badge badge-default pointer float-right et'><i class="fa fa-expand"></i></span>
+</div>
+<div class="m-t-15"><span class="badge badge-pill badge-default">testCases.sanityTesting</span></div>
+</div>
+</div>    <div class="row mb-3"><div class="col-md-3">
+    
+
+<img data-featherlight='../Screenshot/User Management_HeaderIsPresent_20251113151949.png' src="../Screenshot/User Management_HeaderIsPresent_20251113151949.png">
+  
+    
+
+    </div></div>
+    <div class="row mb-3"><div class="col-md-3">
+    
+
+<img data-featherlight='../Screenshot/My Info_HeaderIsPresent_20251113151952.png' src="../Screenshot/My Info_HeaderIsPresent_20251113151952.png">
+  
+    
+
+    </div></div>
+<div class="detail-body mt-4">
+<table class="table table-sm">
+  <thead><tr><th class="status-col">Status</th><th class="timestamp-col">Timestamp</th><th class="details-col">Details</th></tr></thead>
+  <tbody>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>3:19:43 pm</td>
+        <td>
+          Lineage is clicked from side Navigation Module
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>3:19:45 pm</td>
+        <td>
+          Admin is clicked from side Navigation Module
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>3:19:47 pm</td>
+        <td>
+          User Management is clicked from side Navigation Module
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>3:19:49 pm</td>
+        <td>
+          **User Management** header is present.
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>3:19:49 pm</td>
+        <td>
+          Clicked on **New Role** button successfully.
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>3:19:49 pm</td>
+        <td>
+          New Role is present
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>3:19:49 pm</td>
+        <td>
+          User Management is clicked
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>3:19:49 pm</td>
+        <td>
+          'Users' is clicked
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>3:19:50 pm</td>
+        <td>
+          Clicked on **New User** button successfully.
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>3:19:50 pm</td>
+        <td>
+          Add User is present
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>3:19:50 pm</td>
+        <td>
+          Profile is clicked from top navigation
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>3:19:52 pm</td>
+        <td>
+          **My Info** header is present.
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>3:19:52 pm</td>
+        <td>
+          userManagement passed successfully.
+        </td>
+      </tr>
+  </tbody>
+</table>
+</div>
+          </div>
+        </li>
+        <li class="test-item"  status="pass" test-id="18"
+          author=""
+          tag="testCases.sanityTesting"
+          device="">
+          <div class="test-detail">
+            <p class="name">workspaceListMDM</p>
+            <p class="text-sm">
+              <span>3:19:52 pm</span> / <span>00:00:13:783</span>
+              <span class="badge pass-bg log float-right">Pass</span>
+            </p>
+          </div>
+          <div class="test-contents d-none">
+<div class="detail-head">
+<div class="p-v-10">
+<div class="info">
+<h5 class="test-status text-pass">workspaceListMDM</h5>
+<span class='badge badge-success'>11.13.2025 3:19:52 pm</span>
+<span class='badge badge-danger'>11.13.2025 3:20:06 pm</span>
+<span class='badge badge-default'>00:00:13:783</span>
+&middot; <span class='uri-anchor badge badge-default'>#test-id=18</span>
+<span title='Skip to the next failed step' class='badge badge-danger pointer float-right ne ml-1'><i class="fa fa-fast-forward"></i></span>
+<span title='Collapse all nodes' class='badge badge-default pointer float-right ct ml-1'><i class="fa fa-compress"></i></span>
+<span title='Expand all nodes' class='badge badge-default pointer float-right et'><i class="fa fa-expand"></i></span>
+</div>
+<div class="m-t-15"><span class="badge badge-pill badge-default">testCases.sanityTesting</span></div>
+</div>
+</div><div class="detail-body mt-4">
+<table class="table table-sm">
+  <thead><tr><th class="status-col">Status</th><th class="timestamp-col">Timestamp</th><th class="details-col">Details</th></tr></thead>
+  <tbody>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>3:20:06 pm</td>
+        <td>
+          Clicked on **MDM-QA2Worspace** button successfully.
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>3:20:06 pm</td>
+        <td>
+          workspaceListMDM passed successfully.
+        </td>
+      </tr>
+  </tbody>
+</table>
+</div>
+          </div>
+        </li>
+        <li class="test-item"  status="pass" test-id="19"
+          author=""
+          tag="testCases.sanityTesting"
+          device="">
+          <div class="test-detail">
+            <p class="name">MDMOverview</p>
+            <p class="text-sm">
+              <span>3:20:06 pm</span> / <span>00:00:07:465</span>
+              <span class="badge pass-bg log float-right">Pass</span>
+            </p>
+          </div>
+          <div class="test-contents d-none">
+<div class="detail-head">
+<div class="p-v-10">
+<div class="info">
+<h5 class="test-status text-pass">MDMOverview</h5>
+<span class='badge badge-success'>11.13.2025 3:20:06 pm</span>
+<span class='badge badge-danger'>11.13.2025 3:20:13 pm</span>
+<span class='badge badge-default'>00:00:07:465</span>
+&middot; <span class='uri-anchor badge badge-default'>#test-id=19</span>
+<span title='Skip to the next failed step' class='badge badge-danger pointer float-right ne ml-1'><i class="fa fa-fast-forward"></i></span>
+<span title='Collapse all nodes' class='badge badge-default pointer float-right ct ml-1'><i class="fa fa-compress"></i></span>
+<span title='Expand all nodes' class='badge badge-default pointer float-right et'><i class="fa fa-expand"></i></span>
+</div>
+<div class="m-t-15"><span class="badge badge-pill badge-default">testCases.sanityTesting</span></div>
+</div>
+</div>    <div class="row mb-3"><div class="col-md-3">
+    
+
+<img data-featherlight='../Screenshot/Home_HeaderIsPresent_20251113152008.png' src="../Screenshot/Home_HeaderIsPresent_20251113152008.png">
+  
+    
+
+    </div></div>
+    <div class="row mb-3"><div class="col-md-3">
+    
+
+<img data-featherlight='../Screenshot/Potential Duplicate Records_HeaderIsPresent_20251113152010.png' src="../Screenshot/Potential Duplicate Records_HeaderIsPresent_20251113152010.png">
+  
+    
+
+    </div></div>
+    <div class="row mb-3"><div class="col-md-3">
+    
+
+<img data-featherlight='../Screenshot/Incomplete Record Table_HeaderIsPresent_20251113152013.png' src="../Screenshot/Incomplete Record Table_HeaderIsPresent_20251113152013.png">
+  
+    
+
+    </div></div>
+<div class="detail-body mt-4">
+<table class="table table-sm">
+  <thead><tr><th class="status-col">Status</th><th class="timestamp-col">Timestamp</th><th class="details-col">Details</th></tr></thead>
+  <tbody>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>3:20:08 pm</td>
+        <td>
+          **Home** header is present.
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>3:20:08 pm</td>
+        <td>
+          'Total Records
+9,598' is present on the page.
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>3:20:08 pm</td>
+        <td>
+          'Unique Clean Records
+4,329' is present on the page.
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>3:20:08 pm</td>
+        <td>
+          'Total Entities
+19' is present on the page.
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>3:20:08 pm</td>
+        <td>
+          'Potential Duplicate %
+54.9%
+View Detail' is present on the page.
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>3:20:08 pm</td>
+        <td>
+          'Incomplete Records %
+0.00%
+View Detail' is present on the page.
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>3:20:08 pm</td>
+        <td>
+          Clicked on **Potential Duplicate View Button** button successfully.
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>3:20:11 pm</td>
+        <td>
+          **Potential Duplicate Records** header is present.
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>3:20:11 pm</td>
+        <td>
+          Clicked on **Dashboard** button successfully.
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>3:20:11 pm</td>
+        <td>
+          Clicked on **Incomplete Records View Button** button successfully.
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>3:20:13 pm</td>
+        <td>
+          **Incomplete Record Table** header is present.
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>3:20:13 pm</td>
+        <td>
+          Clicked on **Dashboard** button successfully.
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>3:20:13 pm</td>
+        <td>
+          MDMOverview passed successfully.
+        </td>
+      </tr>
+  </tbody>
+</table>
+</div>
+          </div>
+        </li>
+        <li class="test-item"  status="pass" test-id="20"
+          author=""
+          tag="testCases.sanityTesting"
+          device="">
+          <div class="test-detail">
+            <p class="name">MDMEntity</p>
+            <p class="text-sm">
+              <span>3:20:13 pm</span> / <span>00:01:00:548</span>
+              <span class="badge pass-bg log float-right">Pass</span>
+            </p>
+          </div>
+          <div class="test-contents d-none">
+<div class="detail-head">
+<div class="p-v-10">
+<div class="info">
+<h5 class="test-status text-pass">MDMEntity</h5>
+<span class='badge badge-success'>11.13.2025 3:20:13 pm</span>
+<span class='badge badge-danger'>11.13.2025 3:21:14 pm</span>
+<span class='badge badge-default'>00:01:00:548</span>
+&middot; <span class='uri-anchor badge badge-default'>#test-id=20</span>
+<span title='Skip to the next failed step' class='badge badge-danger pointer float-right ne ml-1'><i class="fa fa-fast-forward"></i></span>
+<span title='Collapse all nodes' class='badge badge-default pointer float-right ct ml-1'><i class="fa fa-compress"></i></span>
+<span title='Expand all nodes' class='badge badge-default pointer float-right et'><i class="fa fa-expand"></i></span>
+</div>
+<div class="m-t-15"><span class="badge badge-pill badge-default">testCases.sanityTesting</span></div>
+</div>
+</div>    <div class="row mb-3"><div class="col-md-3">
+    
+
+<img data-featherlight='../Screenshot/Entity_HeaderIsPresent_20251113152018.png' src="../Screenshot/Entity_HeaderIsPresent_20251113152018.png">
+  
+    
+
+    </div></div>
+    <div class="row mb-3"><div class="col-md-3">
+    
+
+<img data-featherlight='../Screenshot/New Parent_HeaderIsPresent_20251113152020.png' src="../Screenshot/New Parent_HeaderIsPresent_20251113152020.png">
+  
+    
+
+    </div></div>
+    <div class="row mb-3"><div class="col-md-3">
+    
+
+<img data-featherlight='../Screenshot/Golden Record Details_HeaderIsPresent_20251113152114.png' src="../Screenshot/Golden Record Details_HeaderIsPresent_20251113152114.png">
+  
+    
+
+    </div></div>
+<div class="detail-body mt-4">
+<table class="table table-sm">
+  <thead><tr><th class="status-col">Status</th><th class="timestamp-col">Timestamp</th><th class="details-col">Details</th></tr></thead>
+  <tbody>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>3:20:15 pm</td>
+        <td>
+          Entities is clicked from side Navigation Module
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>3:20:16 pm</td>
+        <td>
+          Clicked on **Employee Details** button successfully.
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>3:20:18 pm</td>
+        <td>
+          **Entity** header is present.
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>3:20:18 pm</td>
+        <td>
+          Clicked on **Add New** button successfully.
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>3:20:20 pm</td>
+        <td>
+          **New Parent** header is present.
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>3:20:20 pm</td>
+        <td>
+          ✅ Clicked on **Close button** successfully.
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>3:20:21 pm</td>
+        <td>
+          Clicked on **Yes** button successfully.
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>3:20:21 pm</td>
+        <td>
+          Clicked on **Bangalore** button successfully.
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>3:20:33 pm</td>
+        <td>
+          Clicked on **Admin** button successfully.
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>3:20:45 pm</td>
+        <td>
+          Clicked on **Employee_1000** button successfully.
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>3:20:57 pm</td>
+        <td>
+          Clicked on **1314** button successfully.
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>3:21:09 pm</td>
+        <td>
+          Clicked on **employee1000@company.com** button successfully.
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>3:21:14 pm</td>
+        <td>
+          **Golden Record Details** header is present.
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>3:21:14 pm</td>
+        <td>
+          Clicked on **Back Button** button successfully.
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>3:21:14 pm</td>
+        <td>
+          MDMEntity passed successfully.
+        </td>
+      </tr>
+  </tbody>
+</table>
+</div>
+          </div>
+        </li>
+        <li class="test-item"  status="pass" test-id="21"
+          author=""
+          tag="testCases.sanityTesting"
+          device="">
+          <div class="test-detail">
+            <p class="name">MDMTaxonomy</p>
+            <p class="text-sm">
+              <span>3:21:14 pm</span> / <span>00:00:06:901</span>
+              <span class="badge pass-bg log float-right">Pass</span>
+            </p>
+          </div>
+          <div class="test-contents d-none">
+<div class="detail-head">
+<div class="p-v-10">
+<div class="info">
+<h5 class="test-status text-pass">MDMTaxonomy</h5>
+<span class='badge badge-success'>11.13.2025 3:21:14 pm</span>
+<span class='badge badge-danger'>11.13.2025 3:21:21 pm</span>
+<span class='badge badge-default'>00:00:06:901</span>
+&middot; <span class='uri-anchor badge badge-default'>#test-id=21</span>
+<span title='Skip to the next failed step' class='badge badge-danger pointer float-right ne ml-1'><i class="fa fa-fast-forward"></i></span>
+<span title='Collapse all nodes' class='badge badge-default pointer float-right ct ml-1'><i class="fa fa-compress"></i></span>
+<span title='Expand all nodes' class='badge badge-default pointer float-right et'><i class="fa fa-expand"></i></span>
+</div>
+<div class="m-t-15"><span class="badge badge-pill badge-default">testCases.sanityTesting</span></div>
+</div>
+</div>    <div class="row mb-3"><div class="col-md-3">
+    
+
+<img data-featherlight='../Screenshot/Taxonomy_HeaderIsPresent_20251113152118.png' src="../Screenshot/Taxonomy_HeaderIsPresent_20251113152118.png">
+  
+    
+
+    </div></div>
+    <div class="row mb-3"><div class="col-md-3">
+    
+
+<img data-featherlight='../Screenshot/Add New Taxonomy_HeaderIsPresent_20251113152120.png' src="../Screenshot/Add New Taxonomy_HeaderIsPresent_20251113152120.png">
+  
+    
+
+    </div></div>
+<div class="detail-body mt-4">
+<table class="table table-sm">
+  <thead><tr><th class="status-col">Status</th><th class="timestamp-col">Timestamp</th><th class="details-col">Details</th></tr></thead>
+  <tbody>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>3:21:16 pm</td>
+        <td>
+          Taxonomy is clicked from side Navigation Module
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>3:21:18 pm</td>
+        <td>
+          **Taxonomy** header is present.
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>3:21:18 pm</td>
+        <td>
+          Clicked on **Add New** button successfully.
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>3:21:20 pm</td>
+        <td>
+          **Add New Taxonomy** header is present.
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>3:21:21 pm</td>
+        <td>
+          Entered **Taxonomy123** into **Taxonomy Name** textbox successfully.
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>3:21:21 pm</td>
+        <td>
+          MDMTaxonomy passed successfully.
+        </td>
+      </tr>
+  </tbody>
+</table>
+</div>
+          </div>
+        </li>
+        <li class="test-item"  status="pass" test-id="22"
+          author=""
+          tag="testCases.sanityTesting"
+          device="">
+          <div class="test-detail">
+            <p class="name">MDMMasters</p>
+            <p class="text-sm">
+              <span>3:21:21 pm</span> / <span>00:00:35:399</span>
+              <span class="badge pass-bg log float-right">Pass</span>
+            </p>
+          </div>
+          <div class="test-contents d-none">
+<div class="detail-head">
+<div class="p-v-10">
+<div class="info">
+<h5 class="test-status text-pass">MDMMasters</h5>
+<span class='badge badge-success'>11.13.2025 3:21:21 pm</span>
+<span class='badge badge-danger'>11.13.2025 3:21:56 pm</span>
+<span class='badge badge-default'>00:00:35:399</span>
+&middot; <span class='uri-anchor badge badge-default'>#test-id=22</span>
+<span title='Skip to the next failed step' class='badge badge-danger pointer float-right ne ml-1'><i class="fa fa-fast-forward"></i></span>
+<span title='Collapse all nodes' class='badge badge-default pointer float-right ct ml-1'><i class="fa fa-compress"></i></span>
+<span title='Expand all nodes' class='badge badge-default pointer float-right et'><i class="fa fa-expand"></i></span>
+</div>
+<div class="m-t-15"><span class="badge badge-pill badge-default">testCases.sanityTesting</span></div>
+</div>
+</div>    <div class="row mb-3"><div class="col-md-3">
+    
+
+<img data-featherlight='../Screenshot/Masters_HeaderIsPresent_20251113152125.png' src="../Screenshot/Masters_HeaderIsPresent_20251113152125.png">
+  
+    
+
+    </div></div>
+    <div class="row mb-3"><div class="col-md-3">
+    
+
+<img data-featherlight='../Screenshot/New Master_HeaderIsPresent_20251113152137.png' src="../Screenshot/New Master_HeaderIsPresent_20251113152137.png">
+  
+    
+
+    </div></div>
+    <div class="row mb-3"><div class="col-md-3">
+    
+
+<img data-featherlight='../Screenshot/De-Duplication Configuration _HeaderIsPresent_20251113152142.png' src="../Screenshot/De-Duplication Configuration _HeaderIsPresent_20251113152142.png">
+  
+    
+
+    </div></div>
+    <div class="row mb-3"><div class="col-md-3">
+    
+
+<img data-featherlight='../Screenshot/2025.11.13.14.59.53_20251113152145.png' src="../Screenshot/2025.11.13.14.59.53_20251113152145.png">
+  
+    
+
+    </div></div>
+<div class="detail-body mt-4">
+<table class="table table-sm">
+  <thead><tr><th class="status-col">Status</th><th class="timestamp-col">Timestamp</th><th class="details-col">Details</th></tr></thead>
+  <tbody>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>3:21:23 pm</td>
+        <td>
+          Masters is clicked from side Navigation Module
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>3:21:25 pm</td>
+        <td>
+          **Masters** header is present.
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>3:21:35 pm</td>
+        <td>
+          Clicked on **Add Master** button successfully.
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>3:21:37 pm</td>
+        <td>
+          **New Master** header is present.
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>3:21:38 pm</td>
+        <td>
+          'Masters' is clicked
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>3:21:38 pm</td>
+        <td>
+          Clicked on **Yes** button successfully.
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>3:21:39 pm</td>
+        <td>
+          Clicked on **Edit** button successfully.
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>3:21:39 pm</td>
+        <td>
+          'Masters' is clicked
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>3:21:40 pm</td>
+        <td>
+          Clicked on **Yes** button successfully.
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>3:21:40 pm</td>
+        <td>
+          Clicked on **Configure** button successfully.
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>3:21:42 pm</td>
+        <td>
+          **De-Duplication Configuration ** header is present.
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>3:21:43 pm</td>
+        <td>
+          'MastersList' is clicked
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>3:21:43 pm</td>
+        <td>
+          Clicked on **Schedule** button successfully.
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>3:21:56 pm</td>
+        <td>
+          ✅ Clicked on **Close button** successfully.
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>3:21:56 pm</td>
+        <td>
+          MDMMasters passed successfully.
+        </td>
+      </tr>
+  </tbody>
+</table>
+</div>
+          </div>
+        </li>
+        <li class="test-item"  status="pass" test-id="23"
+          author=""
+          tag="testCases.sanityTesting"
+          device="">
+          <div class="test-detail">
+            <p class="name">MDMIntegration</p>
+            <p class="text-sm">
+              <span>3:21:56 pm</span> / <span>00:00:31:587</span>
+              <span class="badge pass-bg log float-right">Pass</span>
+            </p>
+          </div>
+          <div class="test-contents d-none">
+<div class="detail-head">
+<div class="p-v-10">
+<div class="info">
+<h5 class="test-status text-pass">MDMIntegration</h5>
+<span class='badge badge-success'>11.13.2025 3:21:56 pm</span>
+<span class='badge badge-danger'>11.13.2025 3:22:28 pm</span>
+<span class='badge badge-default'>00:00:31:587</span>
+&middot; <span class='uri-anchor badge badge-default'>#test-id=23</span>
+<span title='Skip to the next failed step' class='badge badge-danger pointer float-right ne ml-1'><i class="fa fa-fast-forward"></i></span>
+<span title='Collapse all nodes' class='badge badge-default pointer float-right ct ml-1'><i class="fa fa-compress"></i></span>
+<span title='Expand all nodes' class='badge badge-default pointer float-right et'><i class="fa fa-expand"></i></span>
+</div>
+<div class="m-t-15"><span class="badge badge-pill badge-default">testCases.sanityTesting</span></div>
+</div>
+</div>    <div class="row mb-3"><div class="col-md-3">
+    
+
+<img data-featherlight='../Screenshot/Data Sources_HeaderIsPresent_20251113152202.png' src="../Screenshot/Data Sources_HeaderIsPresent_20251113152202.png">
+  
+    
+
+    </div></div>
+    <div class="row mb-3"><div class="col-md-3">
+    
+
+<img data-featherlight='../Screenshot/New Connection_HeaderIsPresent_20251113152205.png' src="../Screenshot/New Connection_HeaderIsPresent_20251113152205.png">
+  
+    
+
+    </div></div>
+    <div class="row mb-3"><div class="col-md-3">
+    
+
+<img data-featherlight='../Screenshot/Choose Transformation Type_HeaderIsPresent_20251113152222.png' src="../Screenshot/Choose Transformation Type_HeaderIsPresent_20251113152222.png">
+  
+    
+
+    </div></div>
+    <div class="row mb-3"><div class="col-md-3">
+    
+
+<img data-featherlight='../Screenshot/Schedule Pipeline_HeaderIsPresent_20251113152228.png' src="../Screenshot/Schedule Pipeline_HeaderIsPresent_20251113152228.png">
+  
+    
+
+    </div></div>
+<div class="detail-body mt-4">
+<table class="table table-sm">
+  <thead><tr><th class="status-col">Status</th><th class="timestamp-col">Timestamp</th><th class="details-col">Details</th></tr></thead>
+  <tbody>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>3:21:58 pm</td>
+        <td>
+          Integration is clicked from side Navigation Module
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>3:22:00 pm</td>
+        <td>
+          Connectors is clicked from side Navigation Module
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>3:22:03 pm</td>
+        <td>
+          **Data Sources** header is present.
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>3:22:03 pm</td>
+        <td>
+          Clicked on **Add New** button successfully.
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>3:22:05 pm</td>
+        <td>
+          **New Connection** header is present.
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>3:22:07 pm</td>
+        <td>
+          Pipelines is clicked from side Navigation Module
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>3:22:20 pm</td>
+        <td>
+          Clicked on **New Pipeline** button successfully.
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>3:22:22 pm</td>
+        <td>
+          **Choose Transformation Type** header is present.
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>3:22:23 pm</td>
+        <td>
+          Clicked on **Close** button successfully.
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>3:22:23 pm</td>
+        <td>
+          Entered **T_Sample_data** into **Searchbox** textbox successfully.
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>3:22:23 pm</td>
+        <td>
+          Clicked on **Edit Pipeline** button successfully.
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>3:22:23 pm</td>
+        <td>
+          'Pipelines' is clicked
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>3:22:24 pm</td>
+        <td>
+          Clicked on **Yes** button successfully.
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>3:22:24 pm</td>
+        <td>
+          Entered **T_Sample_data** into **Searchbox** textbox successfully.
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>3:22:25 pm</td>
+        <td>
+          Clicked on **View Pipeline** button successfully.
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>3:22:25 pm</td>
+        <td>
+          'Pipelines' is clicked
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>3:22:25 pm</td>
+        <td>
+          Entered **T_Sample_data** into **Searchbox** textbox successfully.
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>3:22:26 pm</td>
+        <td>
+          Clicked on **Schedule Pipeline** button successfully.
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>3:22:28 pm</td>
+        <td>
+          **Schedule Pipeline** header is present.
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>3:22:28 pm</td>
+        <td>
+          Clicked on **Close** button successfully.
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>3:22:28 pm</td>
+        <td>
+          MDMIntegration passed successfully.
+        </td>
+      </tr>
+  </tbody>
+</table>
+</div>
+          </div>
+        </li>
+        <li class="test-item"  status="pass" test-id="24"
+          author=""
+          tag="testCases.sanityTesting"
+          device="">
+          <div class="test-detail">
+            <p class="name">MDMDataQuality</p>
+            <p class="text-sm">
+              <span>3:22:28 pm</span> / <span>00:00:09:034</span>
+              <span class="badge pass-bg log float-right">Pass</span>
+            </p>
+          </div>
+          <div class="test-contents d-none">
+<div class="detail-head">
+<div class="p-v-10">
+<div class="info">
+<h5 class="test-status text-pass">MDMDataQuality</h5>
+<span class='badge badge-success'>11.13.2025 3:22:28 pm</span>
+<span class='badge badge-danger'>11.13.2025 3:22:37 pm</span>
+<span class='badge badge-default'>00:00:09:034</span>
+&middot; <span class='uri-anchor badge badge-default'>#test-id=24</span>
+<span title='Skip to the next failed step' class='badge badge-danger pointer float-right ne ml-1'><i class="fa fa-fast-forward"></i></span>
+<span title='Collapse all nodes' class='badge badge-default pointer float-right ct ml-1'><i class="fa fa-compress"></i></span>
+<span title='Expand all nodes' class='badge badge-default pointer float-right et'><i class="fa fa-expand"></i></span>
+</div>
+<div class="m-t-15"><span class="badge badge-pill badge-default">testCases.sanityTesting</span></div>
+</div>
+</div>    <div class="row mb-3"><div class="col-md-3">
+    
+
+<img data-featherlight='../Screenshot/Data Quality Dashboard_HeaderIsPresent_20251113152232.png' src="../Screenshot/Data Quality Dashboard_HeaderIsPresent_20251113152232.png">
+  
+    
+
+    </div></div>
+    <div class="row mb-3"><div class="col-md-3">
+    
+
+<img data-featherlight='../Screenshot/Potential Duplicate Records_HeaderIsPresent_20251113152234.png' src="../Screenshot/Potential Duplicate Records_HeaderIsPresent_20251113152234.png">
+  
+    
+
+    </div></div>
+    <div class="row mb-3"><div class="col-md-3">
+    
+
+<img data-featherlight='../Screenshot/Incomplete Record Table_HeaderIsPresent_20251113152237.png' src="../Screenshot/Incomplete Record Table_HeaderIsPresent_20251113152237.png">
+  
+    
+
+    </div></div>
+<div class="detail-body mt-4">
+<table class="table table-sm">
+  <thead><tr><th class="status-col">Status</th><th class="timestamp-col">Timestamp</th><th class="details-col">Details</th></tr></thead>
+  <tbody>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>3:22:30 pm</td>
+        <td>
+          Data Quality is clicked from side Navigation Module
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>3:22:32 pm</td>
+        <td>
+          **Data Quality Dashboard** header is present.
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>3:22:32 pm</td>
+        <td>
+          'Total Records
+9,598' is present on the page.
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>3:22:32 pm</td>
+        <td>
+          'Unique Clean Records
+4,329' is present on the page.
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>3:22:32 pm</td>
+        <td>
+          'Total Entities
+19' is present on the page.
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>3:22:32 pm</td>
+        <td>
+          'Potential Duplicate %
+54.9%
+View Detail' is present on the page.
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>3:22:32 pm</td>
+        <td>
+          'Incomplete Records %
+0.00%
+View Detail' is present on the page.
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>3:22:32 pm</td>
+        <td>
+          Clicked on **Potential Duplicate View Button** button successfully.
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>3:22:34 pm</td>
+        <td>
+          **Potential Duplicate Records** header is present.
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>3:22:34 pm</td>
+        <td>
+          Clicked on **Dashboard** button successfully.
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>3:22:35 pm</td>
+        <td>
+          Clicked on **Incomplete Records View Button** button successfully.
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>3:22:37 pm</td>
+        <td>
+          **Incomplete Record Table** header is present.
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>3:22:37 pm</td>
+        <td>
+          MDMDataQuality passed successfully.
+        </td>
+      </tr>
+  </tbody>
+</table>
+</div>
+          </div>
+        </li>
+        <li class="test-item"  status="pass" test-id="25"
+          author=""
+          tag="testCases.sanityTesting"
+          device="">
+          <div class="test-detail">
+            <p class="name">AuditLogs</p>
+            <p class="text-sm">
+              <span>3:22:37 pm</span> / <span>00:00:06:271</span>
+              <span class="badge pass-bg log float-right">Pass</span>
+            </p>
+          </div>
+          <div class="test-contents d-none">
+<div class="detail-head">
+<div class="p-v-10">
+<div class="info">
+<h5 class="test-status text-pass">AuditLogs</h5>
+<span class='badge badge-success'>11.13.2025 3:22:37 pm</span>
+<span class='badge badge-danger'>11.13.2025 3:22:43 pm</span>
+<span class='badge badge-default'>00:00:06:271</span>
+&middot; <span class='uri-anchor badge badge-default'>#test-id=25</span>
+<span title='Skip to the next failed step' class='badge badge-danger pointer float-right ne ml-1'><i class="fa fa-fast-forward"></i></span>
+<span title='Collapse all nodes' class='badge badge-default pointer float-right ct ml-1'><i class="fa fa-compress"></i></span>
+<span title='Expand all nodes' class='badge badge-default pointer float-right et'><i class="fa fa-expand"></i></span>
+</div>
+<div class="m-t-15"><span class="badge badge-pill badge-default">testCases.sanityTesting</span></div>
+</div>
+</div>    <div class="row mb-3"><div class="col-md-3">
+    
+
+<img data-featherlight='../Screenshot/Audit Logs_HeaderIsPresent_20251113152243.png' src="../Screenshot/Audit Logs_HeaderIsPresent_20251113152243.png">
+  
+    
+
+    </div></div>
+<div class="detail-body mt-4">
+<table class="table table-sm">
+  <thead><tr><th class="status-col">Status</th><th class="timestamp-col">Timestamp</th><th class="details-col">Details</th></tr></thead>
+  <tbody>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>3:22:39 pm</td>
+        <td>
+          Settings is clicked from side Navigation Module
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>3:22:41 pm</td>
+        <td>
+          Audit Logs is clicked from side Navigation Module
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>3:22:43 pm</td>
+        <td>
+          **Audit Logs** header is present.
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>3:22:43 pm</td>
+        <td>
+          AuditLogs passed successfully.
+        </td>
+      </tr>
+  </tbody>
+</table>
+</div>
+          </div>
+        </li>
+        <li class="test-item"  status="fail" test-id="26"
+          author=""
+          tag="testCases.sanityTesting"
+          device="">
+          <div class="test-detail">
+            <p class="name">UserManagement</p>
+            <p class="text-sm">
+              <span>3:22:43 pm</span> / <span>00:00:16:785</span>
+              <span class="badge fail-bg log float-right">Fail</span>
+            </p>
+          </div>
+          <div class="test-contents d-none">
+<div class="detail-head">
+<div class="p-v-10">
+<div class="info">
+<h5 class="test-status text-fail">UserManagement</h5>
+<span class='badge badge-success'>11.13.2025 3:22:43 pm</span>
+<span class='badge badge-danger'>11.13.2025 3:23:00 pm</span>
+<span class='badge badge-default'>00:00:16:785</span>
+&middot; <span class='uri-anchor badge badge-default'>#test-id=26</span>
+<span title='Skip to the next failed step' class='badge badge-danger pointer float-right ne ml-1'><i class="fa fa-fast-forward"></i></span>
+<span title='Collapse all nodes' class='badge badge-default pointer float-right ct ml-1'><i class="fa fa-compress"></i></span>
+<span title='Expand all nodes' class='badge badge-default pointer float-right et'><i class="fa fa-expand"></i></span>
+</div>
+<div class="m-t-15"><span class="badge badge-pill badge-default">testCases.sanityTesting</span></div>
+</div>
+</div>    <div class="row mb-3"><div class="col-md-3">
+    
+
+<img data-featherlight='../Screenshot/Audit Logs_HeaderIsPresent_20251113152245.png' src="../Screenshot/Audit Logs_HeaderIsPresent_20251113152245.png">
+  
+    
+
+    </div></div>
+    <div class="row mb-3"><div class="col-md-3">
+    
+
+<img data-featherlight='../Screenshot/User Management_HeaderIsPresent_20251113152249.png' src="../Screenshot/User Management_HeaderIsPresent_20251113152249.png">
+  
+    
+
+    </div></div>
+    <div class="row mb-3"><div class="col-md-3">
+    
+
+<img data-featherlight='../Screenshot/Failed_UserManagement_20251113152300.png' src="../Screenshot/Failed_UserManagement_20251113152300.png">
+  
+    
+
+    </div></div>
+<div class="detail-body mt-4">
+<table class="table table-sm">
+  <thead><tr><th class="status-col">Status</th><th class="timestamp-col">Timestamp</th><th class="details-col">Details</th></tr></thead>
+  <tbody>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>3:22:45 pm</td>
+        <td>
+          **Audit Logs** header is present.
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>3:22:47 pm</td>
+        <td>
+          User Management is clicked from side Navigation Module
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>3:22:49 pm</td>
+        <td>
+          **User Management** header is present.
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>3:22:50 pm</td>
+        <td>
+          Clicked on **New Role** button successfully.
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>3:22:50 pm</td>
+        <td>
+          'User Management' is clicked
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log fail-bg">Fail</span></td>
+        <td>3:23:00 pm</td>
+        <td>
+          UserManagement failed.
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>3:23:00 pm</td>
+        <td>
+          org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {"method":"xpath","selector":"//span[text()='Role Name']//following::p[1]"}
+  (Session info: chrome=142.0.7444.135)
+For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception
+Build info: version: '4.33.0', revision: '2c6aaad03a'
+System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '21.0.7'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [53f3163d986ccd1ee6ffe74fb0ddd5e2, findElement {using=xpath, value=//span[text()='Role Name']//following::p[1]}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 142.0.7444.135, chrome: {chromedriverVersion: 142.0.7444.162 (c076baf266c..., userDataDir: C:\Users\ABHINA~1.DAG\AppDa...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:52649}, goog:processID: 23232, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:52649/devtoo..., se:cdpVersion: 142.0.7444.135, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 53f3163d986ccd1ee6ffe74fb0ddd5e2
+        </td>
+      </tr>
+  </tbody>
+</table>
+</div>
+          </div>
+        </li>
+        <li class="test-item"  status="pass" test-id="27"
+          author=""
+          tag="testCases.sanityTesting"
+          device="">
+          <div class="test-detail">
+            <p class="name">logout</p>
+            <p class="text-sm">
+              <span>3:23:00 pm</span> / <span>00:00:01:189</span>
+              <span class="badge pass-bg log float-right">Pass</span>
+            </p>
+          </div>
+          <div class="test-contents d-none">
+<div class="detail-head">
+<div class="p-v-10">
+<div class="info">
+<h5 class="test-status text-pass">logout</h5>
+<span class='badge badge-success'>11.13.2025 3:23:00 pm</span>
+<span class='badge badge-danger'>11.13.2025 3:23:01 pm</span>
+<span class='badge badge-default'>00:00:01:189</span>
+&middot; <span class='uri-anchor badge badge-default'>#test-id=27</span>
+<span title='Skip to the next failed step' class='badge badge-danger pointer float-right ne ml-1'><i class="fa fa-fast-forward"></i></span>
+<span title='Collapse all nodes' class='badge badge-default pointer float-right ct ml-1'><i class="fa fa-compress"></i></span>
+<span title='Expand all nodes' class='badge badge-default pointer float-right et'><i class="fa fa-expand"></i></span>
+</div>
+<div class="m-t-15"><span class="badge badge-pill badge-default">testCases.sanityTesting</span></div>
+</div>
+</div><div class="detail-body mt-4">
+<table class="table table-sm">
+  <thead><tr><th class="status-col">Status</th><th class="timestamp-col">Timestamp</th><th class="details-col">Details</th></tr></thead>
+  <tbody>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>3:23:00 pm</td>
+        <td>
+          Log out is clicked from top navigation
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>3:23:00 pm</td>
+        <td>
+          'Logged Out Successfully!' is present on the page.
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>3:23:01 pm</td>
+        <td>
+          Username Textbox is present
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>3:23:01 pm</td>
+        <td>
+          logout passed successfully.
+        </td>
+      </tr>
+  </tbody>
+</table>
+</div>
+          </div>
+        </li>
+      </ul>
+    </div>
+  </div>
+<div class="test-content scrollable">
+<div class="test-content-tools">
+<ul><li><a class="back-to-test" href="#"><i class="fa fa-arrow-left"></i></a></li></ul>
+</div>
+<div class="test-content-detail"><div class="detail-body"></div></div>
+</div></div>
+<div class="test-wrapper row view category-view attributes-view">
+<div class="test-list">
+<div class="test-list-tools">
+<ul class="tools pull-left"><li><a href=""><span class="font-size-14">Category</span></a></li></ul>
+<ul class="tools text-right"><li><a href="#"><span class="badge badge-primary">1</span></a></li></ul>
+</div>
+<div class="test-list-wrapper scrollable">
+<ul class="test-list-item">
+<li class="test-item">
+<div class="test-detail">
+<span class="meta">
+<span class='badge log pass-bg'>23</span>
+<span class='badge log badge-danger'>3</span>
+<span class='badge log badge-skip'>1</span>
+</span>
+<p class="name">testCases.sanityTesting</p>
+<p class="duration text-sm">27 tests</p>
+</div>
+<div class="test-contents d-none">
+<div class="info">
+<h4>testCases.sanityTesting</h4>
+<span status="pass" class='badge log pass-bg'>23 passed</span>
+<span status="fail" class='badge log badge-danger'>3 failed</span>
+<span status="skip" class='badge log badge-skip'>1 skipped</span>
+</div>
+<table class='table table-sm mt-4'>
+<thead>
+<tr>
+<th class="status-col">Status</th>
+<th class="timestamp-col">Timestamp</th>
+<th>TestName</th>
+</tr>
+</thead>
+<tbody>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>14:59:42 pm</td>
+<td>
+<a href="#" class="linked" test-id='1' id='1'>Login Page</a>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>14:59:47 pm</td>
+<td>
+<a href="#" class="linked" test-id='2' id='2'>landingPage</a>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>14:59:48 pm</td>
+<td>
+<a href="#" class="linked" test-id='3' id='3'>workspaceListDataNexus</a>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>14:59:53 pm</td>
+<td>
+<a href="#" class="linked" test-id='4' id='4'>dataNexusHome</a>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>14:59:59 pm</td>
+<td>
+<a href="#" class="linked" test-id='5' id='5'>dataNexusDataLake</a>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>15:00:13 pm</td>
+<td>
+<a href="#" class="linked" test-id='6' id='6'>dataNexusConnections</a>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>15:00:29 pm</td>
+<td>
+<a href="#" class="linked" test-id='7' id='7'>dataNexusIngestionPipeline</a>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>15:01:45 pm</td>
+<td>
+<a href="#" class="linked" test-id='8' id='8'>dataNexusTransformationPipeline</a>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>15:02:00 pm</td>
+<td>
+<a href="#" class="linked" test-id='9' id='9'>dataNexusDataModel</a>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>15:02:25 pm</td>
+<td>
+<a href="#" class="linked" test-id='10' id='10'>dataNexusTransformationPipelineV2</a>
+</td>
+</tr>
+<tr class="tag-test-status" status="fail">
+<td><span class="badge log fail-bg">Fail</span></td>
+<td>15:03:46 pm</td>
+<td>
+<a href="#" class="linked" test-id='11' id='11'>dataNexusOrchestrator</a>
+</td>
+</tr>
+<tr class="tag-test-status" status="skip">
+<td><span class="badge log skip-bg">Skip</span></td>
+<td>15:11:56 pm</td>
+<td>
+<a href="#" class="linked" test-id='12' id='12'>dataNexusDataProfiler</a>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>15:11:56 pm</td>
+<td>
+<a href="#" class="linked" test-id='13' id='13'>dataNexusDocumentParser</a>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>15:13:03 pm</td>
+<td>
+<a href="#" class="linked" test-id='14' id='14'>dataNexusMonitoring</a>
+</td>
+</tr>
+<tr class="tag-test-status" status="fail">
+<td><span class="badge log fail-bg">Fail</span></td>
+<td>15:13:16 pm</td>
+<td>
+<a href="#" class="linked" test-id='15' id='15'>migrationCICD</a>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>15:19:31 pm</td>
+<td>
+<a href="#" class="linked" test-id='16' id='16'>tenants</a>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>15:19:40 pm</td>
+<td>
+<a href="#" class="linked" test-id='17' id='17'>userManagement</a>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>15:19:52 pm</td>
+<td>
+<a href="#" class="linked" test-id='18' id='18'>workspaceListMDM</a>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>15:20:06 pm</td>
+<td>
+<a href="#" class="linked" test-id='19' id='19'>MDMOverview</a>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>15:20:13 pm</td>
+<td>
+<a href="#" class="linked" test-id='20' id='20'>MDMEntity</a>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>15:21:14 pm</td>
+<td>
+<a href="#" class="linked" test-id='21' id='21'>MDMTaxonomy</a>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>15:21:21 pm</td>
+<td>
+<a href="#" class="linked" test-id='22' id='22'>MDMMasters</a>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>15:21:56 pm</td>
+<td>
+<a href="#" class="linked" test-id='23' id='23'>MDMIntegration</a>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>15:22:28 pm</td>
+<td>
+<a href="#" class="linked" test-id='24' id='24'>MDMDataQuality</a>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>15:22:37 pm</td>
+<td>
+<a href="#" class="linked" test-id='25' id='25'>AuditLogs</a>
+</td>
+</tr>
+<tr class="tag-test-status" status="fail">
+<td><span class="badge log fail-bg">Fail</span></td>
+<td>15:22:43 pm</td>
+<td>
+<a href="#" class="linked" test-id='26' id='26'>UserManagement</a>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>15:23:00 pm</td>
+<td>
+<a href="#" class="linked" test-id='27' id='27'>logout</a>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</li>
+</ul>
+</div>
+</div>
+<div class="test-content scrollable">
+<div class="test-content-detail">
+<div class="detail-body"></div>
+</div>
+</div>
+</div><div class="container-fluid p-4 view dashboard-view">
+<div class="row">
+<div class="col-md-3">
+<div class="card"><div class="card-body">
+<p class="m-b-0">Started</p>
+<h3>Nov 13, 2025 02:59:37 pm</h3>
+</div></div>
+</div>
+<div class="col-md-3">
+<div class="card"><div class="card-body">
+<p class="m-b-0">Ended</p>
+<h3>Nov 13, 2025 03:23:02 pm</h3>
+</div></div>
+</div>
+<div class="col-md-3">
+<div class="card"><div class="card-body">
+<p class="m-b-0 text-pass">Tests Passed</p>
+<h3>23</h3>
+</div></div>
+</div>
+<div class="col-md-3">
+<div class="card"><div class="card-body">
+<p class="m-b-0 text-fail">Tests Failed</p>
+<h3>3</h3>
+</div></div>
+</div>
+</div>
+<div class="row">
+<div class="col-md-6">
+<div class="card">
+<div class="card-header">
+<h6 class="card-title">Tests</h6>
+</div>
+<div class="card-body">
+<div class="">
+<canvas id='parent-analysis' width='115' height='90'></canvas>
+</div>
+</div>
+<div class="card-footer">
+<div><small data-tooltip='85%'>
+<b>23</b> tests passed
+</small>
+</div>
+<div>
+<small data-tooltip='11%'><b>3</b> tests failed,
+<b>1</b> skipped, <b data-tooltip='0%'>0</b> others
+</small>
+</div>
+</div>
+</div>
+</div>
+<div class="col-md-6">
+<div class="card">
+<div class="card-header">
+<h6 class="card-title">Log events</h6>
+</div>
+<div class="card-body">
+<div class="">
+<canvas id='events-analysis' width='115' height='90'></canvas>
+</div>
+</div>
+<div class="card-footer">
+<div><small data-tooltip='96%'><b>385</b> events passed</small></div>
+<div>
+<small data-tooltip='3%'><b>14</b> events failed,
+<b data-tooltip='%'>2</b> others
+</small>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="row"><div class="col-md-12">
+<div class="card"><div class="card-header"><p>Timeline</p></div>
+<div class="card-body pt-0"><div>
+<canvas id="timeline" height="120"></canvas>
+</div></div>
+</div>
+</div></div>
+<script>
+var timeline = {
+"Login Page":4.381,"landingPage":1.126,"workspaceListDataNexus":5.136,"dataNexusHome":5.895,"dataNexusDataLake":13.908,"dataNexusConnections":16.126,"dataNexusIngestionPipeline":76.062,"dataNexusTransformationPipeline":15.27,"dataNexusDataModel":24.217,"dataNexusTransformationPipelineV2":81.552,"dataNexusOrchestrator":489.719,"dataNexusDataProfiler":0,"dataNexusDocumentParser":67.455,"dataNexusMonitoring":12.481,"migrationCICD":375.595,"tenants":8.918,"userManagement":11.624,"workspaceListMDM":13.783,"MDMOverview":7.465,"MDMEntity":60.548,"MDMTaxonomy":6.901,"MDMMasters":35.399,"MDMIntegration":31.587,"MDMDataQuality":9.034,"AuditLogs":6.271,"UserManagement":16.785,"logout":1.189
+};
+</script>
+<div class="row">
+<div class="col-lg-6 col-md-12 category-container">
+<div class="card">
+<div class="card-header"><p>Tags</p></div>
+<div class="card-body pb-0 pt-0"><table class="table table-sm table-bordered">
+<thead><tr class="bg-gray"><th>Name</th><th>Passed</th><th>Failed</th><th>Skipped</th><th>Others</th><th>Passed %</th></tr></thead><tbody>
+<tr>
+<td>testCases.sanityTesting</td>
+<td>23</td>
+<td>3</td>
+<td>1</td>
+<td>0</td>
+<td>85.185%</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+</div>
+<div class="col-lg-6 col-md-12 sysenv-container">
+<div class="card">
+<div class="card-header"><p>System/Environment</p></div>
+<div class="card-body pb-0 pt-0"><table class="table table-sm table-bordered">
+<thead><tr class="bg-gray"><th>Name</th><th>Value</th></tr></thead>
+<tbody>
+<tr>
+<td>Application</td>
+<td>OnePlatform</td>
+</tr>
+<tr>
+<td>Environment</td>
+<td>UAT</td>
+</tr>
+<tr>
+<td>User Name</td>
+<td>abhinav.dagar</td>
+</tr>
+<tr>
+<td>Browser</td>
+<td>chrome</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+</div>
+</div>
+</div>
+<script>
+var statusGroup = {
+parentCount: 5,
+passParent: 23,
+failParent: 3,
+warningParent: 0,
+skipParent: 1,
+childCount: 5,
+passChild: 0,
+failChild: 0,
+warningChild: 0,
+skipChild: 0,
+infoChild: 0,
+grandChildCount: 5,
+passGrandChild: 0,
+failGrandChild: 0,
+warningGrandChild: 0,
+skipGrandChild: 0,
+infoGrandChild: 0,
+eventsCount: 5,
+passEvents: 385,
+failEvents: 14,
+warningEvents: 0,
+skipEvents: 1,
+infoEvents: 1
+};
+</script>        </div>
+      </div>
+    </div>
+  </div>
+<script src="https://cdn.jsdelivr.net/gh/extent-framework/extent-github-cdn@c05cd28cde1617b9d0c05a831daff6cb97fd9fd5/spark/js/spark-script.js"></script>
+<script type="text/javascript"></script></body>
+</html>

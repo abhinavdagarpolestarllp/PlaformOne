@@ -19,6 +19,8 @@ public class DataNexusConnection extends basePage{
 	public WebElement connectionNameTextbox;
 	@FindBy(xpath="(//div[@class='Sourcecard '])[2]")
 	public WebElement firstConnectionName;
+	@FindBy(xpath="(//div[@class='Sourcecard '])[1]")
+	public WebElement allFirstConnectionName;
 	@FindBy(xpath="//input[@id='basic_server']")
 	public WebElement serverTextbox;
 	@FindBy(xpath="//input[@id='basic_port']")
@@ -31,7 +33,7 @@ public class DataNexusConnection extends basePage{
 	public WebElement passwordTextbox;
 	@FindBy (xpath="(//input[@class='searchInput'])[2]")
 	public WebElement newConnectionSearchbox;
-	@FindBy(xpath="//p[text()='Connection Validated Successfully']")
+	@FindBy(xpath="//p[contains(text(),'Connection Validated Successfully')]")
 	public WebElement connectionTestSuccessMsg;
 	@FindBy(xpath="//p[text()='connection added successfully']")
 	public WebElement connectionAddedMsg;
@@ -45,7 +47,7 @@ public class DataNexusConnection extends basePage{
 	public WebElement mandatoryConnectionMessage;
 	@FindBy(xpath="//div[contains(@class,'editIcon')]")
 	WebElement editConnectionType;
-	@FindBy(xpath="//p[text()='This connection already exists']")
+	@FindBy(xpath="//span[text()='This connection already exists']")
 	public WebElement duplicateNameMsg;
 	@FindBy(xpath="//p[text()='PostgreSQL connection successful']")
 	public WebElement postgreMsg;
@@ -58,21 +60,23 @@ public class DataNexusConnection extends basePage{
 		}
 	}public void clickFirstConnection() throws IOException {
 		standardClickButton(firstConnectionName,"Connection Type");
+	}public void clickAllFirstConnection() throws IOException {
+		standardClickButton(allFirstConnectionName,"Connection Type");
 	}public void setConnectionName(String s) throws IOException {
 		standardEnterTextbox(connectionNameTextbox,s,"Connection Textbox");
-	}public void setServer(String s) {
-		serverTextbox.sendKeys(s);
+	}public void setServer(String s) throws IOException {
+		standardEnterTextbox(serverTextbox,s,"Set Server");
 	}public void setPort(String s) throws IOException {
 		standardEnterTextbox(portTextbox,s,"Port");
 		
-	}public void setDatabase(String s) {
-		databaseTextbox.sendKeys(s);
-	}public void setUserName(String s) {
-		userTextbox.sendKeys(s);
-	}public void setPassword(String s) {
-		passwordTextbox.sendKeys(s);
-	}public void newConnectionSearchbox(String data) {
-		newConnectionSearchbox.sendKeys(data);
+	}public void setDatabase(String s) throws IOException {
+		standardEnterTextbox(databaseTextbox,s,"Database");
+	}public void setUserName(String s) throws IOException {
+		standardEnterTextbox(userTextbox,s,"User");
+	}public void setPassword(String s) throws IOException {
+		standardEnterTextbox(passwordTextbox,s,"Password");
+	}public void newConnectionSearchbox(String data) throws IOException{
+		standardEnterTextbox(newConnectionSearchbox,data,"New Connection Searchbox");
 	}public void clickEditConnectionType() throws IOException {
 		standardClickButton(editConnectionType,"Edit Connection Type");
 	}

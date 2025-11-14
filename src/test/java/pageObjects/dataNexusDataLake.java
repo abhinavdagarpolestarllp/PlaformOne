@@ -2,13 +2,17 @@ package pageObjects;
 
 import java.io.IOException;
 
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
+import org.openqa.selenium.support.ui.ExpectedConditions;
 
-public class dataNexusDataLake extends basePage{
+import Utilities.ExtentReportManager;
+
+public class DataNexusDataLake extends basePage{
 	WebDriver driver;
-	public dataNexusDataLake(WebDriver driver){
+	public DataNexusDataLake(WebDriver driver){
 		super(driver);
 	}@FindBy(xpath="//span[@class='ant-select-selection-item']")
 	public WebElement lakeHouseSelectDropdown;
@@ -33,6 +37,31 @@ public class dataNexusDataLake extends basePage{
 		standardClickButton(addRootDirectory,"Add Root Directory");
 	}public void driectoryName(String s) throws IOException {
 		standardEnterTextbox(directoryNameTextbox,s,"Driectory Name");
+	}public void openDirectoryStructure(String name) {
+		By loc = By.xpath("(//span[@class='ant-tree-title' and text()='"+name+"'])[1]");	
+		try {
+			WebElement option = dropdownWait.until(ExpectedConditions.visibilityOfElementLocated(loc));
+			standardClickButton(option,name+" directory expand");
+		}catch(Exception e) {
+			ExtentReportManager.getTest().fail("Unable to click on "+name+" directory expand option");
+		}
+		}
+	public void isDataLakeTablePresent(String name) {
+		By loc = By.xpath("(//span[@class='ant-tree-title' and text()='"+name+"'])[1]");
+		try {
+			WebElement option = dropdownWait.until(ExpectedConditions.visibilityOfElementLocated(loc));
+			ExtentReportManager.getTest().pass(name+" node is present in data lake file directory");
+		}catch(Exception e) {
+			ExtentReportManager.getTest().pass(name+" node is not present in data lake file directory");
+		}
+	}public void isDataLakeFilePresent(String name) {
+		By loc = By.xpath("(//span[contains(@class,'fabric-datalake_tableLabel') and text()='"+name+"'])[1]");
+		try {
+			WebElement option = dropdownWait.until(ExpectedConditions.visibilityOfElementLocated(loc));
+			ExtentReportManager.getTest().pass(name+" node is present in data lake file directory");
+		}catch(Exception e) {
+			ExtentReportManager.getTest().pass(name+" node is not present in data lake file directory");
+		}
 	}
 	
 }

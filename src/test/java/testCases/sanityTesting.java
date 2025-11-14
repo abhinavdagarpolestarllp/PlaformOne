@@ -13,6 +13,7 @@ import org.testng.asserts.SoftAssert;
 
 import pageObjects.DataNexusConnection;
 import pageObjects.DataNexusDataDictionary;
+import pageObjects.DataNexusDataLake;
 import pageObjects.DataNexusTransformationV2;
 import pageObjects.DataNexusDataModel;
 import pageObjects.DataNexusDataProfiler;
@@ -26,7 +27,6 @@ import pageObjects.MDMIntegrationPipeline;
 import pageObjects.MDMOverview;
 import pageObjects.MigrationCICD;
 import pageObjects.UserManagement;
-import pageObjects.dataNexusDataLake;
 import pageObjects.dataNexusHome;
 import pageObjects.landingPage;
 import pageObjects.loginPage;
@@ -106,7 +106,7 @@ public class sanityTesting extends baseClass{
 	}@Test(priority=5)
 	public void dataNexusDataLake() throws InterruptedException,UnexpectedTagNameException, IOException{
 		checkRunFlagSanity("DataNexusDataLake");
-		dataNexusDataLake dataLake = new dataNexusDataLake(getDriver());
+		DataNexusDataLake dataLake = new DataNexusDataLake(getDriver());
 		login.clickSideNavigationModule("Data Lake");
 		login.isHeaderPresent("h5", "Data Lake");
 		//login.standardDropdownElement("LakeHouse: ", "LAK1");

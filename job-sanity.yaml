@@ -1,0 +1,33 @@
+apiVersion: batch/v1
+kind: Job
+metadata:
+  name: java-selenium-sanity-job
+spec:
+  template:
+    metadata:
+      labels:
+        job: java-selenium-sanity-job
+    spec:
+      restartPolicy: Never
+      containers:
+        - name: test-runner
+          image: abhinavdagar9897/platformone:java-selenium-latest
+          imagePullPolicy: IfNotPresent
+          env:
+            - name: SELENIUM_REMOTE_URL
+              value: "http://selenium-hub:4444/wd/hub"
+            - name: REPORT_DIR
+              value: "/reports"
+            - name: JAVA_TOOL_OPTIONS
+              value: "-Djava.awt.headless=true"
+          args:
+            - "sh"
+            - "-c"
+            - "echo \"JAVA_TOOL_OPTIONS=${JAVA_TOOL_OPTIONS}\" && mvn -B -DskipTests=false test -DsuiteXmlFile=SanityTest.xml"
+          volumeMounts:
+            - name: reports
+              mountPath: /reports
+      volumes:
+        - name: reports
+          emptyDir: {}
+  backoffLimit: 0

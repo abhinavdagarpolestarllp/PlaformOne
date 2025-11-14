@@ -2,6 +2,7 @@ package pageObjects;
 
 import java.io.IOException;
 import java.time.Duration;
+import java.util.List;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
@@ -80,13 +81,15 @@ public class DataNexusTransformationV2 extends basePage{
 	public WebElement castDataConfigAppliedMsg;
 	@FindBy(xpath="//span[text()='Remove duplicate rows based on all or selected columns']")
 	public WebElement removeDuplicateMsg;
+	@FindBy(xpath="//span[text()='Drop duplicates configuration saved successfully!']")
+	public WebElement removeDuplicateConfigSaveMsg;
 	@FindBy(xpath="//span[text()='Pipeline copy created successfully']")
 	public WebElement copeCreatedMsg;
 	@FindBy(xpath="//span[text()='Join configuration saved successfully!']")
 	public WebElement saveJoinConfigMsg;
 	@FindBy(xpath="//span[text()='Trim configuration saved successfully!']")
 	public WebElement saveTrimConfigMsg;
-	@FindBy(xpath="//textarea[contains(@placeholder,'Enter rejection message')]")
+	@FindBy(xpath="//input[@placeholder='Rejection Remark']")
 	WebElement dataQualityRejectionRemark;
 	@FindBy(xpath="//span[text()='Data Quality Rules configuration saved successfully!']")
 	public WebElement dataQualityConfigSaveMsg;
@@ -292,9 +295,9 @@ public class DataNexusTransformationV2 extends basePage{
 		}
 		
 	}public void selectDataQualityRuleColumn(String column) {
-		By loc = By.xpath("(//label[@title='Columns']//following::div[@class='ant-form-item-control-input'])[1]");
+		By loc = By.xpath("(//label[@title='Column List']//following::div[@class='ant-form-item-control-input'])[1]");
 		By loc1 = By.xpath("//div[@class='ant-select-item-option-content' and contains(text(),'"+column+"')]");
-		By loc2 = By.xpath("//*[text()='Columns']//following::input[@type='search'][1]");
+		By loc2 = By.xpath("//*[text()='Column List']//following::input[@type='search'][1]");
 		try {
 			WebElement dropdown =dropdownWait.until(ExpectedConditions.visibilityOfElementLocated(loc));
 			dropdown.click();
@@ -316,8 +319,28 @@ public class DataNexusTransformationV2 extends basePage{
 		}catch(Exception e) {
 			
 		}
-	}public void enterCastDatatypeSearchColumn(String value) throws IOException {
-		standardEnterTextbox(castDatatypeSearchColumn,value,"Search Column");
+	}public void enterCastDatatypeSearchColumn(String value) {
+	    // XPath for the search input elements
+		try {
+	    String xpath = "//input[contains(@placeholder,'Search columns')]";
+	    
+	    // Find all matching elements
+	    List<WebElement> searchBoxes = driver.findElements(By.xpath(xpath));
+	    
+	    // Determine which element to use
+	    WebElement targetElement;
+	    if (searchBoxes.size() > 1) {
+	        targetElement = searchBoxes.get(1); // 2nd element (index 1)
+	        System.out.println("Multiple elements found. Using 2nd Search Column input.");
+	    }else {
+	        targetElement = searchBoxes.get(0); // 1st element
+	       
+	    }standardEnterTextbox(targetElement,value,"Search Column");
+		}
+	    catch(Exception e) {
+	    	
+	    }
+		
 	}public void clickVersionHistory() {
 		standardClickButton(versionHistory,"Version History");
 	}public void pipelineScriptVerification(String s) {
@@ -354,6 +377,28 @@ public class DataNexusTransformationV2 extends basePage{
 		}catch(Exception e) {
 			
 		}
+	}public void selectAllCheckbox() {
+		//By loc =By.xpath("//input[@aria-label='Select all' and @type='checkbox']");
+		try {
+		    String xpath = "//input[@aria-label='Select all' and @type='checkbox']";
+		    
+		    // Find all matching elements
+		    List<WebElement> searchBoxes = driver.findElements(By.xpath(xpath));
+		    
+		    // Determine which element to use
+		    WebElement targetElement;
+		    if (searchBoxes.size() > 1) {
+		        targetElement = searchBoxes.get(1); // 2nd element (index 1)
+		       // System.out.println("Multiple elements found. Using 2nd Search Column input.");
+		    }else {
+		        targetElement = searchBoxes.get(0); // 1st element
+		       
+		    }standardClickButton(targetElement,"Select All Checkbox");
+			}
+		    catch(Exception e) {
+		    	
+		 }
+			
 	}
 
 }

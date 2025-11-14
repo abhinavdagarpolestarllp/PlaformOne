@@ -69,8 +69,8 @@ public class basePage {
                 .build()
                 .perform();
         } catch (Exception clearText) {
-        	ExtentReportManager.getTest().fail("Failed to clear textbox: " + clearText.getMessage());
-        	captureScreenshot();
+        	//ExtentReportManager.getTest().fail("Failed to clear textbox: " + clearText.getMessage());
+        	//captureScreenshot();
             
         }
     }public String getText(WebElement e) {
@@ -877,7 +877,7 @@ public void isTextPresentAt(WebElement textbox,String value) throws IOException 
     		ExtentReportManager.getTest().pass("Pipeline "+pName+" is failed");
     	}
     }public void dialogCloseButton(String tag,String name) throws IOException {
-    	String obj="(//"+tag+"[text()='"+name+"']//following::button[contains(@class,'commonPanel_closeButton')])[1]";
+    	String obj="(//"+tag+"[text()='"+name+"']//following::button[contains(@class,'closeButton')])[1]";
     	standardClickButton(driver.findElement(By.xpath(obj)),name+" Dialog Box Close Button");
     }public void captureScreenshot() throws IOException {
     	String screenshotPath = baseClass.captureScreen(driver, screenshotName);

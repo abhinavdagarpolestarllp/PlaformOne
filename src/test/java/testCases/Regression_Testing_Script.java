@@ -11,8 +11,10 @@ import org.testng.annotations.Test;
 import org.testng.asserts.SoftAssert;
 
 import pageObjects.DataNexusConnection;
+import pageObjects.DataNexusDataLake;
 import pageObjects.DataNexusMonitoring;
 import pageObjects.DataNexusDataModel;
+import pageObjects.DataNexusDocumentParser;
 import pageObjects.DataNexusIngestionPipeline;
 import pageObjects.DataNexusOrchestrator;
 import pageObjects.DataNexusTransformationV2;
@@ -31,8 +33,12 @@ DataNexusTransformationV2 v2;
 DataNexusOrchestrator orch=new DataNexusOrchestrator(getDriver());
 String IngestionPipelineName;
 String TranformationPipelineName;
- String OrchestratorName = orch.orchestratorName;
- String ConnectionName;
+String OrchestratorName = orch.orchestratorName;
+String ConnectionName;
+DataNexusIngestionPipeline igp;
+DataNexusDataLake dlake;
+DataNexusDocumentParser parse;
+String processName;
 @BeforeMethod
 public void setupTestData() {
 	login = new loginPage(getDriver()); // initialize after driver ready
@@ -41,6 +47,8 @@ public void setupTestData() {
 	conn = new DataNexusConnection(getDriver());
 	orch = new DataNexusOrchestrator(getDriver());
 	v2= new DataNexusTransformationV2(getDriver());
+	igp= new DataNexusIngestionPipeline(getDriver());
+	dlake = new DataNexusDataLake(getDriver());
 	
 }
 	
@@ -101,8 +109,8 @@ public void setupTestData() {
 	@Test(dependsOnMethods = {"dataNexusHomePageNavigation"})
 	public void dataNexus() throws InterruptedException, IOException {
 		checkRunFlag("DataNexus");
-		wslist.searchBox("CICD Updated");
-		wslist.clickWorkSpace("CICD Updated");
+		wslist.searchBox("Automation_DataNexus");
+		wslist.clickWorkSpace("Automation_DataNexus");
 		login.isHeaderPresent("h5", "Home");
 		
 	}
@@ -112,16 +120,49 @@ public void setupTestData() {
 		checkRunFlag("DataNexusHome");
 		login.extendedWait.until(ExpectedConditions.visibilityOf(home.totalPipelines));
 		login.isHeaderPresent("h5", "Home");
-		home.searchBox(home.firstPipeline.getText());
-		login.isObjectExist(home.firstPipeline);
-		login.isValidDateFormat(home.createdDate.getText());
+		home.searchBox("Automation_Trigger_Testing");
+		home.isDataPresentInColumn("Name", "Automation_Trigger_Testing");
+		home.isDataPresentInColumn("Type", "Transformation");
 		home.clickActive();
+		home.searchBox("Automation_Trigger_Testing");
+		home.isDataPresentInColumn("Name", "Automation_Trigger_Testing");
 		home.clickInctive();
 		home.clickScheduled();
 		login.isObjectExist(home.totalPipelines);
 		login.isObjectExist(home.totalFailedTrigger);
 		login.isObjectExist(home.totalSuccessTrigger);
 		
+	}@Test(priority=5)
+	public void dataNexusDataLake() throws InterruptedException, IOException{
+		checkRunFlag("DataNexusDataLake");
+		login.clickSideNavigationModule("Data Lake");
+		login.isHeaderPresent("h5", "Data Lake");
+		login.wait.until(ExpectedConditions.elementToBeClickable(dlake.treeSwitch));
+		login.isHeaderPresent("h2", "Directory Structure");
+		dlake.openDirectoryStructure("automation_uspert_test_ad");
+		dlake.openDirectoryStructure("ADDUsers");
+        dlake.isDataLakeFilePresent("file1.parquet");
+        dlake.clickTable();
+        login.isHeaderPresent("h2", "Tables");
+        dlake.isDataLakeTablePresent("1k_sample");
+        login.changeEnv("uat");
+        login.clickSideNavigationModule("Data Lake");
+        login.waitForPageLoad(dlake.treeSwitch);
+		login.isHeaderPresent("h2", "Directory Structure");
+        dlake.isDataLakeFilePresent("Bronze");
+        dlake.clickTable();
+        login.isHeaderPresent("h2", "Tables");
+        dlake.isDataLakeTablePresent("customer");
+        login.changeEnv("prod");
+        login.clickSideNavigationModule("Data Lake");
+        login.wait.until(ExpectedConditions.elementToBeClickable(dlake.treeSwitch));
+		login.isHeaderPresent("h2", "Directory Structure");
+        dlake.isDataLakeFilePresent("PROD");
+        dlake.clickTable();
+        login.isHeaderPresent("h2", "Tables");
+        dlake.isDataLakeTablePresent("groupbynewfunctionsfinal");
+        login.changeEnv("dev");
+        
 	}
 	@Test(priority=4)
 	public void dataNexusConnection() throws InterruptedException, IOException {
@@ -159,16 +200,18 @@ public void setupTestData() {
 		login.isDataPresentInColumn("Source Type", "Mssql");
 		login.isDataPresentInColumn("Created By", "Ankit Rana");
 		login.isDataPresentInColumn("Created Date", login.todayDate);
+		conn.clickSortingButton("Connection Name");
+		conn.sortingValidation("Connection Name", "Ascending");
 		login.clickEdit();
 		login.clearTextbox(conn.connectionNameTextbox);
 		login.isObjectExist(conn.mandatoryConnectionName);
 		login.testConnection();
 		login.isObjectExist(conn.mandatoryConnectionMessage);
 		conn.setConnectionName(ConnectionName);
-		conn.setPort("143");
+		conn.setUserName("sqladm");
 		login.testConnection();
 		login.isObjectExist(conn.invalidCredentials_Message);
-		conn.setPort("1433");
+		conn.setUserName("sqladmin");
 		login.testConnection();
 		login.isObjectExist(conn.connectionTestSuccessMsg);
 		login.clearTextbox(conn.serverTextbox);
@@ -181,7 +224,6 @@ public void setupTestData() {
 		login.isObjectExist(conn.connectionUpdatedMsg);
 		Thread.sleep(1000);
 		login.clickCreateNew();
-		String conn2="Test_Connection"+login.todayDate;
 		//Assert.assertEquals(login.isPageInititiorAddedAfterCreation(), initalcount+1);
 		login.isHeaderPresent("span","Connections");
 		login.textClick("div", "Database");
@@ -189,27 +231,28 @@ public void setupTestData() {
 		conn.setConnectionName(ConnectionName);
 		conn.clickFirstConnection();
 		login.clickNext();
-		login.enterInTextbox("Host Name","platform-dev.postgres.database.azure.com");
+		login.enterInTextbox("Host Name","4.247.179.244");
 		login.enterInTextbox("Port","5432");
 		login.enterInTextbox("Database","oneplatform_db");
-		login.enterInTextbox("User","dev");
-		login.enterInTextbox("Password","Pole@4321");
+		login.enterInTextbox("User","uatuser");
+		login.enterInTextbox("Password","Pole@4321uat");
 		login.testConnection();
-		login.isSuccessMessagePresent(conn.connectionTestSuccessMsg);
+		login.isSuccessMessagePresent(conn.postgreMsg);
 		login.clickSubmitButton();
 		login.isSuccessMessagePresent(conn.duplicateNameMsg);
-		conn.setConnectionName(conn2);
+		String UConnectionName=ConnectionName+1;
+		conn.setConnectionName(UConnectionName);
 		login.testConnection();
-		login.isSuccessMessagePresent(conn.connectionTestSuccessMsg);
-		login.clickSubmitButton();
 		login.isSuccessMessagePresent(conn.postgreMsg);
+		login.clickSubmitButton();
+		login.isSuccessMessagePresent(conn.connectionAddedMsg);
 		login.isHeaderPresent("h5","Connections");
-		login.enterInSearchbox(conn2);
+		login.enterInSearchbox(UConnectionName);
 		login.clickEdit();
 		conn.clickEditConnectionType();
 		conn.newConnectionSearchbox("SFTP");
-		conn.clickFirstConnection();
-		login.clickNext();
+		conn.clickAllFirstConnection();
+		//login.clickNext();
 		login.enterInTextbox("Server","4.247.183.76");
 		login.enterInTextbox("SSH Host Key","4.247.183.76");
 		login.standardDropdownElement("Authentication Kind","Basic");
@@ -219,86 +262,107 @@ public void setupTestData() {
 		login.isObjectExist(conn.connectionTestSuccessMsg);
 		login.clickSubmitButton();
 		login.isObjectExist(conn.connectionUpdatedMsg);
-		login.enterInSearchbox(conn2);
-		login.clickDelete();
+		
+		
 	}@Test(priority=5)
 	public void dataNexusIngestionPipeline() throws InterruptedException, IOException {
 		DataNexusIngestionPipeline igp = new DataNexusIngestionPipeline(getDriver());
 		checkRunFlag("DataNexusIngestionPipeline");
+		IngestionPipelineName=igp.iGPipelineName;
 		igp.clickSideNavigationModule("Ingestion Pipeline");
 		igp.isHeaderPresent("h5","Ingestion Pipelines");
 		login.clickCreateNew();
 		igp.isHeaderPresent("span", "Create New");
-		igp.enterPipelineName(igp.iGPipelineName);
+		igp.enterPipelineName(IngestionPipelineName);
 		igp.clearTextbox(igp.pipelineName);
 		igp.clickSpanText("Save Pipeline");
 		login.isObjectExist(igp.mandatoryPipelineNameMsg);
 		igp.isObjectExist(igp.blankPipelineMsg);
-		igp.selectLakehouseName("Dev_Ingestion");
-		igp.selectDatalkeName("BDS_SAMPLE_DATA");
-		igp.selectSource(conn.connectionname);
+		igp.selectLakehouseName("LAK1");
+		igp.selectDataLakePath("automation_uspert_test_ad");
+		//igp.selectDatalkeName("BDS_SAMPLE_DATA");
+		igp.selectSource("SQL Server");
+		//igp.selectSource(conn.connectionname);
 		igp.selectSchema("dbo");
 		igp.clickCheckBox("ADDUsers");
-		igp.clickCheckBox("addValues");
-		igp.clickCheckBox("AWBuildVersion");
-		igp.selectLoadType("addValues", "Full Load");
-		igp.selectLoadType("ADDUsers", "Incremental Load");
-		igp.selectLoadTypeColumn("ADDUsers", "user_name");
-		igp.selectLoadTypeCondition("ADDUsers", "Equal To");
-		igp.selectLoadTypeIncValue("ADDUsers", "Ankit");
-		igp.enterPipelineName(igp.iGPipelineName);
+		login.enterInSearchbox("callback_requests");
+		igp.clickCheckBox("callback_requests");
+		login.enterInSearchbox("chat_history");
+		igp.clickCheckBox("chat_history");
+		login.enterInSearchbox("");
+		igp.selectLoadType("ADDUsers", "Full Load");
+		igp.selectLoadType("chat_history", "Incremental Load");
+		igp.selectLoadTypeColumn("chat_history", "id");
+		igp.selectLoadTypeCondition("chat_history", "Greater Than");
+		igp.selectLoadTypeIncValue("chat_history", "1");
+		igp.enterPipelineName(IngestionPipelineName);
 		igp.clickSpanText("Save Pipeline");
 		login.isObjectExist(igp.columnSelectionMsg);
-		igp.selectCustomQuery("AWBuildVersion");
-		igp.enterCustomQuery("AWBuildVersion", "SELECT SystemInformationID, Database Version, VersionDate, ModifiedDate FROM dbo.AWBuildVersion");
+		igp.selectCustomQuery("callback_requests");
+		igp.enterCustomQuery("callback_requests", "SELECT id, mobile_number, callback_date, time_slot, user_email, user_name, company_name, status, created_at, updated_at, notes FROM dbo.callback_requests");
 		login.clickSaveButton();
 		igp.columnSelector("ADDUsers");
 		login.clickSaveButton();
-		igp.columnSelector("addValues");
+		igp.columnSelector("chat_history");
+		igp.clickColumnSelectorSelectAll();
+		igp.clickCustomSelectorCheckBox("id");
+		igp.clickCustomSelectorCheckBox("userID");
+		igp.clickCustomSelectorCheckBox("User_Email");
 		login.clickSaveButton();
 		igp.clickViewQueryBody("ADDUsers");
 		login.isHeaderPresent("h3", "Preview Query");
-		igp.clickCloseButton();
-		igp.clickViewQueryBody("addValues");
-		login.isObjectExist(igp.mandatoryColumnSelectionMsg);
+		igp.dialogCloseButton("h3", "Preview Query");
+		//gp.clickCloseButton();
+		//igp.clickViewQueryBody("addValues");
+		//login.isObjectExist(igp.mandatoryColumnSelectionMsg);
 		igp.clickSpanText("Save Pipeline");
 		igp.isObjectExist(igp.pipelineCreatedMsg);
-		login.enterInSearchbox(igp.iGPipelineName);
-		login.isTextPresentInColumn("Pipeline Name", igp.iGPipelineName);
-		login.isTextPresentInColumn("Source Connection Name", conn.connectionname);
+		login.enterInSearchbox(IngestionPipelineName);
+		login.isTextPresentInColumn("Pipeline Name", IngestionPipelineName);
+		login.isTextPresentInColumn("Source Connection Name", "SQL Server");
 		login.isTextPresentInColumn("Created By", "Ankit Rana");
 		login.isTextPresentInColumn("Created Date", login.todayDate);
-		login.clickSpanText(igp.iGPipelineName);
+		login.clickSpanText(IngestionPipelineName);
 		login.isHeaderPresent("span", "Preview");
 		login.clickSpanText("Ingestion Pipelines");
 		login.clickYesButton();
-		login.enterInSearchbox(igp.iGPipelineName);
+		login.enterInSearchbox(IngestionPipelineName);
 		login.clickEdit();
-		igp.clickCheckBox("Customers");
+		Thread.sleep(10000);
+		igp.columnSelector("chat_history");
+		//igp.clickCheckBox("Userquery");
 		igp.clickSpanText("Update Pipeline");
 		igp.isObjectExist(igp.pipelineupdatedMsg);
 		igp.clickSortingButton("Pipeline Name");
 		igp.sortingValidation("Pipeline Name", "Ascending");
+		login.clickCreateNew();
 		igp.isHeaderPresent("span", "Create New");
-		igp.enterPipelineName(igp.iGPipelineName);
-		igp.clearTextbox(igp.pipelineName);
-		igp.selectLakehouseName("Dev_Ingestion");
-		igp.selectDatalkeName("BDS_SAMPLE_DATA");
-		igp.selectSource(conn.connectionname);
+		igp.enterPipelineName(IngestionPipelineName);
+		igp.selectLakehouseName("LAK1");
+		igp.selectDataLakePath("automation_uspert_test_ad");
+		//igp.selectDatalkeName("BDS_SAMPLE_DATA");
+		igp.selectSource("SQL Server");
+		//igp.selectSource(conn.connectionname);
 		igp.selectSchema("dbo");
-		igp.clickCheckBox("addValues");
-		igp.selectLoadType("addValues", "Full Load");
-		igp.columnSelector("addValues");
-		login.clickSaveButton();
-		igp.duplicatePipelineMsg(igp.iGPipelineName);
-		String nPName="Test"+login.todayDate;
-		igp.enterPipelineName(nPName);
-		login.clickSaveButton();
+		igp.clickCheckBox("ADDUsers");
+		igp.columnSelector("ADDUsers");
+		igp.clickSpanText("Save Pipeline");
+		igp.isObjectExist(igp.duplicateIngestionMsg);
+		String UIngestionPipelineName=IngestionPipelineName+"1";
+		igp.enterPipelineName(UIngestionPipelineName);
+		igp.clickSpanText("Save Pipeline");
 		igp.isObjectExist(igp.pipelineCreatedMsg);
-		login.enterInSearchbox(nPName);
+		login.enterInSearchbox(UIngestionPipelineName);
 		login.clickDelete();
 		login.clickSpanText("Yes");
 		login.isObjectExist(igp.deletePipelineMsg);
+		login.enterInSearchbox(IngestionPipelineName);
+		login.clickTrigger();
+		login.clickSpanText("Yes");
+		login.isObjectExist(igp.pipelineTriggerMsg);
+		login.clickSideNavigationModule("Monitoring");
+		igp.waitForIngestionPipelineExecution(IngestionPipelineName);
+
 		
 	}@Test(priority=7)
 	public void dataNeuxsTransformationPipeline() throws Exception {
@@ -316,7 +380,7 @@ public void setupTestData() {
 		//v2.openTransformationPannel();
 		v2.selectSourceDataLake();
 		login.isDialogHeaderPresent("div", "Configure Delta Lake Source");
-		login.standardDropdownElement("Select Lakehouse", "lak1");
+		login.standardDropdownElement("Select Lakehouse", "LAK1");
 		login.standardDropdownElement("Select Lakehouse Type", "Tables");
 		Thread.sleep(15000);
 		login.typeAheadWebElement("Source Table", "customertestscd2");
@@ -334,7 +398,7 @@ public void setupTestData() {
 		login.isDialogHeaderPresent("div", "Select Target Type");
 		v2.clicksourceSelectionModel();
 		login.isDialogHeaderPresent("div", "Configure Delta Lake Target");
-		login.standardDropdownElement("Select Lakehouse", "lak1");
+		login.standardDropdownElement("Select Lakehouse", "LAK1");
 		login.standardDropdownElement("Select Lakehouse Type", "Tables");
 		login.typeAheadWebElement("Target Table", "customertargetdim");
 		login.clickSpanText("Proceed");
@@ -357,7 +421,7 @@ public void setupTestData() {
 		login.isDataPresentInColumn("Pipeline Name", TranformationPipelineName);
 		login.isDataPresentInColumn("Description", "Automation Testing");
 		login.isDataPresentInColumn("Created Date", login.todayDate);
-		login.isDataPresentInColumn("Current Version", "Version 1");
+		login.isDataPresentInColumn("Current Version", "Base Version");
 		login.clickEdit();
 		login.isObjectExist(v2.pipelineEditMsg);
 		login.clickSpanText("Make a copy");
@@ -367,7 +431,7 @@ public void setupTestData() {
 		//v2.openTransformationPannel();
 		v2.selectSourceDataLake();
 		login.isDialogHeaderPresent("div", "Configure Delta Lake Source");
-		login.standardDropdownElement("Select Lakehouse", "lak1");
+		login.standardDropdownElement("Select Lakehouse", "LAK1");
 		login.standardDropdownElement("Select Lakehouse Type", "Tables");
 		Thread.sleep(15000);
 		login.typeAheadWebElement("Source Table", "1kimport");
@@ -376,7 +440,7 @@ public void setupTestData() {
 		v2.clickZoomOutButton();
 		v2.selectSourceDataLake();
 		login.isDialogHeaderPresent("div", "Configure Delta Lake Source");
-		login.standardDropdownElement("Select Lakehouse", "lak1");
+		login.standardDropdownElement("Select Lakehouse", "LAK1");
 		login.standardDropdownElement("Select Lakehouse Type", "Tables");
 		login.typeAheadWebElement("Source Table", "1k_sample");
 		login.clickSpanText("Proceed");
@@ -417,7 +481,7 @@ public void setupTestData() {
 		v2.connectSourceTarget("trim", "data_quality_rules");
 		login.doubleClick(v2.getPipelineNode("data_quality_rules"), "Data Quality Rules");
 		v2.isDialogHeaderPresent("h2", "Data Quality Rules Configuration");
-		v2.selectDataQualityRuleType("Check Not Null");
+		v2.selectDataQualityRuleType("Check for not null");
 		v2.clickSpanText("Add Rule");
 		v2.selectDataQualityRuleColumn("id");
 		v2.enterDataQualityRejectionRemark("Null not allowed");
@@ -452,15 +516,16 @@ public void setupTestData() {
 		v2.connectSourceTarget("drop_columns", "drop_duplicates");
 		login.doubleClick(v2.getPipelineNode("drop_duplicates"), "Drop Duplicates");
 		login.isDialogHeaderPresent("h2", "Drop Duplicates Configuration");
-		login.clickSelectAllCheckbox();
+		Thread.sleep(3000);
+		v2.selectAllCheckbox();
 		login.clickSpanText("Apply Configuration");
-		login.isObjectExist(v2.removeDuplicateMsg);
+		login.isObjectExist(v2.removeDuplicateConfigSaveMsg);
 		v2.dialogCloseButton("h2","Drop Duplicates Configuration");
 		v2.addTargetDataLake();
 		login.isDialogHeaderPresent("div", "Select Target Type");
 		v2.clicksourceSelectionModel();
 		login.isDialogHeaderPresent("div", "Configure Delta Lake Target");
-		login.standardDropdownElement("Select Lakehouse", "lak1");
+		login.standardDropdownElement("Select Lakehouse", "LAK1");
 		login.standardDropdownElement("Select Lakehouse Type", "Tables");
 		Thread.sleep(3000);
 		login.typeAheadWebElement("Target Table", "automation_transform_dev");
@@ -475,7 +540,14 @@ public void setupTestData() {
 		login.clickSpanText("Auto Map");
 		v2.targetConfigurationCloseButton();
 		v2.clickSpanText("Save");
+		login.clickSpanText("Commit");
+		login.isDialogHeaderPresent("div", "Commit Pipeline");
+		v2.entercommitMessage("Pipeline updated for testing purpose");
+		v2.clickCommit();
 		login.clickSpanText("Deploy");
+		v2.enterSummaryMessage("Pipeline updated for testing purpose");
+		//login.isObjectExist(v2.pipelineCommitedMsg);
+		//login.clickSpanText("Deploy");
 		login.isObjectExist(v2.deployMessage);
 		v2.searchbox(TranformationPipelineName);
 		login.isDataPresentInColumn("Current Version", "Version 2");
@@ -572,7 +644,67 @@ public void setupTestData() {
 		login.clickDelete();
 		login.clickYesButton();
 		login.isObjectExist(model.tableDeleteMsg);
-	}@Test(priority=6)
+	}@Test(priority =5)
+	public void dataNexusDocumentParser() throws InterruptedException, IOException {
+		checkRunFlag("DataNexusDocumentParser");
+		login.clickSideNavigationModule("Document Parser");
+		login.isHeaderPresent("h5", "Document Parser");
+		parse = new DataNexusDocumentParser(getDriver());
+		processName = parse.pname;
+		parse.clickAddProcess();
+		login.isDialogHeaderPresent("span", "New Process");
+		parse.enterProcessName(processName);
+		parse.textClick("button", "Reset");
+		parse.isTextPresentAt(parse.processName, "");
+		parse.enterProcessName(processName);
+		login.clickSaveButton();
+		login.isSuccessMessagePresent(parse.mandatoryFieldsMessage);
+		login.isObjectExist(parse.mandatoryLakehouseMessage);
+		login.isObjectExist(parse.mandatorySourceMessage);
+		login.isObjectExist(parse.mandatoryTargetMessage);
+		parse.chooseLakehouse("LAK1");
+		parse.choosedefinePath("automation_uspert_test_ad/Document_test_parser/");
+		Thread.sleep(2000);
+		parse.chooseTargetPath("automation_uspert_test_ad/Doucment_test_parser_result/");
+		parse.textClick("button", "Save");
+		login.isObjectExist(parse.createProcessMsg);
+		parse.clickAddProcess();
+		login.isDialogHeaderPresent("span", "New Process");
+		parse.enterProcessName(processName);
+		parse.chooseLakehouse("LAK1");
+		parse.choosedefinePath("automation_uspert_test_ad/Document_test_parser/");
+		Thread.sleep(2000);
+		parse.chooseTargetPath("automation_uspert_test_ad/Doucment_test_parser_result/");
+		parse.textClick("button", "Save");
+		parse.isObjectExist(parse.duplicateNameMessage);
+		login.clickClose();	
+		parse.enterInSearchbox(processName);
+		login.clickSortingButton("Process Name");
+		login.sortingValidation("Process Name", "Ascending");
+		parse.isDataPresentInColumn("Process Name", processName);
+		parse.isDataPresentInColumn("Source Path", "automation_uspert_test_ad/Document_test_parser/");
+		parse.isDataPresentInColumn("Target Path", "automation_uspert_test_ad/Doucment_test_parser_result/");
+		login.clickEdit();
+		login.isDialogHeaderPresent("span", "Edit Process");
+		processName=processName+"1";
+		parse.enterProcessName(processName);
+		parse.textClick("button", "Update");
+		login.isObjectExist(parse.updateProcessMsg);
+		parse.enterInSearchbox(processName);
+		login.clickViewButton();
+		login.isDialogHeaderPresent("span", "View Process");
+		parse.textClick("button", "Close");
+		parse.enterInSearchbox(processName);
+		login.clickTrigger();
+		login.clickYesButton();
+		parse.isSuccessMessagePresent(parse.processTriggerMsg);
+		login.clickSideNavigationModule("Monitoring");
+		login.isHeaderPresent("h5","Monitoring");
+		Thread.sleep(2000);
+		login.textClick("div", "Document Parser");
+		parse.waitForDocumentProcessExecution(processName);
+	}
+	@Test(priority=6)
 	public void DataNexusOrchestrator() throws InterruptedException, IOException {
 		DataNexusOrchestrator orch = new DataNexusOrchestrator(getDriver());
 		DataNexusIngestionPipeline igp = new DataNexusIngestionPipeline(getDriver());
@@ -588,7 +720,7 @@ public void setupTestData() {
 		orch.clickSpanText("Done");
 		orch.clickAddPipelineButton();
 		orch.selectPipelineType("Transformation");
-		orch.selectPipeline("Test1234567");
+		orch.selectPipeline(TranformationPipelineName);
 		orch.selectPipelineDependentUpon(IngestionPipelineName);
 		orch.clickSpanText("Done");
 		orch.clickSpanText("Save");
@@ -670,8 +802,8 @@ public void setupTestData() {
 		login.clickSideNavigationModule("Monitoring");
 		login.isHeaderPresent("h5", "Monitoring");
 		login.enterInSearchbox(IngestionPipelineName);
-		login.isTextPresentInColumn("Pipeline Name", IngestionPipelineName);
-		login.isTextPresentInColumn("Source Connection Name", ConnectionName);
+		monitor.isDataPresentInColumn("Pipeline Name", IngestionPipelineName);
+		monitor.isDataPresentInColumn("Source Connection Name", ConnectionName);
 		login.clickSortingButton("Pipeline Name");	
 		login.sortingValidation("Pipeline Name", "Ascending");
 		login.clickTrigger();
@@ -680,13 +812,38 @@ public void setupTestData() {
 		login.clickSortingButton("Lod Id");
 		login.sortingValidation("Log Id", "Ascending");
 		monitor.clickcolumnData("Log Id");
+		login.enterInSearchbox("callback_requests");
+		login.isDataPresentInColumn("Table Name", "callback_requests");
+		login.isDataPresentInColumn("Row Count", "12");
+		login.enterInSearchbox("ADDUsers");
+		login.isDataPresentInColumn("Table Name", "ADDUsers");
+		login.isDataPresentInColumn("Row Count", "0");
+		login.enterInSearchbox("chat_history");
+		login.isDataPresentInColumn("Table Name", "chat_history");
+		login.isDataPresentInColumn("Row Count", "2897");
+		login.isDataPresentInColumn("Remarks", "Pipeline Succeeded");
 		login.textClick("div", "Transformation And Data Quality");
-		login.enterInSearchbox(TranformationPipelineName);	
-		login.isHeaderPresent("span", "Successfull");
-		login.isTextPresentInColumnDiv("Operation Name", "Target");
-		login.isTextPresentInColumnTable("Operation Type", "overwrite_delta_table");
-		login.isTextPresentInColumnTable("Operation Name", "Target");
-		
+		login.textClick("div", "Document Parser");
+		monitor.searchBox("3", processName);
+		monitor.isDataPresentInColumn("Process Name", processName);
+		monitor.isDataPresentInColumn("Total PDFs Processed", "2");
+		monitor.textClick("div", processName);
+		monitor.isHeaderPresent("span", processName);
+		monitor.isDataPresentInColumn("File Name/Pattern","2021_Corporation_292_EA2 1.PDF");
+		monitor.clickParserPreview();
+		monitor.isHeaderPresent("h5", "Extracted Fields");
+		monitor.isDialogHeaderPresent("h2", "View Extracted Data");
+		monitor.waitForPageLoad(monitor.getObjectFromText("span", "Edit"));
+		monitor.clickSpanText("Edit");
+		monitor.clickCheckBox("New KYC");
+		monitor.clickSpanText("Save");
+		monitor.isSuccessMessagePresent(monitor.formDataSavedMsg);
+		monitor.clickParserBack();
+		monitor.clickParserVersionHistory();
+		monitor.isDialogHeaderPresent("h2", "Cell History");
+		//login.clickDelete();
+		//login.clickSpanText("Yes");
+		//login.isObjectExist(igp.deletePipelineMsg);
 		
 		
 	}@Test(priority=10)
