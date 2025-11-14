@@ -23,7 +23,7 @@ pipeline {
     stage('Archive Extent Reports') {
       steps {
         // archive so you can download the raw report later
-        archiveArtifacts artifacts: 'target/extent-reports/**', fingerprint: true, allowEmptyArchive: true
+        archiveArtifacts artifacts: '**target/extent-reports/', fingerprint: true, allowEmptyArchive: true
       }
     }
 
