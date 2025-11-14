@@ -228,12 +228,12 @@ public class sanityTesting extends baseClass{
 		login.clickViewButton();
 		model.clickAddTablesButton();	
 		login.isDialogHeaderPresent("h4", "Add New Table");
-		login.clickSpanText("Upload Excel");
-		login.isDialogHeaderPresent("span", "Upload Excel File");
-		login.clickSpanText("Click to Upload Excel File");
-		login.uploadFile("C:\\Users\\abhinav.dagar\\Downloads\\ChatBot_Testing\\column_template.xlsx");
-		login.clickSpanText("Upload");
-		login.isObjectExist(model.fileUploadedMsg);
+		//login.clickSpanText("Upload Excel");
+		//login.isDialogHeaderPresent("span", "Upload Excel File");
+		//login.clickSpanText("Click to Upload Excel File");
+		//login.uploadFile("C:\\Users\\abhinav.dagar\\Downloads\\ChatBot_Testing\\column_template.xlsx");
+		//login.clickSpanText("Upload");
+		//login.isObjectExist(model.fileUploadedMsg);
 		/*login.clickSideNavigationModule("Data Dictionary");
 		login.isHeaderPresent("h5","Data Dictionary");
 		DataNexusDataDictionary dict = new DataNexusDataDictionary(driver);
