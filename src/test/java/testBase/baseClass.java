@@ -223,7 +223,7 @@ public class baseClass {
     private ChromeOptions buildChromeOptionsForRemote() {
         ChromeOptions options = new ChromeOptions();
         Map<String, Object> prefsChrome = new HashMap<>();
-        prefsChrome.put("credentials_enable_service", false);
+       /* prefsChrome.put("credentials_enable_service", false);
         prefsChrome.put("profile.password_manager_enabled", false);
         prefsChrome.put("download.prompt_for_download", true);
         prefsChrome.put("download.directory_upgrade", true);
@@ -231,8 +231,8 @@ public class baseClass {
         options.setExperimentalOption("prefs", prefsChrome);
 
         // container-friendly args
-        options.addArguments("--headless=new");           // modern headless; if older chrome use "--headless"
-        options.addArguments("--no-sandbox");
+        //options.addArguments("--headless=new");           // modern headless; if older chrome use "--headless"
+        //options.addArguments("--no-sandbox");
         options.addArguments("--disable-dev-shm-usage");
         options.addArguments("--disable-gpu");
         options.addArguments("--window-size=1920,1080");
@@ -240,7 +240,7 @@ public class baseClass {
         options.addArguments("--disable-infobars");
         options.addArguments("--disable-blink-features=AutomationControlled");
         options.setExperimentalOption("excludeSwitches", new String[] { "enable-automation" });
-        options.setExperimentalOption("useAutomationExtension", false);
+        options.setExperimentalOption("useAutomationExtension", false);*/
         return options;
     }
 
@@ -254,8 +254,8 @@ public class baseClass {
         prefs.put("safebrowsing.enabled", true);
         options.setExperimentalOption("prefs", prefs);
 
-        options.addArguments("--headless=new");
-        options.addArguments("--no-sandbox");
+        //options.addArguments("--headless=new");
+        //options.addArguments("--no-sandbox");
         options.addArguments("--disable-dev-shm-usage");
         options.addArguments("--window-size=1920,1080");
         options.addArguments("--disable-blink-features=AutomationControlled");
@@ -266,8 +266,8 @@ public class baseClass {
 
     private FirefoxOptions buildFirefoxOptionsForRemote() {
         FirefoxOptions options = new FirefoxOptions();
-        options.addArguments("-headless"); // Firefox uses -headless
-        options.addArguments("--no-sandbox");
+        //options.addArguments("-headless"); // Firefox uses -headless
+        //options.addArguments("--no-sandbox");
         options.addArguments("--disable-dev-shm-usage");
         options.addArguments("--width=1920");
         options.addArguments("--height=1080");
