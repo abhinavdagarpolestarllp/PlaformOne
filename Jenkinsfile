@@ -15,26 +15,39 @@ pipeline {
 
     stage('Build & Run Sanity') {
       steps {
+        // run sanity suite
         bat 'mvn -B clean test -DsuiteXmlFile=SanityTest.xml'
-      }
-      post {
-        always {
-          junit allowEmptyResults: true, testResults: '**/target/surefire-reports/*.xml'
-          archiveArtifacts artifacts: '**/target/*.jar, **/target/*.zip', allowEmptyArchive: true
-        }
       }
     }
 
-    stage('Publish Allure (optional)') {
-      when { expression { fileExists('target/allure-results') } }
+    stage('Archive Extent Reports') {
       steps {
-        allure includeProperties: false, results: [[path: 'target/allure-results']]
+        // archive so you can download the raw report later
+        archiveArtifacts artifacts: 'target/extent-reports/**', fingerprint: true, allowEmptyArchive: true
+      }
+    }
+
+    stage('Publish Extent HTML') {
+      steps {
+        script {
+          // publishHTML step requires HTML Publisher plugin
+          publishHTML(target: [
+            reportDir: 'target/extent-reports',
+            reportFiles: 'index.html',
+            reportName: 'Extent Report',
+            allowMissing: false,
+            alwaysLinkToLastBuild: true,
+            keepAll: true
+          ])
+        }
       }
     }
   }
 
   post {
-    success { echo 'Sanity suite passed' }
-    failure { echo 'Sanity suite failed' }
+    always {
+      junit allowEmptyResults: true, testResults: '**/target/surefire-reports/*.xml'
+      // optional: keep extent results archived (already archived)
+    }
   }
 }
