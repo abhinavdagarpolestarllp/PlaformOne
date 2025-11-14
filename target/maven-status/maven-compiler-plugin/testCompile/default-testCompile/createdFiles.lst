@@ -1,9 +1,11 @@
 testCases\multipleLoginValidate.class
 testBase\baseClassTesting.class
 pageObjects\loginPage.class
+pageObjects\MigrationCICD.class
 testCases\test.class
 pageObjects\MDMEntities.class
 testCases\TestNGExecutionMain.class
+pageObjects\DataNexusDataLake.class
 testBase\baseClassPowerBi.class
 pageObjects\DataNexusMonitoring.class
 pageObjects\DataNexusTransformationPipeline.class
@@ -39,9 +41,10 @@ pageObjects\MDMIntegrationPipeline.class
 pageObjects\dataNexusHome.class
 testCases\PowerBi.class
 pageObjects\DataNexusDataDictionary.class
-pageObjects\dataNexusDataLake.class
 pageObjects\DataNexusConnection.class
+testCases\SanityTestingInsigneo.class
 testBase\baseClass.class
+Utilities\ExtentReportManager_OLD.class
 pageObjects\workspacePage.class
 testCases\MainClass.class
 Utilities\ExtentReportManager.class

@@ -12,23 +12,26 @@
           <include name="MDMEntity"/>
           <include name="UserManagement"/>
           <include name="MDMOverview"/>
-          <include name="dataNexusDataLake"/>
           <include name="MDMDataQuality"/>
-          <include name="setup"/>
           <include name="dataNexusDataProfiler"/>
           <include name="MDMTaxonomy"/>
+          <include name="migrationCICD"/>
+          <include name="dataNexusIngestionPipeline"/>
+          <include name="setup"/>
           <include name="logout"/>
-          <include name="MDMMasters"/>
+          <include name="dataNexusTransformationPipeline"/>
           <include name="MDMIntegration"/>
           <include name="dataNexusDocumentParser"/>
-          <include name="dataNexusOrchestrator"/>
+          <include name="MDMMasters"/>
           <include name="dataNexusMonitoring"/>
+          <include name="dataNexusOrchestrator"/>
           <include name="tearDown"/>
           <include name="dataNexusTransformationPipelineV2"/>
           <include name="userManagement"/>
           <include name="AuditLogs"/>
-          <include name="tenants"/>
+          <include name="dataNexusDataModel"/>
           <include name="workspaceListMDM"/>
+          <include name="tenants"/>
         </methods>
       </class> <!-- testCases.sanityTesting -->
     </classes>

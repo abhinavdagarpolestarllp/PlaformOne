@@ -2,7 +2,7 @@ C:\Users\abhinav.dagar\eclipse-workspace\platformOne\src\test\java\pageObjects\b
 C:\Users\abhinav.dagar\eclipse-workspace\platformOne\src\test\java\pageObjects\basePageAllure.java
 C:\Users\abhinav.dagar\eclipse-workspace\platformOne\src\test\java\pageObjects\DataNexusConnection.java
 C:\Users\abhinav.dagar\eclipse-workspace\platformOne\src\test\java\pageObjects\DataNexusDataDictionary.java
-C:\Users\abhinav.dagar\eclipse-workspace\platformOne\src\test\java\pageObjects\dataNexusDataLake.java
+C:\Users\abhinav.dagar\eclipse-workspace\platformOne\src\test\java\pageObjects\DataNexusDataLake.java
 C:\Users\abhinav.dagar\eclipse-workspace\platformOne\src\test\java\pageObjects\DataNexusDataModel.java
 C:\Users\abhinav.dagar\eclipse-workspace\platformOne\src\test\java\pageObjects\DataNexusDataProfiler.java
 C:\Users\abhinav.dagar\eclipse-workspace\platformOne\src\test\java\pageObjects\DataNexusDocumentParser.java
@@ -20,6 +20,7 @@ C:\Users\abhinav.dagar\eclipse-workspace\platformOne\src\test\java\pageObjects\M
 C:\Users\abhinav.dagar\eclipse-workspace\platformOne\src\test\java\pageObjects\MDMIntegrationPipeline.java
 C:\Users\abhinav.dagar\eclipse-workspace\platformOne\src\test\java\pageObjects\MDMMasters.java
 C:\Users\abhinav.dagar\eclipse-workspace\platformOne\src\test\java\pageObjects\MDMOverview.java
+C:\Users\abhinav.dagar\eclipse-workspace\platformOne\src\test\java\pageObjects\MigrationCICD.java
 C:\Users\abhinav.dagar\eclipse-workspace\platformOne\src\test\java\pageObjects\PowerBIEmailPro.java
 C:\Users\abhinav.dagar\eclipse-workspace\platformOne\src\test\java\pageObjects\sharpInsights.java
 C:\Users\abhinav.dagar\eclipse-workspace\platformOne\src\test\java\pageObjects\SharpInsightsTemporary.java
@@ -39,9 +40,11 @@ C:\Users\abhinav.dagar\eclipse-workspace\platformOne\src\test\java\testCases\mul
 C:\Users\abhinav.dagar\eclipse-workspace\platformOne\src\test\java\testCases\PowerBi.java
 C:\Users\abhinav.dagar\eclipse-workspace\platformOne\src\test\java\testCases\Regression_Testing_Script.java
 C:\Users\abhinav.dagar\eclipse-workspace\platformOne\src\test\java\testCases\sanityTesting.java
+C:\Users\abhinav.dagar\eclipse-workspace\platformOne\src\test\java\testCases\SanityTestingInsigneo.java
 C:\Users\abhinav.dagar\eclipse-workspace\platformOne\src\test\java\testCases\test.java
 C:\Users\abhinav.dagar\eclipse-workspace\platformOne\src\test\java\testCases\TestNGExecutionMain.java
 C:\Users\abhinav.dagar\eclipse-workspace\platformOne\src\test\java\Utilities\AllureReportManager.java
 C:\Users\abhinav.dagar\eclipse-workspace\platformOne\src\test\java\Utilities\DataProviders.java
 C:\Users\abhinav.dagar\eclipse-workspace\platformOne\src\test\java\Utilities\excelUtility.java
 C:\Users\abhinav.dagar\eclipse-workspace\platformOne\src\test\java\Utilities\ExtentReportManager.java
+C:\Users\abhinav.dagar\eclipse-workspace\platformOne\src\test\java\Utilities\ExtentReportManager_OLD.java
